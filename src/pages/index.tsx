@@ -1,15 +1,10 @@
 import '@emotion/core'
-import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Parallax } from 'react-parallax'
 import { Layout } from '../components/layout'
-
-export const Title = styled.h1`
-  color: #380030;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-size: 30px;
-`
+import { marmicodeColor, marmicodeColorWithOpacity } from '../config/config'
+import { createGradient } from '../helpers/create-gradient'
 
 export const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -24,7 +19,15 @@ export const IndexPage = () => {
     }
   `)
 
-  console.log(data.background.childImageSharp.fluid.src)
+  const gradient = {
+    background: [
+      marmicodeColor,
+      ...createGradient({
+        colorA: marmicodeColorWithOpacity(0.5),
+        colorB: marmicodeColor,
+      }),
+    ],
+  }
 
   return (
     <>
@@ -33,7 +36,8 @@ export const IndexPage = () => {
         <Parallax
           bgImage={data.background.childImageSharp.fluid.src}
           bgImageAlt="marmicode cooking pot"
-          bgImageStyle={{ backgroundSize: 'cover' }}
+          bgImageStyle={{ opacity: 0.7 }}
+          css={gradient}
           strength={200}
         >
           <div style={{ height: '400px' }} />

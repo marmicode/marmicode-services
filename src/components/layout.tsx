@@ -1,16 +1,23 @@
+import styled from '@emotion/styled'
 import { Toolbar } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { css, Global } from '@emotion/core'
 import Img from 'gatsby-image'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Title } from '../pages'
+import { marmicodeColor } from '../config/config'
 import SEO from './seo'
 
 const bodyStyle = css`
   body {
     margin: 0;
   }
+`
+
+export const Title = styled.h1`
+  color: ${marmicodeColor};
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 30px;
 `
 
 export const Layout = ({ children, title }: { children?; title: string }) => {
