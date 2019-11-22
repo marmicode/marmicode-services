@@ -15,9 +15,12 @@ const bodyStyle = css`
 `
 
 export const Title = styled.h1`
+  position: absolute;
   color: ${marmicodeColor};
   font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-size: 30px;
+  bottom: 5px;
+  left: 90px;
+  margin: 0;
 `
 
 export const Layout = ({ children, title }: { children?; title: string }) => {
@@ -49,11 +52,9 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
           type="text/css"
         />
       </Helmet>
-      <Toolbar>
+      <Toolbar style={{ minHeight: '60px' }}>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
-        <Title style={{ marginBottom: 0, marginTop: '20px' }}>
-          {data.site.siteMetadata.title}
-        </Title>
+        <Title>{data.site.siteMetadata.title}</Title>
       </Toolbar>
       {children}
     </>
