@@ -2,8 +2,13 @@ import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Parallax } from 'react-parallax'
+import { Hero } from '../components/hero'
 import { Layout } from '../components/layout'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../config/config'
+import {
+  hero,
+  marmicodeColor,
+  marmicodeColorWithOpacity,
+} from '../config/config'
 import { createGradient } from '../helpers/create-gradient'
 
 export const IndexPage = () => {
@@ -23,7 +28,7 @@ export const IndexPage = () => {
     background: [
       marmicodeColor,
       ...createGradient({
-        colorA: marmicodeColorWithOpacity(0.5),
+        colorA: marmicodeColorWithOpacity(0.9),
         colorB: marmicodeColor,
       }),
     ],
@@ -31,19 +36,21 @@ export const IndexPage = () => {
 
   return (
     <>
-      <Layout title={'Welcome'}></Layout>
+      <Layout title={'Welcome'} />
       <div>
         <Parallax
           bgImage={data.background.childImageSharp.fluid.src}
           bgImageAlt="marmicode cooking pot"
-          bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.7 }}
+          bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.65 }}
           css={{ height: 'calc(100vh - 60px)', ...gradient }}
           strength={400}
         >
-          <div style={{ height: '400px' }} />
+          <div css={{ marginTop: '30vh' }}>
+            <Hero title={hero.title} subtitle={hero.subtitle} />
+          </div>
         </Parallax>
       </div>
-      <div css={{ height: '1000px' }}></div>
+      <div css={{ height: '1000px' }} />
     </>
   )
 }
