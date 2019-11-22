@@ -68,7 +68,10 @@ export const IndexPage = () => {
       </Parallax>
       <Slant />
       {sectionList.map(section => (
-        <section css={{ textAlign: 'center', height: '100vh' }}>
+        <section
+          key={section.title}
+          css={{ textAlign: 'center', height: '100vh' }}
+        >
           <h1>{section.title}</h1>
         </section>
       ))}
