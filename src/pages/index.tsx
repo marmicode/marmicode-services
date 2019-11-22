@@ -1,10 +1,11 @@
-import '@emotion/core'
-import styled from '@emotion/styled'
-import { Toolbar } from '@material-ui/core'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import "@emotion/core"
+import styled from "@emotion/styled"
+import { Toolbar } from "@material-ui/core"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import React from "react"
+import { Helmet } from "react-helmet"
+import SEO from "../components/seo"
 
 export const Title = styled.h1`
   color: #380030;
@@ -15,6 +16,11 @@ export const Title = styled.h1`
 export const Layout = ({ children }: { children? }) => {
   const data = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
       logo: file(relativePath: { eq: "icon.png" }) {
         childImageSharp {
           fixed(width: 60) {
@@ -25,10 +31,11 @@ export const Layout = ({ children }: { children? }) => {
     }
   `)
 
-  console.log(data.logo)
+  const title = 'Welcome'
 
   return (
     <>
+      <SEO title={title}></SEO>
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700"
@@ -38,7 +45,7 @@ export const Layout = ({ children }: { children? }) => {
       </Helmet>
       <Toolbar>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
-        <Title style={{ marginBottom: 0, marginTop: '20px' }}>Marmicode</Title>
+        <Title style={{ marginBottom: 0, marginTop: '20px' }}>{data.site.siteMetadata.title}</Title>
       </Toolbar>
       {children}
     </>
