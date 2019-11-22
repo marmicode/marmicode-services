@@ -1,12 +1,19 @@
 import { Toolbar } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
+import { css, Global } from '@emotion/core'
 import Img from 'gatsby-image'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Title } from '../pages'
 import SEO from './seo'
 
-export const Layout = ({ children, title }: { children?, title: string }) => {
+const bodyStyle = css`
+  body {
+    margin: 0;
+  }
+`
+
+export const Layout = ({ children, title }: { children?; title: string }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -26,6 +33,7 @@ export const Layout = ({ children, title }: { children?, title: string }) => {
 
   return (
     <>
+      <Global styles={bodyStyle}></Global>
       <SEO title={title}></SEO>
       <Helmet>
         <link
@@ -44,3 +52,5 @@ export const Layout = ({ children, title }: { children?, title: string }) => {
     </>
   )
 }
+
+export default Layout

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Marmicode`,
-    description: `Web Development & eXtreme Programming`,
+    description: `Helping you cook better apps with the best ingredients`,
     author: `@marmicode`,
   },
   plugins: [
