@@ -4,5 +4,5 @@ export const marmicodeColor = marmicodeColorWithOpacity(1);
 
 export const hero = {
   title: 'We Help You Cook Better Apps',
-  subtitle: 'with the best ingredients'
+  subtitle: 'with delicious ingredients'
 }
