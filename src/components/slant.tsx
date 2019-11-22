@@ -12,7 +12,7 @@ const slant = ({ height }: { height: number }) => css`
 
 const slantContainer = ({ height }: { height: number }) => css`
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   overflow: hidden;
   height: ${height}px;
   width: 100%;
