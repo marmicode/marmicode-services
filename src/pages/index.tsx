@@ -36,9 +36,9 @@ export const IndexPage = () => {
         <Parallax
           bgImage={data.background.childImageSharp.fluid.src}
           bgImageAlt="marmicode cooking pot"
-          bgImageStyle={{ opacity: 0.7 }}
-          css={gradient}
-          strength={200}
+          bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.7 }}
+          css={{ height: 'calc(100vh - 60px)', ...gradient }}
+          strength={400}
         >
           <div style={{ height: '400px' }} />
         </Parallax>
