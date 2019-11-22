@@ -36,24 +36,21 @@ export const IndexPage = () => {
   }
 
   return (
-    <>
-      <Layout title={'Welcome'} />
-      <div>
-        <Parallax
-          bgImage={data.background.childImageSharp.fluid.src}
-          bgImageAlt="marmicode cooking pot"
-          bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.65 }}
-          css={{ height: 'calc(100vh - 60px)', ...gradient }}
-          strength={400}
-        >
-          <div css={{ marginTop: '30vh' }}>
-            <Hero title={hero.title} subtitle={hero.subtitle} />
-          </div>
-        </Parallax>
-        <Slant />
-      </div>
+    <Layout title={'Welcome'}>
+      <Parallax
+        bgImage={data.background.childImageSharp.fluid.src}
+        bgImageAlt="marmicode cooking pot"
+        bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.65 }}
+        css={{ height: 'calc(100vh - 60px)', ...gradient }}
+        strength={400}
+      >
+        <div css={{ marginTop: '30vh' }}>
+          <Hero title={hero.title} subtitle={hero.subtitle} />
+        </div>
+      </Parallax>
+      <Slant />
       <div css={{ height: '1000px' }} />
-    </>
+    </Layout>
   )
 }
 
