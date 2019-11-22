@@ -35,6 +35,24 @@ export const IndexPage = () => {
     ],
   }
 
+  const sectionList = [
+    {
+      title: 'Services',
+    },
+    {
+      title: 'Pricing',
+    },
+    {
+      title: 'Testimonials',
+    },
+    {
+      title: 'Your Coach',
+    },
+    {
+      title: 'Get in touch',
+    },
+  ]
+
   return (
     <Layout title={'Welcome'}>
       <Parallax
@@ -49,7 +67,11 @@ export const IndexPage = () => {
         </div>
       </Parallax>
       <Slant />
-      <div css={{ height: '1000px' }} />
+      {sectionList.map(section => (
+        <section css={{ textAlign: 'center', height: '100vh' }}>
+          <h1>{section.title}</h1>
+        </section>
+      ))}
     </Layout>
   )
 }
