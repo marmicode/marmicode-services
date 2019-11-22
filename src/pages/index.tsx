@@ -4,6 +4,7 @@ import React from 'react'
 import { Parallax } from 'react-parallax'
 import { Hero } from '../components/hero'
 import { Layout } from '../components/layout'
+import { Slant } from '../components/slant'
 import {
   hero,
   marmicodeColor,
@@ -49,6 +50,7 @@ export const IndexPage = () => {
             <Hero title={hero.title} subtitle={hero.subtitle} />
           </div>
         </Parallax>
+        <Slant />
       </div>
       <div css={{ height: '1000px' }} />
     </>
