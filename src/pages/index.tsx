@@ -61,14 +61,15 @@ export const Section = ({
     : {}
 
   return (
-    <>
+    <div css={{ position: 'relative' }}>
+      <Slant isTop={true} />
       <section
         css={{ textAlign: 'center', height: '100vh', ...backgroundStyle }}
       >
         <SectionTitle title={section.title} />
       </section>
       <Slant />
-    </>
+    </div>
   )
 }
 

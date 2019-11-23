@@ -1,29 +1,39 @@
 import { css } from '@emotion/core'
 
-const slant = ({ height }: { height: number }) => css`
-  background-color: #fff;
-  transform: rotate(-2deg);
-  overflow: hidden;
-  height: ${height}px;
-  width: 102%;
-  position: absolute;
-  bottom: -${height / 2}px;
-`
+const slant = ({ height, isTop }: { height: number; isTop: boolean }) => {
+  return css({
+    backgroundColor: '#fff',
+    transform: 'rotate(-2deg)',
+    overflow: 'hidden',
+    height: `${height}px`,
+    width: '102%',
+    position: 'absolute',
+    bottom: `-${height / 2}px`,
+  })
+}
 
-const slantContainer = ({ height }: { height: number }) => css`
-  position: absolute;
-  bottom: 0;
-  overflow: hidden;
-  height: ${height}px;
-  width: 100%;
-  z-index: 1;
-`
+const slantContainer = ({
+  height,
+  isTop,
+}: {
+  height: number
+  isTop: boolean
+}) => {
+  return css({
+    position: 'absolute',
+    bottom: 0,
+    overflow: 'hidden',
+    height: `${height}px`,
+    width: '100%',
+    zIndex: 1,
+  })
+}
 
-export const Slant = () => {
+export const Slant = ({ isTop }: { isTop?: boolean }) => {
   const height = 80
   return (
-    <div css={slantContainer({ height })}>
-      <div css={slant({ height })}></div>
+    <div css={slantContainer({ height, isTop })}>
+      <div css={slant({ height, isTop })}></div>
     </div>
   )
 }
