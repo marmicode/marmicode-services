@@ -4,6 +4,7 @@ import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../config/config'
+import { createGradient } from '../helpers/create-gradient'
 
 export interface SectionData {
   title: string
@@ -41,10 +42,29 @@ export const SectionTitle = ({ title }: { title: string }) => {
   )
 }
 
-export const Section = ({ section }: { section: SectionData }) => {
+export const Section = ({
+  hasBackground,
+  section,
+}: {
+  hasBackground: boolean
+  section: SectionData
+}) => {
+  const backgroundStyle = hasBackground
+    ? {
+        background: [
+          ...createGradient({
+            colorA: marmicodeColorWithOpacity(0.7),
+            colorB: marmicodeColor,
+          }),
+        ],
+      }
+    : {}
+
   return (
     <>
-      <section css={{ textAlign: 'center', height: '100vh' }}>
+      <section
+        css={{ textAlign: 'center', height: '100vh', ...backgroundStyle }}
+      >
         <SectionTitle title={section.title} />
       </section>
       <Slant />
@@ -75,8 +95,12 @@ export const IndexPage = () => {
     <Layout title={'Welcome'}>
       <Splash />
       <Slant />
-      {sectionList.map(section => (
-        <Section key={section.title} section={section} />
+      {sectionList.map((section, index) => (
+        <Section
+          key={section.title}
+          hasBackground={index % 2}
+          section={section}
+        />
       ))}
     </Layout>
   )
