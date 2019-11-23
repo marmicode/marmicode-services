@@ -10,12 +10,18 @@ export interface SectionData {
   title: string
 }
 
-export const SectionTitle = ({ title }: { title: string }) => {
+export const SectionTitle = ({
+  hasBackground,
+  title,
+}: {
+  hasBackground: boolean
+  title: string
+}) => {
   return (
     <>
       <h2
         css={{
-          color: '#444',
+          color: hasBackground ? '#fff' : '#444',
           fontFamily: '"Source Sans Pro", Arial, sans-serif',
           fontSize: '30px',
           fontWeight: 300,
@@ -70,7 +76,7 @@ export const Section = ({
           ...backgroundStyle,
         }}
       >
-        <SectionTitle title={section.title} />
+        <SectionTitle hasBackground={hasBackground} title={section.title} />
       </section>
       <Slant />
     </div>
