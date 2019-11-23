@@ -90,12 +90,12 @@ export const IndexPage = () => {
     {
       title: 'Services',
     },
-    {
-      title: 'Pricing',
-    },
-    {
-      title: 'Testimonials',
-    },
+    // {
+    //   title: 'Pricing',
+    // },
+    // {
+    //   title: 'Testimonials',
+    // },
     {
       title: 'Your Coach',
     },
@@ -111,7 +111,7 @@ export const IndexPage = () => {
       {sectionList.map((section, index) => (
         <Section
           key={section.title}
-          hasBackground={index % 2}
+          hasBackground={index % 2 !== 0}
           section={section}
         />
       ))}
