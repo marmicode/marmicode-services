@@ -39,7 +39,9 @@ export const SectionTitle = ({
           position: 'absolute',
           width: '80px',
           height: '2px',
-          background: marmicodeColorWithOpacity(0.7),
+          background: hasBackground
+            ? 'rgba(255,255,255,.5)'
+            : marmicodeColorWithOpacity(0.7),
           left: '50%',
           marginLeft: '-40px',
         }}
