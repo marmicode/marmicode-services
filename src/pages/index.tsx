@@ -5,12 +5,43 @@ import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
 
-export const Service = ({ service }) => {
-  return <div />
+export interface ServiceData {
+  icon: string
+  title: string
+  paragraphs: string[]
+}
+
+export const Service = ({ service }: { service: ServiceData }) => {
+  return (
+    <div>
+      <h3>{service.title}</h3>
+    </div>
+  )
 }
 
 export const IndexPage = () => {
-  const serviceList = []
+  const serviceList: ServiceData[] = [
+    {
+      icon: null,
+      title: 'Training',
+      paragraphs: [],
+    },
+    {
+      icon: null,
+      title: 'Coaching',
+      paragraphs: [],
+    },
+    {
+      icon: null,
+      title: 'Remote Consultations',
+      paragraphs: [],
+    },
+    {
+      icon: null,
+      title: 'Code Review',
+      paragraphs: [],
+    },
+  ]
 
   const sectionList = [
     {
@@ -18,7 +49,7 @@ export const IndexPage = () => {
       content: (
         <>
           {serviceList.map(service => (
-            <Service service={service} />
+            <Service key={service.title} service={service} />
           ))}
         </>
       ),
