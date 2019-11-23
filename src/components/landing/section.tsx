@@ -71,7 +71,8 @@ export const Section = ({
     <div css={{ position: 'relative' }}>
       <section
         css={{
-          height: '100vh',
+          minHeight: '100vh',
+          paddingBottom: '70px',
           paddingTop: '20px',
           textAlign: 'center',
           ...backgroundStyle,
