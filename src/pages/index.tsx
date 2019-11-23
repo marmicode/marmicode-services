@@ -1,6 +1,6 @@
 import '@emotion/core'
 import React from 'react'
-import { Section } from '../components/landing/section'
+import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
@@ -43,7 +43,7 @@ export const IndexPage = () => {
     },
   ]
 
-  const sectionList = [
+  const sectionList: SectionData[] = [
     {
       title: 'Services',
       content: (

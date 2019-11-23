@@ -5,6 +5,7 @@ import { Slant } from '../slant'
 
 export interface SectionData {
   title: string
+  content: React.Element
 }
 
 export const SectionTitle = ({
@@ -16,6 +17,7 @@ export const SectionTitle = ({
 }) => {
   return (
     <>
+      {/*Section title*/}
       <h2
         css={{
           color: hasBackground ? '#fff' : '#444',
@@ -31,6 +33,7 @@ export const SectionTitle = ({
       >
         {title}
       </h2>
+      {/*Section title underline.*/}
       <div
         css={{
           position: 'absolute',
@@ -75,6 +78,7 @@ export const Section = ({
         }}
       >
         <SectionTitle hasBackground={hasBackground} title={section.title} />
+        {section.content}
       </section>
       <Slant />
     </div>
