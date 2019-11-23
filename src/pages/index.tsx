@@ -85,10 +85,23 @@ export const Section = ({
   )
 }
 
+export const Service = ({ service }) => {
+  return <div />
+}
+
 export const IndexPage = () => {
+  const serviceList = []
+
   const sectionList = [
     {
       title: 'Services',
+      content: (
+        <>
+          {serviceList.map(service => (
+            <Service service={service} />
+          ))}
+        </>
+      ),
     },
     // {
     //   title: 'Pricing',
