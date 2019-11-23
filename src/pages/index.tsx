@@ -8,7 +8,7 @@ import { Slant } from '../components/slant'
 export interface ServiceData {
   icon: string
   title: string
-  paragraphs: string[]
+  content: React.Element
 }
 
 export const Service = ({ service }: { service: ServiceData }) => {
@@ -29,6 +29,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
       >
         {service.title}
       </h3>
+      {service.content}
     </div>
   )
 }
@@ -38,22 +39,22 @@ export const ServicesSection = () => {
     {
       icon: null,
       title: 'Training',
-      paragraphs: [],
+      content: null,
     },
     {
       icon: null,
       title: 'Coaching',
-      paragraphs: [],
+      content: null,
     },
     {
       icon: null,
       title: 'Remote Consultations',
-      paragraphs: [],
+      content: null,
     },
     {
       icon: null,
       title: 'Code Review',
-      paragraphs: [],
+      content: null,
     },
   ]
 
