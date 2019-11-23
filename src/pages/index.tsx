@@ -3,7 +3,7 @@ import React from 'react'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
-import { marmicodeColor } from '../config/config'
+import { marmicodeColor, marmicodeColorWithOpacity } from '../config/config'
 
 export interface SectionData {
   title: string
@@ -18,6 +18,7 @@ export const SectionTitle = ({ title }: { title: string }) => {
           fontFamily: '"Source Sans Pro", Arial, sans-serif',
           fontSize: '30px',
           fontWeight: 300,
+          marginBottom: '10px',
           textTransform: 'uppercase',
           '@media screen and (min-width: 768px)': {
             fontSize: '50px',
@@ -31,7 +32,7 @@ export const SectionTitle = ({ title }: { title: string }) => {
           position: 'absolute',
           width: '80px',
           height: '2px',
-          background: marmicodeColor,
+          background: marmicodeColorWithOpacity(0.7),
           left: '50%',
           marginLeft: '-40px',
         }}
