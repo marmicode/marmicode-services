@@ -16,20 +16,21 @@ export const Service = ({ service }: { service: ServiceData }) => {
     <div
       css={{
         boxShadow: '7px 14px 42px 3px rgba(163, 174, 184, 0.4)',
+        color: '#444',
+        fontWeight: 300,
+        fontFamily: '"Source Sans Pro",Arial,sans-serif',
         margin: '20px',
-        minWidth: '300px',
+        width: '300px',
       }}
     >
       <h3
         css={{
-          color: '#444',
-          fontFamily: '"Source Sans Pro",Arial,sans-serif',
           fontWeight: 300,
         }}
       >
         {service.title}
       </h3>
-      {service.content}
+      <div>{service.content}</div>
     </div>
   )
 }
@@ -39,22 +40,90 @@ export const ServicesSection = () => {
     {
       icon: null,
       title: 'Training',
-      content: null,
+      content: (
+        <>
+          <p>
+            Some folks describe our job as “the opposite of a freelance” while
+            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
+          </p>
+
+          <p>
+            Our main goal is to achieve collective ownership and propagate
+            knowledge & skills in the team “Accidentally” and not only through
+            docs…
+          </p>
+
+          <p>
+            …but the known side effects are test automation and TDD addiction.
+          </p>
+        </>
+      ),
     },
     {
       icon: null,
       title: 'Coaching',
-      content: null,
+      content: (
+        <div>
+          <p>
+            Some folks describe our job as “the opposite of a freelance” while
+            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
+          </p>
+
+          <p>
+            Our main goal is to achieve collective ownership and propagate
+            knowledge & skills in the team “Accidentally” and not only through
+            docs…
+          </p>
+
+          <p>
+            …but the known side effects are test automation and TDD addiction.
+          </p>
+        </div>
+      ),
     },
     {
       icon: null,
       title: 'Remote Consultations',
-      content: null,
+      content: (
+        <div>
+          <p>
+            Some folks describe our job as “the opposite of a freelance” while
+            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
+          </p>
+
+          <p>
+            Our main goal is to achieve collective ownership and propagate
+            knowledge & skills in the team “Accidentally” and not only through
+            docs…
+          </p>
+
+          <p>
+            …but the known side effects are test automation and TDD addiction.
+          </p>
+        </div>
+      ),
     },
     {
       icon: null,
       title: 'Code Review',
-      content: null,
+      content: (
+        <div>
+          <p>
+            Some folks describe our job as “the opposite of a freelance” while
+            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
+          </p>
+
+          <p>
+            Our main goal is to achieve collective ownership and propagate
+            knowledge & skills in the team “Accidentally” and not only through
+            docs…
+          </p>
+
+          <p>
+            …but the known side effects are test automation and TDD addiction.
+          </p>
+        </div>
+      ),
     },
   ]
 
