@@ -62,9 +62,13 @@ export const Section = ({
 
   return (
     <div css={{ position: 'relative' }}>
-      <Slant isTop={true} />
       <section
-        css={{ textAlign: 'center', height: '100vh', ...backgroundStyle }}
+        css={{
+          height: '100vh',
+          paddingTop: '20px',
+          textAlign: 'center',
+          ...backgroundStyle,
+        }}
       >
         <SectionTitle title={section.title} />
       </section>

@@ -1,14 +1,15 @@
 import { css } from '@emotion/core'
 
 const slant = ({ height }: { height: number }) => {
+  const bandHeight = height / 2
   return css({
     backgroundColor: '#fff',
-    transform: 'rotate(-2deg)',
+    transform: 'rotate(-1.5deg)',
     overflow: 'hidden',
-    height: `${height / 2}px`,
+    height: `${bandHeight}px`,
     width: '102%',
     position: 'absolute',
-    bottom: `${height / 4}px`,
+    bottom: `calc(50% - ${bandHeight / 2}px)`,
   })
 }
 
@@ -24,7 +25,7 @@ const slantContainer = ({ height }: { height: number }) => {
 }
 
 export const Slant = () => {
-  const height = 160
+  const height = 100
   return (
     <div css={slantContainer({ height })}>
       <div css={slant({ height })}></div>
