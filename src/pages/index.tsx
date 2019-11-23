@@ -13,8 +13,22 @@ export interface ServiceData {
 
 export const Service = ({ service }: { service: ServiceData }) => {
   return (
-    <div>
-      <h3>{service.title}</h3>
+    <div
+      css={{
+        boxShadow: '7px 14px 42px 3px rgba(163, 174, 184, 0.4)',
+        margin: '20px',
+        minWidth: '300px',
+      }}
+    >
+      <h3
+        css={{
+          color: '#444',
+          fontFamily: '"Source Sans Pro",Arial,sans-serif',
+          fontWeight: 300,
+        }}
+      >
+        {service.title}
+      </h3>
     </div>
   )
 }
@@ -48,6 +62,7 @@ export const ServicesSection = () => {
       css={{
         display: 'flex',
         flexDirection: 'row',
+        flexWrap: 'wrap',
         alignContent: 'stretch',
         justifyContent: 'space-around',
       }}
