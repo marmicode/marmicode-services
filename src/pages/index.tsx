@@ -44,11 +44,18 @@ export const ServicesSection = () => {
   ]
 
   return (
-    <>
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignContent: 'stretch',
+        justifyContent: 'space-around',
+      }}
+    >
       {serviceList.map(service => (
         <Service key={service.title} service={service} />
       ))}
-    </>
+    </div>
   )
 }
 
