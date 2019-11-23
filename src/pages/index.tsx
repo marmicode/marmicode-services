@@ -19,7 +19,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
   )
 }
 
-export const IndexPage = () => {
+export const ServicesSection = () => {
   const serviceList: ServiceData[] = [
     {
       icon: null,
@@ -43,16 +43,20 @@ export const IndexPage = () => {
     },
   ]
 
+  return (
+    <>
+      {serviceList.map(service => (
+        <Service key={service.title} service={service} />
+      ))}
+    </>
+  )
+}
+
+export const IndexPage = () => {
   const sectionList: SectionData[] = [
     {
       title: 'Services',
-      content: (
-        <>
-          {serviceList.map(service => (
-            <Service key={service.title} service={service} />
-          ))}
-        </>
-      ),
+      content: <ServicesSection />,
     },
     // {
     //   title: 'Pricing',
@@ -62,9 +66,11 @@ export const IndexPage = () => {
     // },
     {
       title: 'Your Coach',
+      content: <div />,
     },
     {
       title: 'Get in touch',
+      content: <div />,
     },
   ]
 
