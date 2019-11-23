@@ -3,6 +3,7 @@ import React from 'react'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
+import { marmicodeColor } from '../config/config'
 
 export interface SectionData {
   title: string
@@ -10,20 +11,32 @@ export interface SectionData {
 
 export const SectionTitle = ({ title }: { title: string }) => {
   return (
-    <h1
-      css={{
-        color: '#444',
-        fontFamily: '"Source Sans Pro", Arial, sans-serif',
-        fontSize: '30px',
-        fontWeight: 300,
-        textTransform: 'uppercase',
-        '@media screen and (min-width: 768px)': {
-          fontSize: '50px',
-        },
-      }}
-    >
-      {title}
-    </h1>
+    <>
+      <h2
+        css={{
+          color: '#444',
+          fontFamily: '"Source Sans Pro", Arial, sans-serif',
+          fontSize: '30px',
+          fontWeight: 300,
+          textTransform: 'uppercase',
+          '@media screen and (min-width: 768px)': {
+            fontSize: '50px',
+          },
+        }}
+      >
+        {title}
+      </h2>
+      <div
+        css={{
+          position: 'absolute',
+          width: '80px',
+          height: '2px',
+          background: marmicodeColor,
+          left: '50%',
+          marginLeft: '-40px',
+        }}
+      />
+    </>
   )
 }
 
@@ -62,7 +75,7 @@ export const IndexPage = () => {
       <Splash />
       <Slant />
       {sectionList.map(section => (
-        <Section section={section} />
+        <Section key={section.title} section={section} />
       ))}
     </Layout>
   )
