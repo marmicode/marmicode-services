@@ -51,6 +51,10 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
           rel="stylesheet"
           type="text/css"
         />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </Helmet>
       <Toolbar style={{ minHeight: '60px' }}>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />

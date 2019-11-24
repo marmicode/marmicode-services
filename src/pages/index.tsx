@@ -4,6 +4,7 @@ import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
+import { marmicodeColor } from '../config/config'
 
 export interface ServiceData {
   icon: string
@@ -26,6 +27,12 @@ export const Service = ({ service }: { service: ServiceData }) => {
         },
       }}
     >
+      <i
+        className="material-icons"
+        style={{ color: marmicodeColor, fontSize: '48px' }}
+      >
+        {service.icon}
+      </i>
       <h3
         css={{
           fontWeight: 500,
@@ -42,7 +49,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
 export const ServicesSection = () => {
   const serviceList: ServiceData[] = [
     {
-      icon: null,
+      icon: 'menu_book',
       title: 'Training',
       content: (
         <>
@@ -64,7 +71,7 @@ export const ServicesSection = () => {
       ),
     },
     {
-      icon: null,
+      icon: 'trending_up',
       title: 'Coaching',
       content: (
         <div>
@@ -86,7 +93,7 @@ export const ServicesSection = () => {
       ),
     },
     {
-      icon: null,
+      icon: 'computer',
       title: 'Remote Consultations',
       content: (
         <div>
@@ -108,7 +115,7 @@ export const ServicesSection = () => {
       ),
     },
     {
-      icon: null,
+      icon: 'visibility',
       title: 'Code Review',
       content: (
         <div>
