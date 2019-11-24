@@ -4,7 +4,7 @@ export const HeroContainer = styled.div`
   color: white;
   font-size: 1.2em;
   text-align: center;
-  @media (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     font-size: 1.8em;
   }
 `

@@ -15,17 +15,20 @@ export const Service = ({ service }: { service: ServiceData }) => {
   return (
     <div
       css={{
-        boxShadow: '7px 14px 42px 3px rgba(163, 174, 184, 0.4)',
         color: '#444',
         fontWeight: 300,
         fontFamily: '"Source Sans Pro",Arial,sans-serif',
         margin: '20px',
-        width: '300px',
+        '@media screen and (min-width: 768px)': {
+          boxShadow: '7px 14px 42px 3px rgba(163, 174, 184, 0.4)',
+          width: '300px',
+        },
       }}
     >
       <h3
         css={{
-          fontWeight: 300,
+          fontWeight: 500,
+          fontSize: '1.5em',
         }}
       >
         {service.title}
