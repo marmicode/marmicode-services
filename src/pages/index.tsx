@@ -146,6 +146,9 @@ export const ServicesSection = () => {
         flexWrap: 'wrap',
         alignContent: 'stretch',
         justifyContent: 'space-around',
+        '@media screen and (min-width: 768px)': {
+          marginTop: '50px',
+        },
       }}
     >
       {serviceList.map(service => (
@@ -182,11 +185,14 @@ export const IndexPage = () => {
       <Splash />
       <Slant />
       {sectionList.map((section, index) => (
-        <Section
-          key={section.title}
-          hasBackground={index % 2 !== 0}
-          section={section}
-        />
+        <div css={{ position: 'relative' }}>
+          <Section
+            key={section.title}
+            hasBackground={index % 2 !== 0}
+            section={section}
+          />
+          {index !== sectionList.length - 1 && <Slant />}
+        </div>
       ))}
     </Layout>
   )

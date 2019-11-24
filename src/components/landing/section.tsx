@@ -68,20 +68,18 @@ export const Section = ({
     : {}
 
   return (
-    <div css={{ position: 'relative' }}>
-      <section
-        css={{
-          minHeight: '100vh',
-          paddingBottom: '70px',
-          paddingTop: '20px',
-          textAlign: 'center',
-          ...backgroundStyle,
-        }}
-      >
-        <SectionTitle hasBackground={hasBackground} title={section.title} />
-        {section.content}
-      </section>
-      <Slant />
-    </div>
+    <section
+      css={{
+        boxSizing: 'border-box',
+        minHeight: '100vh',
+        paddingBottom: '70px',
+        paddingTop: '20px',
+        textAlign: 'center',
+        ...backgroundStyle,
+      }}
+    >
+      <SectionTitle hasBackground={hasBackground} title={section.title} />
+      {section.content}
+    </section>
   )
 }
