@@ -1,4 +1,5 @@
 import '@emotion/core'
+import { css } from '@emotion/core'
 import { Button, TextareaAutosize, TextField } from '@material-ui/core'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
@@ -28,7 +29,12 @@ export const ContactForm = () => {
       <TextField label="Phone (optional)" name="phone" type="text" />
       <TextField label="Message" name="message" multiline rows={3} required />
 
-      <Button variant="contained" color="primary" type="submit">
+      <Button
+        css={{ backgroundColor: marmicodeColor }}
+        variant="contained"
+        color="primary"
+        type="submit"
+      >
         Envoyer
       </Button>
     </form>
@@ -71,17 +77,16 @@ export const ContactSection = () => {
     },
   ]
 
+  const columnStyle = css({
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+  })
+
   return (
-    <div css={{ display: 'flex', flexDirection: 'row' }}>
-      <div
-        css={{
-          display: 'flex',
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'center',
-          marginTop: '50px',
-        }}
-      >
+    <div css={{ display: 'flex', flexDirection: 'row', marginTop: '50px' }}>
+      <div css={columnStyle}>
         <div
           css={{
             display: 'flex',
@@ -115,7 +120,7 @@ export const ContactSection = () => {
           ))}
         </div>
       </div>
-      <div css={{ flex: 1 }}>
+      <div css={columnStyle}>
         <ContactForm />
       </div>
     </div>
