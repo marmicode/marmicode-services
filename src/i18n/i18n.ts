@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { landingEn } from './landing.en'
-import { landingFr } from './landing.fr'
+import { landingEn } from '../components/landing/landing.en'
+import { landingFr } from '../components/landing/landing.fr'
 
 i18n
   .use(initReactI18next)

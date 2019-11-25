@@ -10,6 +10,14 @@ import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Slant } from '../components/slant'
 
+export const ContentSection = () => {
+  /* @todo notre blog */
+  /* @todo nos guides (angular api rest agile nodejs */
+  /* @todo notre checklist api rest */
+  /* @todo nos recettes */
+  return <div></div>
+}
+
 export const IndexPage = () => {
   const { t } = useTranslation('landing')
 
@@ -45,6 +53,15 @@ export const IndexPage = () => {
         title={t('sections.publications')}
       >
         <PublicationsSection />
+      </SectionContainer>
+
+      {/* Content & publications. */}
+      <SectionContainer
+        hasBackground={true}
+        hasSlant={true}
+        title={t('sections.content')}
+      >
+        <ContentSection />
       </SectionContainer>
 
       {/* Contact. */}

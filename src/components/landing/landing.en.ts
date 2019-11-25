@@ -7,6 +7,7 @@ export const landingEn = {
     services: 'Services',
     coach: 'Your Coach',
     contact: 'Get in Touch',
-    publications: 'Talks & Publications'
+    publications: 'Talks & Publications',
+    content: 'Our Content'
   }
 }
