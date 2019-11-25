@@ -41,7 +41,9 @@ export const CoachSection = () => {
         {data.markdownRemark.frontmatter.name}
       </h3>
       {data.markdownRemark.frontmatter.titles.map(title => (
-        <h4>{title}</h4>
+        <h4 css={{ color: 'rgba(255, 255, 255, .8)', margin: '5px' }}>
+          {title}
+        </h4>
       ))}
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
     </div>
