@@ -1,11 +1,8 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Parallax } from 'react-parallax'
-import {
-  hero,
-  marmicodeColor,
-  marmicodeColorWithOpacity,
-} from '../../config/config'
+import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
+import { hero } from '../../content/hero'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
 
