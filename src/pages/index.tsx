@@ -1,4 +1,5 @@
 import '@emotion/core'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
@@ -9,7 +10,7 @@ import { marmicodeColor } from '../config/config'
 export interface ServiceData {
   icon: string
   title: string
-  content: React.Element
+  html: string
 }
 
 export const Service = ({ service }: { service: ServiceData }) => {
@@ -41,102 +42,37 @@ export const Service = ({ service }: { service: ServiceData }) => {
       >
         {service.title}
       </h3>
-      <div>{service.content}</div>
+      <div dangerouslySetInnerHTML={{ __html: service.html }}></div>
     </div>
   )
 }
 
 export const ServicesSection = () => {
-  const serviceList: ServiceData[] = [
-    {
-      icon: 'menu_book',
-      title: 'Training',
-      content: (
-        <>
-          <p>
-            Some folks describe our job as “the opposite of a freelance” while
-            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
-          </p>
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/content/services/*.md" } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              icon
+              title
+            }
+            html
+          }
+        }
+      }
+    }
+  `)
 
-          <p>
-            Our main goal is to achieve collective ownership and propagate
-            knowledge & skills in the team “Accidentally” and not only through
-            docs…
-          </p>
-
-          <p>
-            …but the known side effects are test automation and TDD addiction.
-          </p>
-        </>
-      ),
-    },
-    {
-      icon: 'trending_up',
-      title: 'Coaching',
-      content: (
-        <div>
-          <p>
-            Some folks describe our job as “the opposite of a freelance” while
-            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
-          </p>
-
-          <p>
-            Our main goal is to achieve collective ownership and propagate
-            knowledge & skills in the team “Accidentally” and not only through
-            docs…
-          </p>
-
-          <p>
-            …but the known side effects are test automation and TDD addiction.
-          </p>
-        </div>
-      ),
-    },
-    {
-      icon: 'computer',
-      title: 'Remote Consultations',
-      content: (
-        <div>
-          <p>
-            Some folks describe our job as “the opposite of a freelance” while
-            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
-          </p>
-
-          <p>
-            Our main goal is to achieve collective ownership and propagate
-            knowledge & skills in the team “Accidentally” and not only through
-            docs…
-          </p>
-
-          <p>
-            …but the known side effects are test automation and TDD addiction.
-          </p>
-        </div>
-      ),
-    },
-    {
-      icon: 'visibility',
-      title: 'Code Review',
-      content: (
-        <div>
-          <p>
-            Some folks describe our job as “the opposite of a freelance” while
-            others compare us to “Gordon Ramsay in Hell’s Kitchen but nicer”.
-          </p>
-
-          <p>
-            Our main goal is to achieve collective ownership and propagate
-            knowledge & skills in the team “Accidentally” and not only through
-            docs…
-          </p>
-
-          <p>
-            …but the known side effects are test automation and TDD addiction.
-          </p>
-        </div>
-      ),
-    },
-  ]
+  const serviceList: ServiceData[] = data.allMarkdownRemark.edges.map(
+    ({ node }) => ({
+      icon: node.frontmatter.icon,
+      title: node.frontmatter.title,
+      html: node.html,
+    })
+  )
 
   return (
     <div
@@ -185,12 +121,8 @@ export const IndexPage = () => {
       <Splash />
       <Slant />
       {sectionList.map((section, index) => (
-        <div css={{ position: 'relative' }}>
-          <Section
-            key={section.title}
-            hasBackground={index % 2 !== 0}
-            section={section}
-          />
+        <div css={{ position: 'relative' }} key={section.title}>
+          <Section hasBackground={index % 2 !== 0} section={section} />
           {index !== sectionList.length - 1 && <Slant />}
         </div>
       ))}
