@@ -39,9 +39,9 @@ export const ContactForm = () => {
       <TextField label="Message" name="message" multiline rows={3} required />
 
       <Button
-        css={{ backgroundColor: marmicodeColor }}
         variant="contained"
         color="primary"
+        style={{ backgroundColor: marmicodeColor }}
         type="submit"
       >
         Envoyer
