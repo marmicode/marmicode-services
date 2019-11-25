@@ -1,5 +1,6 @@
 import '@emotion/core'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
@@ -7,6 +8,8 @@ import { ServicesSection } from '../components/services'
 import { Slant } from '../components/slant'
 
 export const IndexPage = () => {
+  const { t } = useTranslation('landing')
+
   const sectionList: SectionData[] = [
     {
       title: 'Services',

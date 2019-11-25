@@ -1,11 +1,12 @@
+import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { Toolbar } from '@material-ui/core'
 import { graphql, useStaticQuery } from 'gatsby'
-import { css, Global } from '@emotion/core'
 import Img from 'gatsby-image'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { marmicodeColor } from '../config/config'
+import '../i18n/i18n'
 import SEO from './seo'
 
 const bodyStyle = css`

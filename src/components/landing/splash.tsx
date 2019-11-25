@@ -1,12 +1,14 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
+import { useTranslation } from 'react-i18next'
 import { Parallax } from 'react-parallax'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
-import { hero } from '../../content/hero'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
 
 export const Splash = () => {
+  const { t } = useTranslation('landing')
+
   const data = useStaticQuery(graphql`
     query {
       background: file(relativePath: { eq: "cooking-pot.jpg" }) {
@@ -38,7 +40,7 @@ export const Splash = () => {
       strength={400}
     >
       <div css={{ marginTop: '30vh' }}>
-        <Hero title={hero.title} subtitle={hero.subtitle} />
+        <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} />
       </div>
     </Parallax>
   )
