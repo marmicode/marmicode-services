@@ -8,6 +8,7 @@ export const CoachSection = () => {
       markdownRemark(fileAbsolutePath: { glob: "**/content/coach.md" }) {
         frontmatter {
           name
+          picture
           title
         }
         html

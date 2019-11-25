@@ -11,15 +11,24 @@ export const CoachPicture = ({
 }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "younes.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+      allFile(filter: { relativePath: { glob: "*.(jpg|png)" } }) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 300) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
     }
   `)
+
+  const fileEdge = data.allFile.edges.find(
+    ({ node }) => node.relativePath === path
+  )
 
   return (
     <GatsbyImage
@@ -34,7 +43,7 @@ export const CoachPicture = ({
         margin: 'auto',
         width: `${size}px`,
       }}
-      fluid={data.file.childImageSharp.fluid}
+      fluid={fileEdge.node.childImageSharp.fluid}
     ></GatsbyImage>
   )
 }
