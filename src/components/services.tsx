@@ -38,7 +38,12 @@ export const Service = ({ service }: { service: ServiceData }) => {
       >
         {service.title}
       </h3>
-      <div dangerouslySetInnerHTML={{ __html: service.html }}></div>
+      <div
+        css={{
+          textAlign: 'justify',
+        }}
+        dangerouslySetInnerHTML={{ __html: service.html }}
+      ></div>
     </div>
   )
 }
