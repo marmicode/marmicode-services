@@ -9,7 +9,7 @@ export const CoachSection = () => {
         frontmatter {
           name
           picture
-          title
+          titles
         }
         html
       }
@@ -37,8 +37,12 @@ export const CoachSection = () => {
         path={data.markdownRemark.frontmatter.picture}
         size={pictureSize}
       />
-      <h3>{data.markdownRemark.frontmatter.name}</h3>
-      <h4>{data.markdownRemark.frontmatter.title}</h4>
+      <h3 css={{ color: 'white', fontWeight: 400, fontSize: '1.5em' }}>
+        {data.markdownRemark.frontmatter.name}
+      </h3>
+      {data.markdownRemark.frontmatter.titles.map(title => (
+        <h4>{title}</h4>
+      ))}
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
     </div>
   )
