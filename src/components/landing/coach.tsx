@@ -25,12 +25,13 @@ export const CoachSection = () => {
         borderColor: 'rgba(255, 255, 255, .5)',
         borderStyle: 'solid',
         borderWidth: '1px',
-        color: 'rgba(255, 255, 255, .7)',
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: `${20 + pictureSize / 2}px`,
         maxWidth: '800px',
         paddingTop: `${pictureSize / 2}px`,
+        paddingLeft: '20px',
+        paddingRight: '20px',
       }}
     >
       <CoachPicture
@@ -45,7 +46,13 @@ export const CoachSection = () => {
           {title}
         </h4>
       ))}
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+      <div
+        css={{
+          color: 'rgba(255, 255, 255, .85)',
+          textAlign: 'justify',
+        }}
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      ></div>
     </div>
   )
 }
