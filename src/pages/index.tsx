@@ -1,6 +1,7 @@
 import '@emotion/core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { CoachSection } from '../components/landing/coach'
 import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
@@ -19,7 +20,7 @@ export const IndexPage = () => {
     /* @todo add testimonials section */
     {
       title: t('sections.coach'),
-      content: <div />,
+      content: <CoachSection />,
     },
     {
       title: 'Get in touch',
