@@ -17,7 +17,7 @@ export const CoachPicture = ({
         left: `calc(50% - ${size / 2}px)`,
       }}
     >
-      <Picture path={path} width={`${size}px`} />
+      <Picture isCircle={true} path={path} width={`${size}px`} />
     </div>
   )
 }
