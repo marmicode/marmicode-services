@@ -25,7 +25,7 @@ export const CoachSection = () => {
         marginTop: '50px',
       }}
     >
-      <CoachPicture path={'test'} />
+      <CoachPicture path={data.markdownRemark.frontmatter.picture} />
       <h3>{data.markdownRemark.frontmatter.name}</h3>
       <h4>{data.markdownRemark.frontmatter.title}</h4>
       Web Developer, Trainer & eXtreme Programming Coach Après 10 ans
