@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import { Button, TextareaAutosize, TextField } from '@material-ui/core'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
+import { mediaDesktop } from '../../helpers/media-selectors'
 
 export const ExternalLink = ({ href, content }: { href: string; content }) => {
   return (
@@ -23,8 +24,11 @@ export const ContactForm = () => {
       css={{
         display: 'flex',
         flexDirection: 'column',
-        width: '80%',
-        maxWidth: '500px',
+        width: '90%',
+        [mediaDesktop]: {
+          maxWidth: '500px',
+          width: '80%',
+        },
       }}
       method="POST"
     >
@@ -90,7 +94,16 @@ export const ContactSection = () => {
   })
 
   return (
-    <div css={{ display: 'flex', flexDirection: 'row', marginTop: '50px' }}>
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginTop: '50px',
+        [mediaDesktop]: {
+          flexDirection: 'row',
+        },
+      }}
+    >
       <div css={columnStyle}>
         <div
           css={{
