@@ -12,7 +12,7 @@ export const IndexPage = () => {
 
   const sectionList: SectionData[] = [
     {
-      title: 'Services',
+      title: t('sections.services'),
       content: <ServicesSection />,
     },
     // {
@@ -22,7 +22,7 @@ export const IndexPage = () => {
     //   title: 'Testimonials',
     // },
     {
-      title: 'Your Coach',
+      title: t('sections.coach'),
       content: <div />,
     },
     {
