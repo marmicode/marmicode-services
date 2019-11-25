@@ -56,9 +56,11 @@ export const ContentSection = () => {
             width: '100%',
             marginTop: '25px',
             [mediaDesktop]: {
+              borderRadius: '10px',
               margin: '25px',
               minWidth: '300px',
               maxWidth: '500px',
+              overflow: 'hidden',
             },
           }}
           href={content.href}
