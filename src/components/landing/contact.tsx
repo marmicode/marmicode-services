@@ -14,6 +14,19 @@ export const ExternalLink = ({ href, content }: { href: string; content }) => {
   )
 }
 
+export const ContactForm = () => {
+  return (
+    <form action="https://formspree.io/contact@wishtack.com" method="POST">
+      <input name="name" type="text" />
+      <input name="company" type="text" />
+      <input name="_replyto" type="text" />
+      <input name="phone" type="text" />
+      <textarea name="message"></textarea>
+      <button type="submit">ENVOYER</button>
+    </form>
+  )
+}
+
 export const ContactSection = () => {
   const itemList = [
     {
@@ -51,46 +64,50 @@ export const ContactSection = () => {
   ]
 
   return (
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginTop: '50px',
-      }}
-    >
+    <div css={{ display: 'flex', flexDirection: 'row' }}>
       <div
         css={{
           display: 'flex',
+          flex: 1,
           flexDirection: 'column',
-          alignItems: 'start',
+          alignItems: 'center',
+          marginTop: '50px',
         }}
       >
-        {itemList.map(item => (
-          <div
-            css={{
-              alignItems: 'center',
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              marginTop: '10px',
-            }}
-            key={item.icon}
-          >
-            <i
-              className="material-icons"
-              style={{
-                color: marmicodeColor,
-                fontSize: '36px',
-                marginRight: '10px',
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'start',
+          }}
+        >
+          {itemList.map(item => (
+            <div
+              css={{
+                alignItems: 'center',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                marginTop: '10px',
               }}
+              key={item.icon}
             >
-              {item.icon}
-            </i>
-            {item.content}
-          </div>
-        ))}
+              <i
+                className="material-icons"
+                style={{
+                  color: marmicodeColor,
+                  fontSize: '36px',
+                  marginRight: '10px',
+                }}
+              >
+                {item.icon}
+              </i>
+              {item.content}
+            </div>
+          ))}
+        </div>
       </div>
+      <ContactForm css={{ flex: 1 }} />
     </div>
   )
 }
