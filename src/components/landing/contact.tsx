@@ -35,10 +35,14 @@ export const ContactSection = () => {
       ),
     },
     {
+      icon: 'map',
+      content: 'Lyon',
+    },
+    {
       icon: 'business_center',
       content: (
         <div css={{ color: '#555', fontSize: '.8em', textAlign: 'left' }}>
-          <div>Wishtack | Lyon</div>
+          <div>Wishtack</div>
           <div>SIREN: 827 570 490</div>
           <div>VAT N°: FR 71 827570490</div>
         </div>
