@@ -10,32 +10,32 @@ import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
 import { Picture } from '../components/shared/picture'
 import { Slant } from '../components/slant'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../config/config'
 import { createGradient } from '../helpers/create-gradient'
 import { mediaDesktop } from '../helpers/media-selectors'
 
 export const ContentSection = () => {
-  /* @todo notre blog */
-  /* @todo nos guides (angular api rest agile nodejs */
-  /* @todo notre checklist api rest */
-  /* @todo nos recettes */
+  /* @todo other guides */
 
   const contentList = [
     {
       title: 'Blog',
       picture: 'blog.png',
+      href: 'https://medium.com/wishtack',
     },
     {
       title: 'Recipes',
       picture: 'recipes.png',
+      href: 'https://recettes.marmicode.fr',
     },
     {
-      title: 'Guides',
+      title: 'Guide Angular',
       picture: 'guide-angular.png',
+      href: 'https://guide-angular.wishtack.io',
     },
     {
       title: 'ReST API Checklist',
       picture: 'rest-api-checklist.png',
+      href: 'https://rest-api-checklist.marmicode.io',
     },
   ]
 
@@ -50,7 +50,7 @@ export const ContentSection = () => {
       }}
     >
       {contentList.map(content => (
-        <div
+        <a
           css={{
             position: 'relative',
             width: '100%',
@@ -61,6 +61,8 @@ export const ContentSection = () => {
               maxWidth: '500px',
             },
           }}
+          href={content.href}
+          target="_blank"
           key={content.title}
         >
           <Picture path={content.picture} height={'100%'}></Picture>
@@ -88,7 +90,7 @@ export const ContentSection = () => {
           >
             <h3>{content.title}</h3>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   )
