@@ -4,8 +4,8 @@ export const heroEn = {
 }
 
 export const heroFr: typeof heroEn = {
-  title: 'Cuisinons de Meilleures Apps',
-  subtitle: 'avec le top des ingrédients'
+  title: 'Cuisinons le Top des Apps',
+  subtitle: 'avec les meilleurs ingrédients'
 }
 
 export const hero = heroFr;
