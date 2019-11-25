@@ -100,10 +100,15 @@ export const ContactSection = () => {
         flexDirection: 'column',
         marginTop: '50px',
         [mediaDesktop]: {
-          flexDirection: 'row',
+          flexDirection: 'row-reverse',
         },
       }}
     >
+      {/* Contact form. */}
+      <div css={columnStyle}>
+        <ContactForm />
+      </div>
+      {/* Contact information. */}
       <div css={columnStyle}>
         <div
           css={{
@@ -137,9 +142,6 @@ export const ContactSection = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div css={columnStyle}>
-        <ContactForm />
       </div>
     </div>
   )
