@@ -1,10 +1,9 @@
 ---
-title: Training
+title: Formation
 icon: menu_book
 ---
 
-Some folks describe our job as "the opposite of a freelance" while others compare us to "Gordon Ramsay in Hell’s Kitchen but nicer".
+Nos formations s’adaptent au public tout en restant axées sur les **bonnes pratiques** et **l’architecture**.
+Nous préférons aborder les sujets de façon plus approfondie que d’en survoler un nombre plus important et ce dans un cadre agréable.
 
-Our main goal is to achieve collective ownership and propagate knowledge & skills in the team “Accidentally” and not only through docs...
-
-...but the known side effects are test automation and TDD addiction.
+Nous ne formons que sur les sujets qui nous passionnent, que nous maîtrisons et que nous pratiquons au quotidien depuis plusieurs années.
