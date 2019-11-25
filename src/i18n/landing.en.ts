@@ -6,6 +6,7 @@ export const landingEn = {
   sections: {
     services: 'Services',
     coach: 'Your Coach',
-    contact: 'Get in Touch'
+    contact: 'Get in Touch',
+    publications: 'Publications'
   }
 }
