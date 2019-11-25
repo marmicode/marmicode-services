@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
+import { mediaDesktop } from '../helpers/media-selectors'
 
 export const HeroContainer = styled.div`
   color: white;
   font-size: 1.2em;
   text-align: center;
-  @media screen and (min-width: 768px) {
+  ${mediaDesktop} {
     font-size: 1.8em;
   }
 `

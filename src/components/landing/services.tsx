@@ -2,6 +2,7 @@ import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
+import { mediaDesktop } from '../../helpers/media-selectors'
 
 export interface ServiceData {
   icon: string
@@ -17,7 +18,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
         fontWeight: 300,
         fontFamily: '"Source Sans Pro",Arial,sans-serif',
         margin: '20px',
-        '@media screen and (min-width: 768px)': {
+        [mediaDesktop]: {
           boxShadow: '7px 14px 25px 3px rgba(163, 174, 184, 0.4)',
           padding: '10px',
           width: '300px',
@@ -83,7 +84,7 @@ export const ServicesSection = () => {
         flexWrap: 'wrap',
         alignContent: 'stretch',
         justifyContent: 'space-around',
-        '@media screen and (min-width: 768px)': {
+        [mediaDesktop]: {
           marginTop: '50px',
         },
       }}

@@ -20,7 +20,12 @@ export const ContactForm = () => {
   return (
     <form
       action="https://formspree.io/contact@wishtack.com"
-      css={{ display: 'flex', flexDirection: 'column', maxWidth: '500px' }}
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '80%',
+        maxWidth: '500px',
+      }}
       method="POST"
     >
       <TextField label="Email" name="_replyto" required type="text" />

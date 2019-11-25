@@ -1,6 +1,7 @@
 import React from 'react'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
+import { mediaDesktop } from '../../helpers/media-selectors'
 import { Slant } from '../slant'
 
 export interface SectionData {
@@ -26,7 +27,7 @@ export const SectionTitle = ({
           fontWeight: 300,
           marginBottom: '10px',
           textTransform: 'uppercase',
-          '@media screen and (min-width: 768px)': {
+          [mediaDesktop]: {
             fontSize: '50px',
           },
         }}
