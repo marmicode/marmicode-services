@@ -2,10 +2,11 @@ import '@emotion/core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { CoachSection } from '../components/landing/coach'
+import { ContactSection } from '../components/landing/contact'
 import { Section, SectionData } from '../components/landing/section'
+import { ServicesSection } from '../components/landing/services'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
-import { ServicesSection } from '../components/landing/services'
 import { Slant } from '../components/slant'
 
 export const IndexPage = () => {
@@ -24,7 +25,7 @@ export const IndexPage = () => {
     },
     {
       title: 'Get in touch',
-      content: <div />,
+      content: <ContactSection />,
     },
   ]
 
