@@ -30,6 +30,7 @@ export const PublicationsSection = () => {
       css={{
         display: 'flex',
         flexDirection: 'column',
+        marginTop: '50px',
         minHeight: '90vh',
         justifyContent: 'space-around',
         [mediaDesktop]: {
@@ -40,7 +41,10 @@ export const PublicationsSection = () => {
       }}
     >
       {publicationList.map(publication => (
-        <div key={publication.title} css={{ minWidth: '500px' }}>
+        <div
+          key={publication.title}
+          css={{ [mediaDesktop]: { minWidth: '600px' } }}
+        >
           <iframe
             css={{
               boxSizing: 'border-box',
@@ -50,7 +54,7 @@ export const PublicationsSection = () => {
               marginBottom: '-4px',
               [mediaDesktop]: {
                 height: '50vh',
-                width: '40vw',
+                width: '100%',
               },
             }}
             src={`https://www.youtube.com/embed/${publication.youtubeVideoId}`}
