@@ -1,5 +1,5 @@
 import '@emotion/core'
-import { TextField } from '@material-ui/core'
+import { Button, TextareaAutosize, TextField } from '@material-ui/core'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
 
@@ -22,12 +22,15 @@ export const ContactForm = () => {
       css={{ display: 'flex', flexDirection: 'column', maxWidth: '500px' }}
       method="POST"
     >
-      <TextField label="Name" name="name" required type="text" />
+      <TextField label="Email" name="_replyto" required type="text" />
+      <TextField label="Name (optional)" name="name" type="text" />
       <TextField label="Company (optional)" name="company" type="text" />
-      <TextField label="Email (optional)" name="_replyto" type="text" />
       <TextField label="Phone (optional)" name="phone" type="text" />
-      <textarea name="message"></textarea>
-      <button type="submit">ENVOYER</button>
+      <TextField label="Message" name="message" multiline rows={3} required />
+
+      <Button variant="contained" color="primary" type="submit">
+        Envoyer
+      </Button>
     </form>
   )
 }
