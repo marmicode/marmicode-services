@@ -3,7 +3,10 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { CoachSection } from '../components/landing/coach'
 import { ContactSection } from '../components/landing/contact'
-import { Section, SectionData } from '../components/landing/section'
+import {
+  SectionContainer,
+  SectionData,
+} from '../components/landing/section-container'
 import { ServicesSection } from '../components/landing/services'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
@@ -34,10 +37,13 @@ export const IndexPage = () => {
       <Splash />
       <Slant />
       {sectionList.map((section, index) => (
-        <div css={{ position: 'relative' }} key={section.title}>
-          <Section hasBackground={index % 2 !== 0} section={section} />
-          {index !== sectionList.length - 1 && <Slant />}
-        </div>
+        <SectionContainer
+          title={section.title}
+          hasBackground={index % 2 !== 0}
+          hasSlant={index !== sectionList.length - 1}
+        >
+          {section.content}
+        </SectionContainer>
       ))}
     </Layout>
   )

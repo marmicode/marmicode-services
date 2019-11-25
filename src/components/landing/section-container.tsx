@@ -50,12 +50,16 @@ export const SectionTitle = ({
     </>
   )
 }
-export const Section = ({
+export const SectionContainer = ({
+  children,
   hasBackground,
-  section,
+  hasSlant,
+  title,
 }: {
+  children: React.Element
   hasBackground: boolean
-  section: SectionData
+  hasSlant: boolean
+  title: string
 }) => {
   const backgroundStyle = hasBackground
     ? {
@@ -71,6 +75,7 @@ export const Section = ({
   return (
     <section
       css={{
+        position: 'relative',
         boxSizing: 'border-box',
         minHeight: '100vh',
         paddingBottom: '70px',
@@ -79,8 +84,9 @@ export const Section = ({
         ...backgroundStyle,
       }}
     >
-      <SectionTitle hasBackground={hasBackground} title={section.title} />
-      {section.content}
+      <SectionTitle hasBackground={hasBackground} title={title} />
+      {children}
+      {hasSlant && <Slant />}
     </section>
   )
 }
