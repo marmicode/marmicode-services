@@ -6,6 +6,7 @@ export const CoachSection = () => {
     query {
       markdownRemark(fileAbsolutePath: { glob: "**/content/coach.md" }) {
         frontmatter {
+          name
           title
         }
         html
@@ -23,7 +24,7 @@ export const CoachSection = () => {
         marginTop: '50px',
       }}
     >
-      <h3>{data.markdownRemark.frontmatter.title}</h3>
+      <h3>{data.markdownRemark.frontmatter.name}</h3>
       <h4>{data.markdownRemark.frontmatter.title}</h4>
       Web Developer, Trainer & eXtreme Programming Coach Après 10 ans
       d’expérience en développement web et sécurité, Younes est convaincu que la
