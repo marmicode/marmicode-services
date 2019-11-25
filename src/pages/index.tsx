@@ -79,16 +79,15 @@ export const ContentSection = () => {
                 colorB: 'rgba(0, 0, 0, .7)',
               }),
               position: 'absolute',
-              top: 0,
-              height: '100%',
+              bottom: 0,
+              height: '3em',
               width: '100%',
-              ':hover': {
-                background: 'rgba(0,0,0,0)',
-                color: 'rgba(0,0,0,0)',
-              },
             }}
           >
-            <h3>{content.title}</h3>
+            <h3 css={{ margin: 0 }}>{content.title}</h3>
+            <div css={{ fontSize: '.9em', fontStyle: 'italic' }}>
+              {content.href}
+            </div>
           </div>
         </a>
       ))}
