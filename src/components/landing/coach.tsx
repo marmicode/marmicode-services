@@ -15,6 +15,8 @@ export const CoachSection = () => {
     }
   `)
 
+  const pictureSize = 160
+
   return (
     <div
       css={{
@@ -22,10 +24,13 @@ export const CoachSection = () => {
         borderStyle: 'solid',
         borderWidth: '1px',
         margin: '20px',
-        marginTop: '50px',
+        marginTop: `${20 + pictureSize / 2}px`,
       }}
     >
-      <CoachPicture path={data.markdownRemark.frontmatter.picture} />
+      <CoachPicture
+        path={data.markdownRemark.frontmatter.picture}
+        size={pictureSize}
+      />
       <h3>{data.markdownRemark.frontmatter.name}</h3>
       <h4>{data.markdownRemark.frontmatter.title}</h4>
       Web Developer, Trainer & eXtreme Programming Coach Après 10 ans
