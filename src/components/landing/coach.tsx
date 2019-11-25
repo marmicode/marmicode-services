@@ -1,6 +1,6 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
-import GatsbyImage from 'gatsby-image'
+import { CoachPicture } from './coach-picture'
 
 export const CoachSection = () => {
   const data = useStaticQuery(graphql`
@@ -11,13 +11,6 @@ export const CoachSection = () => {
           title
         }
         html
-      }
-      file(relativePath: { eq: "younes.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
       }
     }
   `)
@@ -32,7 +25,7 @@ export const CoachSection = () => {
         marginTop: '50px',
       }}
     >
-      <GatsbyImage fluid={data.file.childImageSharp.fluid}></GatsbyImage>
+      <CoachPicture path={'test'} />
       <h3>{data.markdownRemark.frontmatter.name}</h3>
       <h4>{data.markdownRemark.frontmatter.title}</h4>
       Web Developer, Trainer & eXtreme Programming Coach Après 10 ans

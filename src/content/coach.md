@@ -1,5 +1,6 @@
 ---
 name: Younes Jaaidi
+picture: younes.jpg
 title: Web Developer, Trainer & eXtreme Programming Coach
 ---
 
