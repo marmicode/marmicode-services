@@ -58,7 +58,7 @@ export const SectionContainer = ({
 }: {
   children: React.Element
   hasBackground: boolean
-  hasSlant: boolean
+  hasSlant?: boolean
   title: string
 }) => {
   const backgroundStyle = hasBackground
