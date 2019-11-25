@@ -21,6 +21,7 @@ export const CoachSection = () => {
   return (
     <div
       css={{
+        position: 'relative',
         borderColor: 'rgba(255, 255, 255, .5)',
         borderStyle: 'solid',
         borderWidth: '1px',
@@ -29,6 +30,7 @@ export const CoachSection = () => {
         marginRight: 'auto',
         marginTop: `${20 + pictureSize / 2}px`,
         maxWidth: '800px',
+        paddingTop: `${pictureSize / 2}px`,
       }}
     >
       <CoachPicture

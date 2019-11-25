@@ -31,19 +31,24 @@ export const CoachPicture = ({
   )
 
   return (
-    <GatsbyImage
+    <div
       css={{
         position: 'absolute',
         boxSizing: 'border-box',
         top: `-${size / 2}px`,
-        borderStyle: 'solid',
-        borderColor: 'rgba(255,255,255,.5)',
-        borderWidth: '1px',
-        borderRadius: '50%',
-        margin: 'auto',
-        width: `${size}px`,
+        left: `calc(50% - ${size / 2}px)`,
       }}
-      fluid={fileEdge.node.childImageSharp.fluid}
-    ></GatsbyImage>
+    >
+      <GatsbyImage
+        css={{
+          borderStyle: 'solid',
+          borderColor: 'rgba(255,255,255,.5)',
+          borderWidth: '1px',
+          borderRadius: '50%',
+          width: `${size}px`,
+        }}
+        fluid={fileEdge.node.childImageSharp.fluid}
+      ></GatsbyImage>
+    </div>
   )
 }
