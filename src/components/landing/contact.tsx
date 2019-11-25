@@ -2,30 +2,45 @@ import '@emotion/core'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
 
+export const ExternalLink = ({ href, content }: { href: string; content }) => {
+  return (
+    <a
+      css={{ color: marmicodeColor, textDecoration: 'none' }}
+      href={href}
+      target="_blank"
+    >
+      {content}
+    </a>
+  )
+}
+
 export const ContactSection = () => {
   const itemList = [
     {
       icon: 'email',
       content: (
-        <a href="mailto:concat@marmicode.fr" target="_blank">
-          concat@marmicode.fr
-        </a>
+        <ExternalLink
+          href="mailto:concat@marmicode.fr"
+          content="contact@marmicode.fr"
+        />
       ),
     },
     {
       icon: 'phone',
       content: (
-        <a href="tel:+33 (0) 4 26 83 61 92" target="_blank">
-          +33 (0) 4 26 83 61 92
-        </a>
+        <ExternalLink
+          href="tel:+33 (0) 4 26 83 61 92"
+          content="+33 (0) 4 26 83 61 92"
+        />
       ),
     },
     {
       icon: 'business_center',
       content: (
-        <div css={{ textAlign: 'left' }}>
+        <div css={{ color: '#555', fontSize: '.8em', textAlign: 'left' }}>
+          <div>Wishtack | Lyon</div>
           <div>SIREN: 827 570 490</div>
-          <div>VAT N°: FR 71 827570490</div> <div>69009 Lyon</div>
+          <div>VAT N°: FR 71 827570490</div>
         </div>
       ),
     },
