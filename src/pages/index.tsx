@@ -24,7 +24,7 @@ export const IndexPage = () => {
       content: <CoachSection />,
     },
     {
-      title: 'Get in touch',
+      title: t('sections.contact'),
       content: <ContactSection />,
     },
   ]

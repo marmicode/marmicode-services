@@ -5,6 +5,7 @@ export const landingEn = {
   },
   sections: {
     services: 'Services',
-    coach: 'Your Coach'
+    coach: 'Your Coach',
+    contact: 'Get in Touch'
   }
 }
