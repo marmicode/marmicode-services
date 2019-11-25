@@ -1,5 +1,5 @@
 ---
-title: Coaching & Consulting
+title: Accompagnement
 icon: trending_up
 ---
 

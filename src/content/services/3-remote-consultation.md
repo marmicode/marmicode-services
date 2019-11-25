@@ -1,10 +1,8 @@
 ---
-title: Remote Consultation
+title: Consultations à Distance
 icon: computer
 ---
 
-Some folks describe our job as "the opposite of a freelance" while others compare us to "Gordon Ramsay in Hell’s Kitchen but nicer".
+Pour garder un contact régulier avec les équipes que nous accompagnons et leur **éviter tout blocage**, nous proposons en complément de l’accompagnement, des consultations à distance. 
 
-Our main goal is to achieve collective ownership and propagate knowledge & skills in the team “Accidentally” and not only through docs...
-
-...but the known side effects are test automation and TDD addiction.
+Une fois la session réservée, l’équipe présente ses questions et difficultés rencontrées puis nous abordons ensemble **différentes solutions généralement sous forme de Live Coding ou Remote Coding** *(si l’équipe est dans la capacité de partager son code source)*.
