@@ -14,7 +14,11 @@ export const ContactSection = () => {
     },
     {
       icon: 'phone',
-      content: '+33 (0) 4 26 83 61 92',
+      content: (
+        <a href="tel:+33 (0) 4 26 83 61 92" target="_blank">
+          +33 (0) 4 26 83 61 92
+        </a>
+      ),
     },
     {
       icon: 'business_center',
