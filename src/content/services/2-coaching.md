@@ -1,10 +1,8 @@
 ---
-title: Coaching
+title: Coaching & Consulting
 icon: trending_up
 ---
 
-Some folks describe our job as "the opposite of a freelance" while others compare us to "Gordon Ramsay in Hell’s Kitchen but nicer".
+Certains nous comparent à "Philippe Etchebest dans Cauchemar en cuisine".
 
-Our main goal is to achieve collective ownership and propagate knowledge & skills in the team “Accidentally” and not only through docs...
-
-...but the known side effects are test automation and TDD addiction.
+Notre objectif est d’unifier l’équipe et créer une culture de Collective Ownership puis **propager l’information et les compétences** naturellement et harmonieusement dans l’équipe.
