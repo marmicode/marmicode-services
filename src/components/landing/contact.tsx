@@ -1,4 +1,5 @@
 import '@emotion/core'
+import { TextField } from '@material-ui/core'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
 
@@ -16,11 +17,15 @@ export const ExternalLink = ({ href, content }: { href: string; content }) => {
 
 export const ContactForm = () => {
   return (
-    <form action="https://formspree.io/contact@wishtack.com" method="POST">
-      <input name="name" type="text" />
-      <input name="company" type="text" />
-      <input name="_replyto" type="text" />
-      <input name="phone" type="text" />
+    <form
+      action="https://formspree.io/contact@wishtack.com"
+      css={{ display: 'flex', flexDirection: 'column', maxWidth: '500px' }}
+      method="POST"
+    >
+      <TextField label="Name" name="name" required type="text" />
+      <TextField label="Company (optional)" name="company" type="text" />
+      <TextField label="Email (optional)" name="_replyto" type="text" />
+      <TextField label="Phone (optional)" name="phone" type="text" />
       <textarea name="message"></textarea>
       <button type="submit">ENVOYER</button>
     </form>
@@ -107,7 +112,9 @@ export const ContactSection = () => {
           ))}
         </div>
       </div>
-      <ContactForm css={{ flex: 1 }} />
+      <div css={{ flex: 1 }}>
+        <ContactForm />
+      </div>
     </div>
   )
 }
