@@ -1,7 +1,7 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { marmicodeColor } from '../config/config'
+import { marmicodeColor } from '../../config/config'
 
 export interface ServiceData {
   icon: string

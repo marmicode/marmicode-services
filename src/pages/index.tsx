@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Section, SectionData } from '../components/landing/section'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
-import { ServicesSection } from '../components/services'
+import { ServicesSection } from '../components/landing/services'
 import { Slant } from '../components/slant'
 
 export const IndexPage = () => {
@@ -15,12 +15,8 @@ export const IndexPage = () => {
       title: t('sections.services'),
       content: <ServicesSection />,
     },
-    // {
-    //   title: 'Pricing',
-    // },
-    // {
-    //   title: 'Testimonials',
-    // },
+    /* @todo add pricing section */
+    /* @todo add testimonials section */
     {
       title: t('sections.coach'),
       content: <div />,
