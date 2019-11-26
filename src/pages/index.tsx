@@ -28,14 +28,24 @@ export const ContentSection = () => {
       href: 'https://recettes.marmicode.fr',
     },
     {
+      title: 'ReST API Checklist',
+      picture: 'rest-api-checklist.png',
+      href: 'https://rest-api-checklist.marmicode.io',
+    },
+    {
       title: 'Guide Angular',
       picture: 'guide-angular.png',
       href: 'https://guide-angular.wishtack.io',
     },
     {
-      title: 'ReST API Checklist',
-      picture: 'rest-api-checklist.png',
-      href: 'https://rest-api-checklist.marmicode.io',
+      title: 'Guide API ReST',
+      picture: 'guide-api-rest.png',
+      href: 'https://guide-api-rest.wishtack.io',
+    },
+    {
+      title: 'Guide Agile',
+      picture: 'guide-agile.png',
+      href: 'https://guide-agile.wishtack.io',
     },
   ]
 
