@@ -115,7 +115,6 @@ export const IndexPage = () => {
   return (
     <Layout title={'Welcome'}>
       <Splash />
-      <Slant />
 
       {/* Services. */}
       <SectionContainer
