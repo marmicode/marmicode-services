@@ -10,28 +10,23 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const workshopTemplate = path.resolve(`src/templates/workshop.tsx`)
 
-  const result = await graphql
-    `
-      query loadPagesQuery($limit: Int!) {
-        allMarkdownRemark(
-        
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "**/content/workshops/*.md" } }
         sort: { fields: [fileAbsolutePath] }
-          limit: $limit
-        ) {
-          edges {
-            node {
-              frontmatter {
-#                slug
-                title
-              }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+              title
             }
           }
         }
       }
-    `,
-    { limit: 1000 }
-  )
+    }
+  `);
 
   if (result.errors) {
     throw result.errors
@@ -53,6 +48,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   }
-
 }
-
