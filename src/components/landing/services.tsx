@@ -19,7 +19,8 @@ export const Service = ({ service }: { service: ServiceData }) => {
         fontFamily: '"Source Sans Pro",Arial,sans-serif',
         margin: '20px',
         [mediaDesktop]: {
-          boxShadow: '7px 14px 25px 3px rgba(163, 174, 184, 0.4)',
+          borderRadius: '30px',
+          boxShadow: '0 0 5px 0 rgba(163, 174, 184, 0.6)',
           padding: '10px',
           width: '300px',
         },
