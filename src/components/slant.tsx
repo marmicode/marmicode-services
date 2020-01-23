@@ -4,7 +4,7 @@ const slant = ({ height }: { height: number }) => {
   const bandHeight = height / 2
   return css({
     backgroundColor: '#fff',
-    transform: 'rotate(-1.5deg)',
+    transform: 'rotate(-1.3deg)',
     overflow: 'hidden',
     height: `${bandHeight}px`,
     width: '102%',
