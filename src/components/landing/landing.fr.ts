@@ -10,6 +10,6 @@ export const landingFr: typeof landingEn = {
     coach: 'Votre Coach',
     contact: 'Contactez-nous !',
     publications: 'Talks & Publications',
-    content: 'Nos Contenus'
+    content: 'Nos Contenus',
   },
 }
