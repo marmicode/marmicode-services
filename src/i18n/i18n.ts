@@ -20,3 +20,5 @@ i18n.use(initReactI18next).init({
     },
   },
 })
+
+export const language = process.env.GATSBY_LANGUAGE || 'en'

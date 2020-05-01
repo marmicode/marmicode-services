@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
+import { language } from '../../i18n/i18n'
 
 export interface ServiceData {
   icon: string
@@ -53,11 +54,12 @@ export const ServicesSection = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/content/services/*.fr.md" } }
+        filter: { fileAbsolutePath: { glob: "**/content/services/*.md" } }
         sort: { fields: [fileAbsolutePath] }
       ) {
         edges {
           node {
+            fileAbsolutePath
             frontmatter {
               icon
               title
@@ -69,13 +71,13 @@ export const ServicesSection = () => {
     }
   `)
 
-  const serviceList: ServiceData[] = data.allMarkdownRemark.edges.map(
-    ({ node }) => ({
+  const serviceList: ServiceData[] = data.allMarkdownRemark.edges
+    .filter(({ node }) => node.fileAbsolutePath.endsWith(`${language}.md`))
+    .map(({ node }) => ({
       icon: node.frontmatter.icon,
       title: node.frontmatter.title,
       html: node.html,
-    })
-  )
+    }))
 
   return (
     <div
