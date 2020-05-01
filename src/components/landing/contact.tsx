@@ -56,8 +56,8 @@ export const ContactSection = () => {
       icon: 'email',
       content: (
         <ExternalLink
-          href="mailto:concat@marmicode.fr"
-          content="contact@marmicode.fr"
+          href="mailto:camijote@marmicode.fr"
+          content="camijote@marmicode.fr"
         />
       ),
     },
