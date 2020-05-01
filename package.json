@@ -43,14 +43,13 @@
   "scripts": {
     "build": "gatsby build",
     "build:fr": "GATSBY_LANGUAGE=fr yarn build",
-    "deploy": "run-s build:fr _firebase-deploy",
+    "deploy": "firebase deploy",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "gatsby develop",
     "start:fr": "GATSBY_LANGUAGE=fr yarn start",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "_firebase-deploy": "firebase deploy"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
