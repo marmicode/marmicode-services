@@ -53,7 +53,7 @@ export const ServicesSection = () => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/content/services/*.md" } }
+        filter: { fileAbsolutePath: { glob: "**/content/services/*.fr.md" } }
         sort: { fields: [fileAbsolutePath] }
       ) {
         edges {
