@@ -4,7 +4,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { language } from '../../i18n/i18n'
+import { filterMarkdownFilesByLanguage, language } from '../../i18n/i18n'
 
 export interface ServiceData {
   icon: string
@@ -52,8 +52,6 @@ export const Service = ({ service }: { service: ServiceData }) => {
   )
 }
 export const ServicesSection = () => {
-  const { i18n } = useTranslation()
-
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -74,9 +72,8 @@ export const ServicesSection = () => {
     }
   `)
 
-  const serviceList: ServiceData[] = data.allMarkdownRemark.edges
-    .filter(({ node }) => node.fileAbsolutePath.endsWith(`${i18n.language}.md`))
-    .map(({ node }) => ({
+  const serviceList: ServiceData[] = filterMarkdownFilesByLanguage(data)
+    .map(node => ({
       icon: node.frontmatter.icon,
       title: node.frontmatter.title,
       html: node.html,

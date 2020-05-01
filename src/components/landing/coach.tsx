@@ -1,22 +1,32 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
+import { filterMarkdownFilesByLanguage } from '../../i18n/i18n'
 import { CoachPicture } from './coach-picture'
 
 export const CoachSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      markdownRemark(fileAbsolutePath: { glob: "**/content/coach.md" }) {
-        frontmatter {
-          name
-          picture
-          titles
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/content/coach.*.md" } }
+      ) {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              name
+              picture
+              titles
+            }
+            html
+          }
         }
-        html
       }
     }
   `)
 
   const pictureSize = 160
+
+  const remark = filterMarkdownFilesByLanguage(data)[0]
 
   return (
     <div
@@ -34,14 +44,11 @@ export const CoachSection = () => {
         paddingRight: '20px',
       }}
     >
-      <CoachPicture
-        path={data.markdownRemark.frontmatter.picture}
-        size={pictureSize}
-      />
+      <CoachPicture path={remark.frontmatter.picture} size={pictureSize} />
       <h3 css={{ color: 'white', fontWeight: 400, fontSize: '1.5em' }}>
-        {data.markdownRemark.frontmatter.name}
+        {remark.frontmatter.name}
       </h3>
-      {data.markdownRemark.frontmatter.titles.map(title => (
+      {remark.frontmatter.titles.map(title => (
         <h4
           css={{ color: 'rgba(255, 255, 255, .8)', margin: '5px' }}
           key={title}
@@ -54,7 +61,7 @@ export const CoachSection = () => {
           color: 'rgba(255, 255, 255, .85)',
           textAlign: 'justify',
         }}
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        dangerouslySetInnerHTML={{ __html: remark.html }}
       />
     </div>
   )

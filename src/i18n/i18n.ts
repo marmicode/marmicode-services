@@ -22,3 +22,16 @@ i18n.use(initReactI18next).init({
     },
   },
 })
+
+export interface MarkdownQueryResult<T> {
+  allMarkdownRemark: { edges: Array<{ node: T }> }
+}
+
+export function filterMarkdownFilesByLanguage<
+  R extends MarkdownQueryResult<NODE>,
+  NODE extends { fileAbsolutePath: string }
+>(data: R): (any | NODE)[] {
+  return data.allMarkdownRemark.edges
+    .map(({ node }) => node)
+    .filter(node => node.fileAbsolutePath.endsWith(`${i18n.language}.md`))
+}
