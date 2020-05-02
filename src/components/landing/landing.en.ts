@@ -8,6 +8,9 @@ export const landingEn = {
     coach: 'Your Coach',
     contact: 'Get in Touch',
     publications: 'Talks & Publications',
-    content: 'Our Content'
-  }
+    content: 'Our Content',
+  },
+  contact: {
+    email: 'kitchen@marmicode.io',
+  },
 }

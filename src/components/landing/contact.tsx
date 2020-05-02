@@ -2,6 +2,7 @@ import '@emotion/core'
 import { css } from '@emotion/core'
 import { Button, TextareaAutosize, TextField } from '@material-ui/core'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
 
@@ -51,15 +52,14 @@ export const ContactForm = () => {
 }
 
 export const ContactSection = () => {
+  const { t } = useTranslation('landing')
+
+  const email = t('contact.email')
+
   const itemList = [
     {
       icon: 'email',
-      content: (
-        <ExternalLink
-          href="mailto:camijote@marmicode.fr"
-          content="camijote@marmicode.fr"
-        />
-      ),
+      content: <ExternalLink href={`mailto:${email}`} content={email} />,
     },
     {
       icon: 'phone',

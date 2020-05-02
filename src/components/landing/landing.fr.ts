@@ -12,4 +12,7 @@ export const landingFr: typeof landingEn = {
     publications: 'Talks & Publications',
     content: 'Nos Contenus',
   },
+  contact: {
+    email: 'camijote@marmicode.fr',
+  },
 }

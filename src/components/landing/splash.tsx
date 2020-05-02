@@ -5,7 +5,6 @@ import { Background, Parallax } from 'react-parallax'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
-import { useState, useEffect } from 'react'
 import { Slant } from '../slant'
 
 export const Splash = () => {
