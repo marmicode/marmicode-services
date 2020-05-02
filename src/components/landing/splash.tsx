@@ -24,6 +24,8 @@ export const Splash = () => {
     }
   `)
 
+  const imageFluidInfo = data.background.childImageSharp.fluid;
+
   const gradient = {
     background: [
       marmicodeColor,
@@ -37,7 +39,9 @@ export const Splash = () => {
   return (
     <div css={{position: 'relative', height: `calc(100vh - 60px)`}}>
       <Parallax
-        bgImage={data.background.childImageSharp.fluid.src}
+        bgImage={imageFluidInfo.src}
+        bgImageSizes={imageFluidInfo.sizes}
+        bgImageSrcSet={imageFluidInfo.srcSet}
         bgImageAlt="marmicode cooking pot"
         bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.65 }}
         css={{ height: '100%', ...gradient }}
