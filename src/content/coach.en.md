@@ -1,7 +1,10 @@
 ---
 name: Younes Jaaidi
 picture: younes.jpg
-titles: ["Google Developer Expert for Angular and Web Technologies", "& eXtreme Programming Coach"]
+titles: 
+  - Google Developer Expert for Angular and Web Technologies
+  - "&"
+  - eXtreme Programming Coach
 ---
 
 Younes is a trainer, consultant & eXtreme Programming coach who loves the challenge of boosting teams efficiency and helping everyone enjoy every part of their job. He is passionate about testing, continuous deployment, automation and simplicity.

@@ -31,10 +31,11 @@ export const CoachSection = () => {
   return (
     <div
       css={{
-        position: 'relative',
-        borderColor: 'rgba(255, 255, 255, .5)',
+        borderColor: 'white',
         borderStyle: 'solid',
         borderWidth: '1px',
+        color: 'white',
+        fontFamily: 'Raleway',
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: `${20 + pictureSize / 2}px`,
@@ -42,15 +43,20 @@ export const CoachSection = () => {
         paddingTop: `${pictureSize / 2}px`,
         paddingLeft: '20px',
         paddingRight: '20px',
+        position: 'relative',
       }}
     >
       <CoachPicture path={remark.frontmatter.picture} size={pictureSize} />
-      <h3 css={{ color: 'white', fontWeight: 400, fontSize: '1.5em' }}>
+      <h3 css={{ fontWeight: 800, fontSize: '1.5em' }}>
         {remark.frontmatter.name}
       </h3>
       {remark.frontmatter.titles.map(title => (
         <h4
-          css={{ color: 'rgba(255, 255, 255, .8)', margin: '5px' }}
+          css={{
+            fontSize: '1.2em',
+            fontWeight: 800,
+            margin: '5px',
+          }}
           key={title}
         >
           {title}
@@ -58,7 +64,8 @@ export const CoachSection = () => {
       ))}
       <div
         css={{
-          color: 'rgba(255, 255, 255, .85)',
+          lineHeight: '1.5em',
+          marginTop: '40px',
           textAlign: 'justify',
         }}
         dangerouslySetInnerHTML={{ __html: remark.html }}

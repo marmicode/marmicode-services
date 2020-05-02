@@ -48,6 +48,10 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
       <SEO title={title}></SEO>
       <Helmet>
         <link
+          href="https://fonts.googleapis.com/css?family=Raleway"
+          rel="stylesheet"
+        />
+        <link
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700"
           rel="stylesheet"
           type="text/css"

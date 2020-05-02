@@ -1,6 +1,6 @@
 import '@emotion/core'
 import { css } from '@emotion/core'
-import { Button, TextareaAutosize, TextField } from '@material-ui/core'
+import { Button, TextField } from '@material-ui/core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../../config/config'
