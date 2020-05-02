@@ -44,7 +44,7 @@ export const ContactForm = () => {
         style={{ backgroundColor: marmicodeColor }}
         type="submit"
       >
-        Envoyer
+        Send
       </Button>
     </form>
   )
