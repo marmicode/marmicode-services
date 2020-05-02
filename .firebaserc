@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "marmicode"
+  },
+  "targets": {
+    "marmicode": {
+      "hosting": {
+        "marmicode": [
+          "marmicode"
+        ],
+        "marmicode-fr": [
+          "marmicode-french"
+        ]
+      }
+    }
   }
 }

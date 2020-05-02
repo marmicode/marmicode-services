@@ -2,14 +2,14 @@
   "hosting": [
     {
       "target": "marmicode",
-      "predeploy": "yarn build:fr",
+      "predeploy": "yarn build",
       "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     },
     {
       "target": "marmicode-fr",
       "predeploy": "yarn build:fr",
-      "public": "apps/landing/dist",
+      "public": "public",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
     }
   ]
