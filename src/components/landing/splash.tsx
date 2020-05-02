@@ -1,7 +1,7 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useTranslation } from 'react-i18next'
-import { Parallax } from 'react-parallax'
+import { Background, Parallax } from 'react-parallax'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
@@ -14,9 +14,9 @@ export const Splash = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "cooking-pot.jpg" }) {
+      background: file(relativePath: { eq: "cooking-pot-wide.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -24,7 +24,7 @@ export const Splash = () => {
     }
   `)
 
-  const imageFluidInfo = data.background.childImageSharp.fluid;
+  const imageInfo = data.background.childImageSharp.fluid
 
   const gradient = {
     background: [
@@ -37,16 +37,25 @@ export const Splash = () => {
   }
 
   return (
-    <div css={{position: 'relative', height: `calc(100vh - 60px)`}}>
+    <div css={{ position: 'relative', height: `calc(100vh - 60px)` }}>
       <Parallax
-        bgImage={imageFluidInfo.src}
-        bgImageSizes={imageFluidInfo.sizes}
-        bgImageSrcSet={imageFluidInfo.srcSet}
-        bgImageAlt="marmicode cooking pot"
-        bgImageStyle={{ height: '170%', objectFit: 'cover', opacity: 0.65 }}
         css={{ height: '100%', ...gradient }}
         strength={400}
       >
+        <Background>
+          <img
+            alt="Marmicode Cooking Pot"
+            sizes={imageInfo.sizes}
+            src={imageInfo.src}
+            srcSet={imageInfo.srcSet}
+            css={{
+              height: '170vh',
+              width: '100vw',
+              objectFit: 'cover',
+              opacity: 0.65,
+            }}
+          />
+        </Background>
         <div css={{ marginTop: '30vh' }}>
           <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} />
         </div>
