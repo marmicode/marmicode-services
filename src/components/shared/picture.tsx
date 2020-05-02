@@ -40,7 +40,7 @@ export const Picture = ({
         ...(isCircle
           ? {
               borderStyle: 'solid',
-              borderColor: 'rgba(255,255,255,.5)',
+              borderColor: 'white',
               borderWidth: '1px',
               borderRadius: '50%',
             }

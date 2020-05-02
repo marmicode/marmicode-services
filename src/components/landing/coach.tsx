@@ -1,5 +1,6 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
+import { mediaDesktop } from '../../helpers/media-selectors'
 import { filterMarkdownFilesByLanguage } from '../../i18n/i18n'
 import { CoachPicture } from './coach-picture'
 
@@ -29,11 +30,8 @@ export const CoachSection = () => {
   const remark = filterMarkdownFilesByLanguage(data)[0]
 
   return (
-    <div
+    <section
       css={{
-        borderColor: 'white',
-        borderStyle: 'solid',
-        borderWidth: '1px',
         color: 'white',
         fontFamily: 'Raleway',
         marginLeft: 'auto',
@@ -44,32 +42,51 @@ export const CoachSection = () => {
         paddingLeft: '20px',
         paddingRight: '20px',
         position: 'relative',
+        [mediaDesktop]: {
+          borderColor: 'white',
+          borderStyle: 'solid',
+          borderWidth: '1px',
+        }
       }}
     >
       <CoachPicture path={remark.frontmatter.picture} size={pictureSize} />
-      <h3 css={{ fontWeight: 800, fontSize: '1.5em' }}>
+      <h3
+        css={{
+          color: 'white',
+          fontWeight: 800,
+          fontSize: '1.5em',
+          [mediaDesktop]: {
+            left: 'calc(50% + 90px)',
+            position: 'absolute',
+            top: '-60px',
+          }
+        }}
+      >
         {remark.frontmatter.name}
       </h3>
-      {remark.frontmatter.titles.map(title => (
-        <h4
-          css={{
-            fontSize: '1.2em',
-            fontWeight: 800,
-            margin: '5px',
-          }}
-          key={title}
-        >
-          {title}
-        </h4>
-      ))}
+
+      { /* Coach container. */ }
+      <div css={{margin: '40px 0'}}>
+        {remark.frontmatter.titles.map(title => (
+          <h4
+            css={{
+              fontSize: '1.2em',
+              fontWeight: 800,
+              margin: '5px',
+            }}
+            key={title}
+          >
+            {title}
+          </h4>
+        ))}
+      </div>
       <div
         css={{
           lineHeight: '1.5em',
-          marginTop: '40px',
           textAlign: 'justify',
         }}
         dangerouslySetInnerHTML={{ __html: remark.html }}
       />
-    </div>
+    </section>
   )
 }
