@@ -112,7 +112,7 @@ export const IndexPage = () => {
   /* @todo add pricing section */
   /* @todo add testimonials section */
   return (
-    <Layout title={'Cooking Better Apps'}>
+    <Layout title={t('title')}>
       <Splash />
 
       {/* Services. */}

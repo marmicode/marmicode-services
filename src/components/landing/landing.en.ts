@@ -1,4 +1,5 @@
 export const landingEn = {
+  title: 'Cooking Better Apps',
   hero: {
     title: 'We Help You Cook Better Apps',
     subtitle: 'with delicious ingredients',

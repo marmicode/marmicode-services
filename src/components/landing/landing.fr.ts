@@ -1,6 +1,7 @@
 import { landingEn } from './landing.en'
 
 export const landingFr: typeof landingEn = {
+  title: 'Cuisinons Vos Apps Ensemble',
   hero: {
     title: 'Cuisinons Vos Apps Ensemble',
     subtitle: 'avec les meilleurs ingrédients',
