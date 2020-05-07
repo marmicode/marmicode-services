@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../config/config'
 import '../i18n/i18n'
 import SEO from './seo'
@@ -23,6 +24,55 @@ export const Title = styled.h1`
   left: 90px;
   margin: 0;
 `
+
+const languageLinkCss = css({
+  fontSize: '2em',
+  textDecoration: 'none',
+})
+
+export const LanguageSelector = () => {
+  const { i18n } = useTranslation()
+
+  const links = [
+    {
+      language: 'fr',
+      text: '🇫🇷',
+      href: 'https://marmicode.fr',
+    },
+    {
+      language: 'en',
+      text: '🇬🇧',
+      href: 'https://marmicode.io',
+    },
+  ]
+
+  return (
+    <>
+      {links.map(link => {
+        const isSelectedLanguage = link.language === i18n.language
+        return (
+          <a
+            css={{
+              fontSize: '2em',
+              textDecoration: 'none',
+              margin: '0 10px',
+              ...(isSelectedLanguage
+                ? {
+                    cursor: 'default',
+                    filter: 'grayscale(1)',
+                  }
+                : {}),
+            }}
+            href={link.href}
+            key={link.language}
+          >
+            {link.text}
+          </a>
+        )
+      })}
+    </>
+  )
+}
 
 export const Layout = ({ children, title }: { children?; title: string }) => {
   const data = useStaticQuery(graphql`
@@ -61,9 +111,11 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Toolbar style={{ minHeight: '60px' }}>
+      <Toolbar style={{ display: 'flex', minHeight: '60px' }}>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
         <Title>{data.site.siteMetadata.title}</Title>
+        <div css={{ flex: 1 }}></div>
+        <LanguageSelector></LanguageSelector>
       </Toolbar>
       {children}
     </>
