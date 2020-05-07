@@ -36,12 +36,12 @@ export const LanguageSelector = () => {
   const links = [
     {
       language: 'fr',
-      text: '🇫🇷',
+      flag: 'fr',
       href: 'https://marmicode.fr',
     },
     {
       language: 'en',
-      text: '🇬🇧',
+      flag: 'gb',
       href: 'https://marmicode.io',
     },
   ]
@@ -53,7 +53,7 @@ export const LanguageSelector = () => {
         return (
           <a
             css={{
-              fontSize: '2em',
+              fontSize: '1.5em',
               textDecoration: 'none',
               margin: '0 10px',
               ...(isSelectedLanguage
@@ -66,7 +66,7 @@ export const LanguageSelector = () => {
             href={link.href}
             key={link.language}
           >
-            {link.text}
+            <span className={`flag-icon flag-icon-${link.flag}`}></span>
           </a>
         )
       })}
