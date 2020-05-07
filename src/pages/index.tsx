@@ -12,41 +12,65 @@ import { Picture } from '../components/shared/picture'
 import { createGradient } from '../helpers/create-gradient'
 import { mediaDesktop } from '../helpers/media-selectors'
 
+const contentMap = new Map([
+  [
+    'fr',
+    [
+      {
+        title: 'Blog',
+        picture: 'blog.png',
+        href: 'https://medium.com/marmicode',
+      },
+      {
+        title: 'Recipes',
+        picture: 'recipes.png',
+        href: 'https://recettes.marmicode.fr',
+      },
+      {
+        title: 'ReST API Checklist',
+        picture: 'rest-api-checklist.png',
+        href: 'https://rest-api-checklist.marmicode.io',
+      },
+      {
+        title: 'Guide Angular',
+        picture: 'guide-angular.png',
+        href: 'https://guide-angular.wishtack.io',
+      },
+      {
+        title: 'Guide API ReST',
+        picture: 'guide-api-rest.png',
+        href: 'https://guide-api-rest.wishtack.io',
+      },
+      {
+        title: 'Guide Agile',
+        picture: 'guide-agile.png',
+        href: 'https://guide-agile.wishtack.io',
+      },
+    ],
+  ],
+  [
+    'en',
+    [
+      {
+        title: 'Blog',
+        picture: 'blog.png',
+        href: 'https://medium.com/marmicode',
+      },
+      {
+        title: 'ReST API Checklist',
+        picture: 'rest-api-checklist.png',
+        href: 'https://rest-api-checklist.marmicode.io',
+      },
+    ],
+  ],
+])
+
 export const ContentSection = () => {
   /* @todo other guides */
 
-  const contentList = [
-    {
-      title: 'Blog',
-      picture: 'blog.png',
-      href: 'https://medium.com/wishtack',
-    },
-    {
-      title: 'Recipes',
-      picture: 'recipes.png',
-      href: 'https://recettes.marmicode.fr',
-    },
-    {
-      title: 'ReST API Checklist',
-      picture: 'rest-api-checklist.png',
-      href: 'https://rest-api-checklist.marmicode.io',
-    },
-    {
-      title: 'Guide Angular',
-      picture: 'guide-angular.png',
-      href: 'https://guide-angular.wishtack.io',
-    },
-    {
-      title: 'Guide API ReST',
-      picture: 'guide-api-rest.png',
-      href: 'https://guide-api-rest.wishtack.io',
-    },
-    {
-      title: 'Guide Agile',
-      picture: 'guide-agile.png',
-      href: 'https://guide-agile.wishtack.io',
-    },
-  ]
+  const { i18n } = useTranslation()
+
+  const contentList = contentMap.get(i18n.language) || contentMap.get('en')
 
   return (
     <div
