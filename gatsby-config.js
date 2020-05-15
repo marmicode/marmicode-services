@@ -1,8 +1,12 @@
+const isNetlify = process.env.NETLIFY === 'true';
+
 module.exports = {
   siteMetadata: {
     title: `Marmicode`,
     description: `Helping you cook better apps with the best ingredients`,
     author: `@marmicode`,
+    /* siteUrl is required by robots txt plugin. */
+    ...isNetlify ? {siteUrl: process.env.URL} : {}
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -39,6 +43,17 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    /* Generate robots.txt and disallow / on Netlify. */
+    ...(process.env.NETLIFY === 'true'
+      ? [
+          {
+            resolve: `gatsby-plugin-robots-txt`,
+            options: {
+              policy: [{ userAgent: '*', disallow: '/' }],
+            },
+          },
+        ]
+      : []),
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
