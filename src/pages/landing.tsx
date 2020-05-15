@@ -18,15 +18,15 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { Search, Menu } from '@material-ui/icons'
 import React from 'react'
+import { Picture } from '../components/shared/picture'
+import { useStaticQuery, graphql } from 'gatsby'
 
 export function MediaCard() {
+
   return (
     <Card>
       <CardActionArea>
-        <CardMedia
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
+        <Picture path={'blog.png'}></Picture>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Lizard
@@ -83,17 +83,13 @@ export default function LandingPage() {
     <>
       <Global styles={globalStyle}></Global>
       <ThemeProvider theme={theme}>
-        <div css={{flexGrow: 1}}>
+        <div css={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-              >
+              <IconButton edge="start" color="inherit" aria-label="menu">
                 <Menu />
               </IconButton>
-              <Typography variant="h6" css={{flexGrow: 1}}>
+              <Typography variant="h6" css={{ flexGrow: 1 }}>
                 News
               </Typography>
               <IconButton>
@@ -102,7 +98,10 @@ export default function LandingPage() {
               <Button color="inherit">Login</Button>
             </Toolbar>
           </AppBar>
-          <MediaCard></MediaCard>
+          <div css={{ display: 'flex', flexDirection: 'row' }}>
+            <MediaCard></MediaCard>
+            <MediaCard></MediaCard>
+          </div>
         </div>
       </ThemeProvider>
     </>
