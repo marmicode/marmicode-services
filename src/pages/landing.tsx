@@ -5,28 +5,22 @@ import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 import IconButton from '@material-ui/core/IconButton'
-import {
-  createMuiTheme,
-  createStyles,
-  makeStyles,
-  Theme,
-  ThemeProvider,
-} from '@material-ui/core/styles'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import { Search, Menu } from '@material-ui/icons'
+import { Menu, Search } from '@material-ui/icons'
 import React from 'react'
+import { Hero } from '../components/hero'
+import { Splash } from '../components/landing/splash'
 import { Picture } from '../components/shared/picture'
-import { useStaticQuery, graphql } from 'gatsby'
+import { marmicodeColor } from '../config/config'
 
 export function MediaCard() {
-
   return (
     <Card>
       <CardActionArea>
-        <Picture path={'blog.png'}></Picture>
+        <Picture path={'blog.png'} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Lizard
@@ -52,7 +46,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: '#ff4400',
+      main: marmicodeColor,
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
@@ -84,20 +78,21 @@ export default function LandingPage() {
       <Global styles={globalStyle}></Global>
       <ThemeProvider theme={theme}>
         <div css={{ flexGrow: 1 }}>
-          <AppBar position="static">
+          <AppBar color="inherit" position="static">
             <Toolbar>
-              <IconButton edge="start" color="inherit" aria-label="menu">
+              <IconButton edge="start" color="primary" aria-label="menu">
                 <Menu />
               </IconButton>
-              <Typography variant="h6" css={{ flexGrow: 1 }}>
+              <Typography color="primary" variant="h6" css={{ flexGrow: 1 }}>
                 News
               </Typography>
               <IconButton>
                 <Search />
               </IconButton>
-              <Button color="inherit">Login</Button>
+              <Button color="primary">Login</Button>
             </Toolbar>
           </AppBar>
+          <Splash/>
           <div css={{ display: 'flex', flexDirection: 'row' }}>
             <MediaCard></MediaCard>
             <MediaCard></MediaCard>
