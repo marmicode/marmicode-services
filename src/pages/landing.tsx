@@ -1,5 +1,10 @@
 import React from 'react'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+  ThemeProvider,
+} from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -7,6 +12,31 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import { AccessAlarm, Menu } from '@material-ui/icons'
 import { Global, css } from '@emotion/core'
+import { createMuiTheme } from '@material-ui/core/styles'
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: '#ff4400',
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: '#0066ff',
+      main: '#0044ff',
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: '#ffcc00',
+    },
+    // Used by `getContrastText()` to maximize the contrast between
+    // the background and the text.
+    contrastThreshold: 3,
+    // Used by the functions below to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset: 0.2,
+  },
+})
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,27 +64,29 @@ export default function LandingPage() {
   return (
     <>
       <Global styles={globalStyle}></Global>
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <Menu />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              News
-            </Typography>
-            <IconButton>
-              <AccessAlarm />
-            </IconButton>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className={classes.root}>
+          <AppBar position="static">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              >
+                <Menu />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                News
+              </Typography>
+              <IconButton>
+                <AccessAlarm />
+              </IconButton>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+          </AppBar>
+        </div>
+      </ThemeProvider>
     </>
   )
 }
