@@ -94,8 +94,8 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
 
   return (
     <>
-      <Global styles={bodyStyle}></Global>
       <SEO title={title}></SEO>
+      <Global styles={bodyStyle}></Global>
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Raleway"
