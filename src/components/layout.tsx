@@ -117,7 +117,9 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Toolbar style={{ display: 'flex', minHeight: '60px' }}>
+      <Toolbar
+        style={{ display: 'flex', backgroundColor: 'white', minHeight: '60px' }}
+      >
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
         <Title>{data.site.siteMetadata.title}</Title>
         <div css={{ flex: 1 }} />

@@ -36,10 +36,7 @@ export const Splash = () => {
 
   return (
     <div css={{ position: 'relative', height: `calc(100vh - 60px)` }}>
-      <Parallax
-        css={{ height: '100%', ...gradient }}
-        strength={400}
-      >
+      <Parallax css={{ height: '100%', ...gradient }} strength={400}>
         <Background>
           <img
             alt="Marmicode Cooking Pot"

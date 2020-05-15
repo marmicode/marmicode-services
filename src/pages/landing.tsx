@@ -1,21 +1,14 @@
-import { css, Global } from '@emotion/core'
-import AppBar from '@material-ui/core/AppBar'
+import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import IconButton from '@material-ui/core/IconButton'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import { Menu, Search } from '@material-ui/icons'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Splash } from '../components/landing/splash'
 import Layout from '../components/layout'
 import { Picture } from '../components/shared/picture'
-import { marmicodeColor } from '../config/config'
 
 export function MediaCard() {
   return (
@@ -44,16 +37,55 @@ export function MediaCard() {
   )
 }
 
+export function Hero() {
+  const textStyle = css({
+    color: 'white',
+    position: 'absolute',
+    left: '10%',
+    top: '30%',
+  })
+
+  return (
+    <div css={{ marginTop: '30vh' }}>
+      <div css={textStyle}>
+        <h1>This is</h1>
+        <h2>Cool!</h2>
+      </div>
+    </div>
+  )
+}
+
+export function Banner() {
+  return (
+    <div
+      css={css({
+        width: '100%',
+        height: 'calc(100vh - 60px)',
+      })}
+    >
+      <div css={css({ position: 'fixed', top: 0, zIndex: -1 })}>
+        <Picture
+          height={'100vh'}
+          width={'100vw'}
+          path={'cooking-pot-wide.jpg'}
+        />
+        <Hero />
+      </div>
+    </div>
+  )
+}
+
 export default function LandingPage() {
   const { t } = useTranslation('landing')
 
   return (
     <Layout title={t('title')}>
+      <Banner />
       <div>
-        {/*<div css={{ display: 'flex', flexDirection: 'row' }}>*/}
-        {/*  <MediaCard></MediaCard>*/}
-        {/*  <MediaCard></MediaCard>*/}
-        {/*</div>*/}
+        <div css={{ display: 'flex', flexDirection: 'row' }}>
+          <MediaCard></MediaCard>
+          <MediaCard></MediaCard>
+        </div>
       </div>
     </Layout>
   )

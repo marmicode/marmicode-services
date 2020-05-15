@@ -20,7 +20,7 @@ export const Picture = ({
           node {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 300) {
+              fluid(maxWidth: 4000) {
                 ...GatsbyImageSharpFluid
               }
             }
