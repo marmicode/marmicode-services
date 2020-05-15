@@ -11,8 +11,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { Menu, Search } from '@material-ui/icons'
 import React from 'react'
-import { Hero } from '../components/hero'
+import { useTranslation } from 'react-i18next'
 import { Splash } from '../components/landing/splash'
+import Layout from '../components/layout'
 import { Picture } from '../components/shared/picture'
 import { marmicodeColor } from '../config/config'
 
@@ -42,64 +43,19 @@ export function MediaCard() {
     </Card>
   )
 }
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      // light: will be calculated from palette.primary.main,
-      main: marmicodeColor,
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
-    },
-    secondary: {
-      light: '#0066ff',
-      main: '#0044ff',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#ffcc00',
-    },
-    // Used by `getContrastText()` to maximize the contrast between
-    // the background and the text.
-    contrastThreshold: 3,
-    // Used by the functions below to shift a color's luminance by approximately
-    // two indexes within its tonal palette.
-    // E.g., shift from Red 500 to Red 300 or Red 700.
-    tonalOffset: 0.2,
-  },
-})
-
-const globalStyle = css`
-  body {
-    margin: 0;
-  }
-`
 
 export default function LandingPage() {
+  const { t } = useTranslation('landing')
+
   return (
-    <>
-      <Global styles={globalStyle}></Global>
-      <ThemeProvider theme={theme}>
-        <div css={{ flexGrow: 1 }}>
-          <AppBar color="inherit" position="static">
-            <Toolbar>
-              <IconButton edge="start" color="primary" aria-label="menu">
-                <Menu />
-              </IconButton>
-              <Typography color="primary" variant="h6" css={{ flexGrow: 1 }}>
-                News
-              </Typography>
-              <IconButton>
-                <Search />
-              </IconButton>
-              <Button color="primary">Login</Button>
-            </Toolbar>
-          </AppBar>
-          <Splash/>
-          <div css={{ display: 'flex', flexDirection: 'row' }}>
-            <MediaCard></MediaCard>
-            <MediaCard></MediaCard>
-          </div>
-        </div>
-      </ThemeProvider>
-    </>
+    <Layout title={t('title')}>
+      <div>
+        {/*<div css={{ display: 'flex', flexDirection: 'row' }}>*/}
+        {/*  <MediaCard></MediaCard>*/}
+        {/*  <MediaCard></MediaCard>*/}
+        {/*</div>*/}
+      </div>
+    </Layout>
   )
 }
 

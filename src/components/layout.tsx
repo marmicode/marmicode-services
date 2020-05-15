@@ -1,6 +1,7 @@
 import { css, Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { Toolbar } from '@material-ui/core'
+import { ThemeProvider } from '@material-ui/core/styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
@@ -8,6 +9,7 @@ import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../config/config'
 import '../i18n/i18n'
+import { theme } from '../config/theme'
 import SEO from './seo'
 
 const bodyStyle = css`
@@ -118,10 +120,10 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
       <Toolbar style={{ display: 'flex', minHeight: '60px' }}>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
         <Title>{data.site.siteMetadata.title}</Title>
-        <div css={{ flex: 1 }}></div>
-        <LanguageSelector></LanguageSelector>
+        <div css={{ flex: 1 }} />
+        <LanguageSelector />
       </Toolbar>
-      {children}
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </>
   )
 }
