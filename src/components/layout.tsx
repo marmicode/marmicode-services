@@ -110,6 +110,10 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css"
+          rel="stylesheet"
+        />
       </Helmet>
       <Toolbar style={{ display: 'flex', minHeight: '60px' }}>
         <Img fadeIn={false} fixed={data.logo.childImageSharp.fixed} />
