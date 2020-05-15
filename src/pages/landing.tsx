@@ -1,19 +1,53 @@
-import React from 'react'
+import { css, Global } from '@emotion/core'
+import AppBar from '@material-ui/core/AppBar'
+import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import IconButton from '@material-ui/core/IconButton'
 import {
+  createMuiTheme,
   createStyles,
   makeStyles,
   Theme,
   ThemeProvider,
 } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import { AccessAlarm, Menu } from '@material-ui/icons'
-import { Global, css } from '@emotion/core'
-import { createMuiTheme } from '@material-ui/core/styles'
+import { Search, Menu } from '@material-ui/icons'
+import React from 'react'
 
+export function MediaCard() {
+  return (
+    <Card>
+      <CardActionArea>
+        <CardMedia
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+  )
+}
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -38,20 +72,6 @@ const theme = createMuiTheme({
   },
 })
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-  })
-)
-
 const globalStyle = css`
   body {
     margin: 0;
@@ -59,32 +79,30 @@ const globalStyle = css`
 `
 
 export default function LandingPage() {
-  const classes = useStyles()
-
   return (
     <>
       <Global styles={globalStyle}></Global>
       <ThemeProvider theme={theme}>
-        <div className={classes.root}>
+        <div css={{flexGrow: 1}}>
           <AppBar position="static">
             <Toolbar>
               <IconButton
                 edge="start"
-                className={classes.menuButton}
                 color="inherit"
                 aria-label="menu"
               >
                 <Menu />
               </IconButton>
-              <Typography variant="h6" className={classes.title}>
+              <Typography variant="h6" css={{flexGrow: 1}}>
                 News
               </Typography>
               <IconButton>
-                <AccessAlarm />
+                <Search />
               </IconButton>
               <Button color="inherit">Login</Button>
             </Toolbar>
           </AppBar>
+          <MediaCard></MediaCard>
         </div>
       </ThemeProvider>
     </>
