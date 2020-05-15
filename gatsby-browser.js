@@ -3,5 +3,3 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
-import './node_modules/flag-icon-css/css/flag-icon.css';
