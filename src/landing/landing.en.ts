@@ -1,7 +1,7 @@
 export const landingEn = {
   title: 'Cooking Better Apps',
   hero: {
-    title: 'We Help You Cook Better Apps',
+    title: 'We Help You <strong>Cook Better Apps</strong>',
     subtitle: 'with delicious ingredients',
   },
   sections: {

@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { marmicodeColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { filterMarkdownFilesByLanguage } from '../../i18n/i18n'
+import { filterMarkdownFilesByLanguage } from '../../config/i18n'
 
 export interface ServiceData {
   icon: string
@@ -54,10 +54,10 @@ export const Service = ({ service }: { service: ServiceData }) => {
         dangerouslySetInnerHTML={{ __html: service.html }}
       ></div>
 
-      <div css={{flex: 1}}></div>
+      <div css={{ flex: 1 }}></div>
 
       {service.button && (
-        <a css={{marginBottom: '20px'}} href={service.button.url}>
+        <a css={{ marginBottom: '20px' }} href={service.button.url}>
           <button
             css={{
               boxShadow:
@@ -70,7 +70,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
               fontSize: '1em',
               fontWeight: 600,
               lineHeight: '36px',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
             }}
           >
             {service.button.title}

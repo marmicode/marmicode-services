@@ -21,6 +21,10 @@ i18n.use(initReactI18next).init({
       landing: landingFr,
     },
   },
+  react: {
+    transKeepBasicHtmlNodesFor: ['strong'],
+    transSupportBasicHtmlNodes: true
+  }
 })
 
 export interface MarkdownQueryResult<T> {

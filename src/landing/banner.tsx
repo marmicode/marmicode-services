@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { css } from '@emotion/core'
 import React from 'react'
 import { Picture } from '../components/shared/picture'
@@ -6,11 +6,6 @@ import Button from '@material-ui/core/Button'
 
 export function Hero() {
   const { t } = useTranslation('landing')
-
-  const underlineText = {
-    textDecoration: 'underline',
-    textDecorationColor: '#5DB3AD',
-  }
 
   return (
     <div
@@ -24,9 +19,15 @@ export function Hero() {
         css={css({
           color: 'white',
           fontSize: '170%',
+          strong: {
+            textDecoration: 'underline',
+            textDecorationColor: '#5DB3AD',
+          },
         })}
       >
-        <h1>{t('hero.title')}</h1>
+        <h1>
+          <Trans i18nKey="hero.title" t={t} />
+        </h1>
         <h2>{t('hero.subtitle')}</h2>
         <div
           css={{

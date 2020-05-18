@@ -30,8 +30,6 @@ export const Picture = ({
     }
   `)
 
-  console.log(data)
-
   const fileEdge = data.allFile.edges.find(
     ({ node }) => node.relativePath === path
   )

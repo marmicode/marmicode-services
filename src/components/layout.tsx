@@ -8,7 +8,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 import { marmicodeColor } from '../config/config'
-import '../i18n/i18n'
+import '../config/i18n'
 import { theme } from '../config/theme'
 import SEO from './seo'
 

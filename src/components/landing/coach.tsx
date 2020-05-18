@@ -1,7 +1,7 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { filterMarkdownFilesByLanguage } from '../../i18n/i18n'
+import { filterMarkdownFilesByLanguage } from '../../config/i18n'
 import { CoachPicture } from './coach-picture'
 
 export const CoachSection = () => {
