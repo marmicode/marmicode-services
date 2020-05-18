@@ -4,62 +4,6 @@ import React from 'react'
 import { Picture } from '../components/shared/picture'
 import Button from '@material-ui/core/Button'
 
-export function Hero() {
-  const { t } = useTranslation('landing')
-
-  return (
-    <div
-      css={{
-        position: 'absolute',
-        left: '6%',
-        top: '30%',
-      }}
-    >
-      <div
-        css={css({
-          color: 'white',
-          fontSize: '170%',
-          strong: {
-            textDecoration: 'underline',
-            textDecorationColor: '#5DB3AD',
-          },
-        })}
-      >
-        <h1>
-          <Trans i18nKey="hero.title" t={t} />
-        </h1>
-        <h2>{t('hero.subtitle')}</h2>
-        <div
-          css={{
-            width: '500px',
-            display: 'flex',
-            justifyContent: 'space-around',
-            margin: '5px',
-          }}
-        >
-          <Button variant="contained" size="large" color="primary">
-            WORKSHOP
-          </Button>
-          <Button variant="contained" size="large" color="primary">
-            COACHING
-          </Button>
-          <Button variant="contained" size="large" color="primary">
-            CODE REVIEW
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-//export function ServiceButton({ title }){
-//  return (
-//  <Button variant="contained" size="large" color="primary" css={{}}>
-//    {title}
-//  </Button>
-//  )
-//}
-
 export function Banner() {
   return (
     <div
@@ -77,5 +21,58 @@ export function Banner() {
       </div>
       <Hero />
     </div>
+  )
+}
+
+export function Hero() {
+  const { t } = useTranslation('landing')
+
+  return (
+    <div
+      css={{
+        position: 'absolute',
+        left: '6%',
+        top: '30%',
+      }}
+    >
+      <div
+        css={css({
+          color: 'white',
+          fontSize: '170%',
+        })}
+      >
+        <h1
+          css={css({
+            strong: {
+              textDecoration: 'underline',
+              textDecorationColor: '#5DB3AD',
+            },
+          })}
+        >
+          <Trans i18nKey="hero.title" t={t} />
+        </h1>
+        <h2>{t('hero.subtitle')}</h2>
+        <div
+          css={{
+            width: '500px',
+            display: 'flex',
+            justifyContent: 'space-around',
+            margin: '5px',
+          }}
+        >
+          <ServiceButton title={'WORKSHOP'} />
+          <ServiceButton title={'COACHING'} />
+          <ServiceButton title={'CODE REVIEW'} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function ServiceButton({ title }: { title: string }) {
+  return (
+    <Button variant="contained" size="large" color="primary">
+      {title}
+    </Button>
   )
 }

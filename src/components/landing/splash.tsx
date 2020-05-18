@@ -52,7 +52,7 @@ export const Splash = () => {
           />
         </Background>
         <div css={{ marginTop: '30vh' }}>
-          <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} />
+          <Hero />
         </div>
       </Parallax>
       <Slant />
