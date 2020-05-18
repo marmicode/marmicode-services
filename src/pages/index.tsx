@@ -8,7 +8,7 @@ import { SectionContainer } from '../components/landing/section-container'
 import { ServicesSection } from '../components/landing/services'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
-import { Picture } from '../components/shared/picture'
+import { Picture } from '../shared/picture'
 import { createGradient } from '../helpers/create-gradient'
 import { mediaDesktop } from '../helpers/media-selectors'
 
@@ -100,7 +100,7 @@ export const ContentSection = () => {
           target="_blank"
           key={content.title}
         >
-          <Picture path={content.picture} height={'100%'}></Picture>
+          <Picture path={content.picture} height={'100%'} />
           {/* Overlay. */}
           <div
             css={{

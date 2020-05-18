@@ -1,8 +1,8 @@
-import { Trans, useTranslation } from 'react-i18next'
 import { css } from '@emotion/core'
-import React from 'react'
-import { Picture } from '../components/shared/picture'
 import Button from '@material-ui/core/Button'
+import React from 'react'
+import { Trans, useTranslation } from 'react-i18next'
+import { Picture } from '../shared/picture'
 
 export function Banner() {
   return (

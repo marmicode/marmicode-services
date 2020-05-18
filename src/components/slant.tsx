@@ -24,7 +24,10 @@ const slantContainer = ({ height }: { height: number }) => {
   })
 }
 
-export const Slant = () => {
+/**
+ * @deprecated use new {@Link Slant} instead.
+ */
+export const LegacySlant = () => {
   const height = 100
   return (
     <div css={slantContainer({ height })}>

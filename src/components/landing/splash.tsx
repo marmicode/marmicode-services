@@ -5,7 +5,7 @@ import { Background, Parallax } from 'react-parallax'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
-import { Slant } from '../slant'
+import { LegacySlant } from '../slant'
 
 export const Splash = () => {
   const { t } = useTranslation('landing')
@@ -55,7 +55,7 @@ export const Splash = () => {
           <Hero />
         </div>
       </Parallax>
-      <Slant />
+      <LegacySlant />
     </div>
   )
 }
