@@ -46,7 +46,7 @@ export const CoachSection = () => {
           borderColor: 'white',
           borderStyle: 'solid',
           borderWidth: '1px',
-        }
+        },
       }}
     >
       <CoachPicture path={remark.frontmatter.picture} size={pictureSize} />
@@ -59,14 +59,14 @@ export const CoachSection = () => {
             left: 'calc(50% + 90px)',
             position: 'absolute',
             top: '-60px',
-          }
+          },
         }}
       >
         {remark.frontmatter.name}
       </h3>
 
-      { /* Coach container. */ }
-      <div css={{margin: '40px 0'}}>
+      {/* Coach container. */}
+      <div css={{ margin: '40px 0' }}>
         {remark.frontmatter.titles.map(title => (
           <h4
             css={{

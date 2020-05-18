@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { CoachSection } from '../components/landing/coach'
 import Layout from '../components/layout'
 import { Picture } from '../components/shared/picture'
 import Avatar from '@material-ui/core/Avatar'
@@ -33,7 +34,7 @@ export function ServiceCard({ title, picture, children }) {
           color="primary"
           css={{ margin: 'auto', width: '100%' }}
         >
-          See workshops
+          Learn more
         </Button>
       </CardActions>
     </Card>
@@ -60,7 +61,7 @@ export function PresentationCard() {
               <h2>Google Developers Experts</h2>
               <p>For angular and Web Technologies</p>
             </div>
-            <h2>eXtrem Programming Coach</h2>
+            <h2>eXtreme Programming Coach</h2>
           </div>
           <Picture path={'younes.jpg'} />
         </CardContent>
@@ -127,6 +128,9 @@ export default function LandingPage() {
           Coach
         </Typography>
         <PresentationCard></PresentationCard>
+        <div css={{ background: 'black' }}>
+          <CoachSection />
+        </div>
       </div>
     </Layout>
   )

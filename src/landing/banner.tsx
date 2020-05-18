@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { css } from '@emotion/core'
 import React from 'react'
 import { Picture } from '../components/shared/picture'
+import Button from '@material-ui/core/Button'
 
 export function Hero() {
   const { t } = useTranslation('landing')
@@ -27,10 +28,36 @@ export function Hero() {
       >
         <h1>{t('hero.title')}</h1>
         <h2>{t('hero.subtitle')}</h2>
+        <div
+          css={{
+            width: '500px',
+            display: 'flex',
+            justifyContent: 'space-around',
+            margin: '5px',
+          }}
+        >
+          <Button variant="contained" size="large" color="primary">
+            WORKSHOP
+          </Button>
+          <Button variant="contained" size="large" color="primary">
+            COACHING
+          </Button>
+          <Button variant="contained" size="large" color="primary">
+            CODE REVIEW
+          </Button>
+        </div>
       </div>
     </div>
   )
 }
+
+//export function ServiceButton({ title }){
+//  return (
+//  <Button variant="contained" size="large" color="primary" css={{}}>
+//    {title}
+//  </Button>
+//  )
+//}
 
 export function Banner() {
   return (
