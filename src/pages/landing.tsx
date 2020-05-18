@@ -10,8 +10,9 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { Picture } from '../components/shared/picture'
 import Avatar from '@material-ui/core/Avatar'
+import { Banner } from '../landing/banner'
 
-export function MediaCard({ title, picture, children }) {
+export function ServiceCard({ title, picture, children }) {
   return (
     <Card css={css({ flex: 1, minWidth: '300px' })}>
       <CardActionArea>
@@ -38,52 +39,8 @@ export function MediaCard({ title, picture, children }) {
     </Card>
   )
 }
-const underlineText = {
-  textDecoration: 'underline',
-  textDecorationColor: '#5DB3AD',
-}
 
-export function Hero() {
-  const { t } = useTranslation('landing')
-
-  const textStyle = css({
-    color: 'white',
-    position: 'absolute',
-    fontSize: '170%',
-    left: '6%',
-    top: '30%',
-  })
-
-  return (
-    <div css={{ marginTop: '30vh' }}>
-      <div css={textStyle}>
-        <h1>{t('hero.title')}</h1>
-        <h2>{t('hero.subtitle')}</h2>
-      </div>
-    </div>
-  )
-}
-
-export function Banner() {
-  return (
-    <div
-      css={css({
-        width: '100%',
-        height: 'calc(100vh - 60px)',
-      })}
-    >
-      <div css={css({ position: 'fixed', top: 0, zIndex: -1 })}>
-        <Picture
-          height={'100vh'}
-          width={'100vw'}
-          path={'cooking-pot-wide.jpg'}
-        />
-      </div>
-      <Hero />
-    </div>
-  )
-}
-export function SimpleCard() {
+export function PresentationCard() {
   return (
     <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
       <CardActionArea>
@@ -135,7 +92,7 @@ export default function LandingPage() {
             flexWrap: 'wrap',
           }}
         >
-          <MediaCard title={'WORKSHOPS'} picture={'landing/coaching.jpg'}>
+          <ServiceCard title={'WORKSHOPS'} picture={'landing/coaching.jpg'}>
             Our training is the opportunity to deep dive in some advanced
             topics:
             <li>JavaScript</li>
@@ -143,22 +100,22 @@ export default function LandingPage() {
             <li>Angular</li>
             <li>APIs ReST</li>
             <li>Agility & testing</li>
-          </MediaCard>
+          </ServiceCard>
 
-          <MediaCard title={'COACHING'} picture={'blog.png'}>
+          <ServiceCard title={'COACHING'} picture={'blog.png'}>
             To complement support
             <li>Resolve the difficulties encountered</li>
             <li>Advise (or help?) the company</li>
             <li>answer the questions</li>
-          </MediaCard>
+          </ServiceCard>
 
-          <MediaCard title={'CODE REVIEW'} picture={'blog.png'}>
+          <ServiceCard title={'CODE REVIEW'} picture={'blog.png'}>
             In addition to early detection of issues, bugs, security
             vulnerabilities, our Code Reviews will help your team:
             <li>Confidence, serenity and velocity</li>
             <li>Best practices and tools</li>
             <li>Stay up-to-date</li>
-          </MediaCard>
+          </ServiceCard>
         </div>
         <Typography
           variant="h2"
@@ -169,7 +126,7 @@ export default function LandingPage() {
         >
           Coach
         </Typography>
-        <SimpleCard></SimpleCard>
+        <PresentationCard></PresentationCard>
       </div>
     </Layout>
   )
