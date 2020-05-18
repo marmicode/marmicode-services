@@ -14,23 +14,30 @@ export function MediaCard() {
   return (
     <Card>
       <CardActionArea>
-        <Picture path={'blog.png'} />
-        <CardContent>
+        <CardContent css={{ textAlign: 'center' }}>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            WORKSHOPS
           </Typography>
+          <Picture path={'blog.png'} />
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            Our training is the opportunity to deep dive in some advanced
+            topics:
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>APIs ReST</li>
+            <li>Agility & testing</li>
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          css={{ margin: 'auto', width: '100%' }}
+        >
+          See workshops
         </Button>
       </CardActions>
     </Card>
@@ -41,15 +48,16 @@ export function Hero() {
   const textStyle = css({
     color: 'white',
     position: 'absolute',
-    left: '10%',
-    top: '30%',
+    fontSize: '2rem',
+    left: '6%',
+    top: '17%',
   })
 
   return (
     <div css={{ marginTop: '30vh' }}>
       <div css={textStyle}>
-        <h1>This is</h1>
-        <h2>Cool!</h2>
+        <h1>Cuisinons vos apps ensemble</h1>
+        <h2>Avec les meilleurs ingrédients</h2>
       </div>
     </div>
   )
