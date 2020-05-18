@@ -49,7 +49,7 @@ export function Hero() {
     position: 'absolute',
     fontSize: '170%',
     left: '6%',
-    top: '14%',
+    top: '30%',
   })
 
   return (
@@ -80,8 +80,8 @@ export function Banner() {
           width={'100vw'}
           path={'cooking-pot-wide.jpg'}
         />
-        <Hero />
       </div>
+      <Hero />
     </div>
   )
 }
