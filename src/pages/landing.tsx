@@ -19,7 +19,7 @@ export function MediaCard({ title, picture, children }) {
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Picture path={'blog.png'} />
+          <Picture path={picture} />
           <Typography variant="body2" color="textSecondary" component="p">
             {children}
           </Typography>
@@ -44,6 +44,8 @@ const underlineText = {
 }
 
 export function Hero() {
+  const { t } = useTranslation('landing')
+
   const textStyle = css({
     color: 'white',
     position: 'absolute',
@@ -55,12 +57,8 @@ export function Hero() {
   return (
     <div css={{ marginTop: '30vh' }}>
       <div css={textStyle}>
-        <h1>
-          <span>Cuisinons vos apps</span>
-          <span> </span>
-          <span css={underlineText}>ensemble</span>
-        </h1>
-        <h2>Avec les meilleurs ingrédients</h2>
+        <h1>{t('hero.title')}</h1>
+        <h2>{t('hero.subtitle')}</h2>
       </div>
     </div>
   )
@@ -91,8 +89,8 @@ export function SimpleCard() {
       <CardActionArea>
         <CardContent css={{ textAlign: 'center' }}>
           <Avatar alt="younes" src="blog.png" css={{ margin: 'auto' }} />
-          <Typography gutterBottom variant="h5" component="h2">
-            <h1>Younes Jaaidi</h1>
+          <Typography gutterBottom component="h1">
+            Younes Jaaidi
           </Typography>
           <div
             css={{

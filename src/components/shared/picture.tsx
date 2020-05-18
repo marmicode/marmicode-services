@@ -15,7 +15,7 @@ export const Picture = ({
 }) => {
   const data = useStaticQuery(graphql`
     query {
-      allFile(filter: { relativePath: { glob: "*.(jpg|png)" } }) {
+      allFile(filter: { relativePath: { glob: "**/*.(jpg|png)" } }) {
         edges {
           node {
             relativePath
@@ -29,6 +29,8 @@ export const Picture = ({
       }
     }
   `)
+
+  console.log(data)
 
   const fileEdge = data.allFile.edges.find(
     ({ node }) => node.relativePath === path
