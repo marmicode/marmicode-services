@@ -149,11 +149,7 @@ export const IndexPage = () => {
       </SectionContainer>
 
       {/* Coach. */}
-      <SectionContainer
-        hasBackground={true}
-        hasSlant={true}
-        title={t('sections.coach')}
-      >
+      <SectionContainer hasBackground={true} title={t('sections.coach')}>
         <CoachSection />
       </SectionContainer>
 
@@ -167,16 +163,16 @@ export const IndexPage = () => {
       </SectionContainer>
 
       {/* Content & publications. */}
-      <SectionContainer
-        hasBackground={true}
-        hasSlant={true}
-        title={t('sections.content')}
-      >
+      <SectionContainer hasBackground={true} title={t('sections.content')}>
         <ContentSection />
       </SectionContainer>
 
       {/* Contact. */}
-      <SectionContainer hasBackground={false} title={t('sections.contact')}>
+      <SectionContainer
+        hasBackground={false}
+        hasSlant={true}
+        title={t('sections.contact')}
+      >
         <ContactSection />
       </SectionContainer>
     </Layout>

@@ -55,7 +55,6 @@ export const Splash = () => {
           <Hero />
         </div>
       </Parallax>
-      <LegacySlant />
     </div>
   )
 }
