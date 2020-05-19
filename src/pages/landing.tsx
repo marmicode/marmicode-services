@@ -1,14 +1,11 @@
 import { css } from '@emotion/core'
-import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { CoachSection } from '../components/landing/coach'
 import Layout from '../components/layout'
 import { Banner } from '../landing/banner'
 import { Picture } from '../shared/picture'
@@ -91,6 +88,85 @@ export function ServiceCard({ title, picture, children }) {
   )
 }
 
+export function PresentationCard() {
+  return (
+    <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
+      <CardContent css={{ textAlign: 'center' }}>
+        <Picture path={'younes.jpg'} css={{ borderRadius: '50px' }} />
+        <Typography gutterBottom component="h1">
+          Younes Jaaidi
+        </Typography>
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div>
+            <h2>Google Developers Experts</h2>
+            <p>For angular and Web Technologies</p>
+          </div>
+          <h2>eXtreme Programming Coach</h2>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+//export default function () {
+//  const classes = useStyles();
+//  const bull = <span className={classes.bullet}>•</span>;
+
+//  return (
+//    <Card className={classes.root}>
+//  <CardContent>
+//       <Typography className={classes.title} color="textSecondary" gutterBottom>
+//          Word of the Day
+//        </Typography>
+//        <Typography variant="h5" component="h2">
+//          be{bull}nev{bull}o{bull}lent
+//        </Typography>
+//        <Typography className={classes.pos} color="textSecondary">
+//          adjective
+//        </Typography>
+//        <Typography variant="body2" component="p">
+//          well meaning and kindly.
+//          <br />
+//          {'"a benevolent smile"'}
+//        </Typography>
+//      </CardContent>
+//      <CardActions>
+//        <Button size="small">Learn More</Button>
+//      </CardActions>
+//    </Card>
+//  );
+//}
+export function PublicationSection() {
+  return (
+    <div css={{ display: 'flex', flexDirection: 'row' }}>
+      <Picture
+        path={'landing/talk1.png'}
+        css={{ height: '40%', width: '40%' }}
+      />
+      <Picture
+        path={'landing/talk1.png'}
+        css={{ height: '120px', width: 'auto;' }}
+      />
+    </div>
+  )
+}
+
+export function TalkSection() {
+  return (
+    <Card>
+      <CardContent>
+        <picture path={'landing/talk1.png'} />
+      </CardContent>
+    </Card>
+  )
+}
+
 export default function LandingPage() {
   const { t } = useTranslation('landing')
 
@@ -151,37 +227,19 @@ export default function LandingPage() {
         >
           Coach
         </Typography>
-        <CoachSection />
+        <PresentationCard />
+        <DottyLine />
+        <Typography
+          variant="h2"
+          component="h2"
+          gutterBottom
+          color={'primary'}
+          style={{ margin: '30px' }}
+        >
+          Talks & publications
+        </Typography>
       </div>
     </Layout>
-  )
-}
-export function PresentationCard() {
-  return (
-    <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
-      <CardActionArea>
-        <CardContent css={{ textAlign: 'center' }}>
-          <Avatar alt="younes" src="blog.png" css={{ margin: 'auto' }} />
-          <Typography gutterBottom component="h1">
-            Younes Jaaidi
-          </Typography>
-          <div
-            css={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              <h2>Google Developers Experts</h2>
-              <p>For angular and Web Technologies</p>
-            </div>
-            <h2>eXtreme Programming Coach</h2>
-          </div>
-          <Picture path={'younes.jpg'} />
-        </CardContent>
-      </CardActionArea>
-    </Card>
   )
 }
 
@@ -202,7 +260,7 @@ export function PresentationCard() {
 
 // export const LandingPage = () => {
 //   return (
-// <section>
+//     // <section>
 //     //   <Title name={'jacques'}></Title>
 //     //   <Title name={'bernard'}></Title>
 //     //   <p css={redTextClass}>bonjour à tous</p>
