@@ -11,6 +11,8 @@ import { Banner } from '../landing/banner'
 import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
+import { AppBar, IconButton } from '@material-ui/core'
+import Toolbar from '@material-ui/core/Toolbar'
 
 export function DottyLine() {
   const width = 60
@@ -281,10 +283,10 @@ export default function LandingPage() {
             flexWrap: 'wrap',
           })}
         >
-          <PublicationSection picture={'blog.png'}>
+          <PublicationSection picture={'landing/blog.png'}>
             Bonjour je test 3
           </PublicationSection>
-          <PublicationSection picture={'recipes.png'}>
+          <PublicationSection picture={'landing/recipes.png'}>
             Bonjour je test 4
           </PublicationSection>
         </div>
@@ -300,11 +302,52 @@ export default function LandingPage() {
         >
           See more content
         </Button>
+        <div>
+          <Footer />
+        </div>
       </div>
     </Layout>
   )
 }
 
+export function Footer() {
+  return (
+    <div css={{ marginTop: '25px' }}>
+      <AppBar position="static">
+        <Toolbar css={{ backgroundColor: 'white', color: 'black' }}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+          ></IconButton>
+          <Typography variant="h6">Marmicode</Typography>
+          <div
+            css={{
+              display: 'flex',
+              flex: 1,
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            }}
+          >
+            <div>
+              <h2>CONTACT</h2>
+              <p>younes@marmicode.io</p>
+              <p>+33 (0) 4 26 83 61 92 </p>
+            </div>
+            <div>
+              <h2>INFORMATIONS</h2>
+              <p>Plan du site</p>
+            </div>
+            <div>
+              <h2>MENU</h2>
+              <p>Home</p>
+            </div>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  )
+}
 //export default function Button() {
 // return (
 //    <Button variant="contained" size="large" color="primary">
@@ -327,25 +370,5 @@ export default function LandingPage() {
 //     //   <Title name={'bernard'}></Title>
 //     //   <p css={redTextClass}>bonjour à tous</p>
 //     //   <p>novfozoio</p>
-
-//     // </section>
-//     <AppBar position="static">
-//       <Toolbar>
-//         <IconButton
-//           edge="start"
-//           className={classes.menuButton}
-//           color="inherit"
-//           aria-label="menu"
-//         >
-//           <MenuIcon />
-//         </IconButton>
-//         <Typography variant="h6" className={classes.title}>
-//           News
-//         </Typography>
-//         <Button color="inherit">Login</Button>
-//       </Toolbar>
-//     </AppBar>
-//   )
-// }
 
 // export default LandingPage
