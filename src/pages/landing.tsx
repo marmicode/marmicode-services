@@ -15,24 +15,24 @@ import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 
 export function DottyLine() {
-  const width = 100
+  const width = 60
   const style = css({
     borderBottom: '3px solid',
     float: 'left',
-    margin: '0 10px',
+    margin: '20px 5px',
   })
 
   const itemList = [
     {
-      color: 'blue',
+      color: '#380030',
       width,
     },
     {
-      color: 'orange',
+      color: '#600053',
       width: width / 2,
     },
     {
-      color: 'red',
+      color: '#810070',
       width: width / 4,
     },
   ]
@@ -91,6 +91,71 @@ export function ServiceCard({ title, picture, children }) {
   )
 }
 
+export default function LandingPage() {
+  const { t } = useTranslation('landing')
+
+  return (
+    <Layout title={t('title')}>
+      <Banner />
+      <div css={css({ position: 'relative', backgroundColor: 'white' })}>
+        <TopLeftSlant />
+        <DottyLine />
+        <Typography
+          variant="h2"
+          component="h2"
+          gutterBottom
+          color={'primary'}
+          style={{ padding: '30px' }}
+        >
+          Services
+        </Typography>
+        <div
+          css={css({
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          })}
+        >
+          <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
+            Our training is the opportunity to deep dive in some advanced
+            topics:
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>APIs ReST</li>
+            <li>Agility & testing</li>
+          </ServiceCard>
+
+          <ServiceCard title={'COACHING'} picture={'landing/coaching.jpg'}>
+            To complement support
+            <li>Resolve the difficulties encountered</li>
+            <li>Advise (or help?) the company</li>
+            <li>answer the questions</li>
+          </ServiceCard>
+
+          <ServiceCard title={'CODE REVIEW'} picture={'landing/codereview.jpg'}>
+            In addition to early detection of issues, bugs, security
+            vulnerabilities, our Code Reviews will help your team:
+            <li>Confidence, serenity and velocity</li>
+            <li>Best practices and tools</li>
+            <li>Stay up-to-date</li>
+          </ServiceCard>
+        </div>
+        <DottyLine />
+        <Typography
+          variant="h2"
+          component="h2"
+          gutterBottom
+          color={'primary'}
+          style={{ margin: '30px' }}
+        >
+          Coach
+        </Typography>
+        <CoachSection />
+      </div>
+    </Layout>
+  )
+}
 export function PresentationCard() {
   return (
     <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
@@ -120,74 +185,6 @@ export function PresentationCard() {
   )
 }
 
-export default function LandingPage() {
-  const { t } = useTranslation('landing')
-
-  return (
-    <Layout title={t('title')}>
-      <Banner />
-      <div css={css({ position: 'relative', backgroundColor: 'white' })}>
-        <TopLeftSlant />
-        <DottyLine />
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color={'primary'}
-          style={{ padding: '20px' }}
-        >
-          Services
-        </Typography>
-        <div
-          css={css({
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          })}
-        >
-          <ServiceCard title={'WORKSHOPS'} picture={'landing/coaching.jpg'}>
-            Our training is the opportunity to deep dive in some advanced
-            topics:
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>Angular</li>
-            <li>APIs ReST</li>
-            <li>Agility & testing</li>
-          </ServiceCard>
-
-          <ServiceCard title={'COACHING'} picture={'blog.png'}>
-            To complement support
-            <li>Resolve the difficulties encountered</li>
-            <li>Advise (or help?) the company</li>
-            <li>answer the questions</li>
-          </ServiceCard>
-
-          <ServiceCard title={'CODE REVIEW'} picture={'blog.png'}>
-            In addition to early detection of issues, bugs, security
-            vulnerabilities, our Code Reviews will help your team:
-            <li>Confidence, serenity and velocity</li>
-            <li>Best practices and tools</li>
-            <li>Stay up-to-date</li>
-          </ServiceCard>
-        </div>
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color={'primary'}
-          style={{ margin: '20px' }}
-        >
-          Coach
-        </Typography>
-        <PresentationCard></PresentationCard>
-        <div css={{ background: 'black' }}>
-          <CoachSection />
-        </div>
-      </div>
-    </Layout>
-  )
-}
-
 //export default function Button() {
 // return (
 //    <Button variant="contained" size="large" color="primary">
@@ -205,7 +202,7 @@ export default function LandingPage() {
 
 // export const LandingPage = () => {
 //   return (
-//     // <section>
+// <section>
 //     //   <Title name={'jacques'}></Title>
 //     //   <Title name={'bernard'}></Title>
 //     //   <p css={redTextClass}>bonjour à tous</p>

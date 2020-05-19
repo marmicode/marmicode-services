@@ -32,7 +32,7 @@ export const CoachSection = () => {
   return (
     <section
       css={{
-        color: 'white',
+        color: 'black',
         fontFamily: 'Raleway',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -43,16 +43,16 @@ export const CoachSection = () => {
         paddingRight: '20px',
         position: 'relative',
         [mediaDesktop]: {
-          borderColor: 'white',
+          borderColor: '#5DB3AD',
           borderStyle: 'solid',
-          borderWidth: '1px',
+          borderWidth: '5px',
         },
       }}
     >
       <CoachPicture path={remark.frontmatter.picture} size={pictureSize} />
       <h3
         css={{
-          color: 'white',
+          color: '#5DB3AD',
           fontWeight: 800,
           fontSize: '1.5em',
           [mediaDesktop]: {
