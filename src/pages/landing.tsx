@@ -94,23 +94,24 @@ export function ServiceCard({ title, picture, children }) {
 export function PresentationCard() {
   return (
     <Person
-      borderColor={'secondary'}
-      name={'Foo BAR'}
+      borderColor={'#5DB3AD'}
+      name={'Younes Jaaidi'}
       picturePath={'younes.jpg'}
     >
       <div
         css={{
           display: 'flex',
           justifyContent: 'space-between',
-          padding: '0px',
+          padding: '5px',
         }}
       >
         <div>
-          <h2>Google Developers Experts</h2>
+          <h3>Google Developers Experts</h3>
           <p>For angular and Web Technologies</p>
         </div>
+        <div />
         <div>
-          <h2>eXtrem Programming Coach</h2>
+          <h3>eXtrem Programming Coach</h3>
         </div>
       </div>
       <div
@@ -189,79 +190,81 @@ export function PublicationSection({ picture, children }) {
 //  )
 //}
 
-export default function LandingPage() {
-  const { t } = useTranslation('landing')
-
+export function LandingSection({
+  children,
+  title,
+}: {
+  children
+  title: string
+}) {
   return (
-    <Layout title={t('title')}>
-      <Banner />
-      <div css={css({ position: 'relative', backgroundColor: 'white' })}>
-        <TopLeftSlant />
-        <DottyLine />
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color={'primary'}
-          style={{ padding: '30px' }}
-        >
-          Services
-        </Typography>
-        <div
-          css={css({
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          })}
-        >
-          <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
-            Our training is the opportunity to deep dive in some advanced
-            topics:
-            <li>JavaScript</li>
-            <li>TypeScript</li>
-            <li>Angular</li>
-            <li>APIs ReST</li>
-            <li>Agility & testing</li>
-          </ServiceCard>
-
-          <ServiceCard title={'COACHING'} picture={'landing/coaching.jpg'}>
-            To complement support
-            <li>Resolve the difficulties encountered</li>
-            <li>Advise (or help?) the company</li>
-            <li>answer the questions</li>
-          </ServiceCard>
-
-          <ServiceCard title={'CODE REVIEW'} picture={'landing/codereview.jpg'}>
-            In addition to early detection of issues, bugs, security
-            vulnerabilities, our Code Reviews will help your team:
-            <li>Confidence, serenity and velocity</li>
-            <li>Best practices and tools</li>
-            <li>Stay up-to-date</li>
-          </ServiceCard>
-        </div>
-        <DottyLine />
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color={'primary'}
-          style={{ margin: '30px' }}
-        >
-          Coach
-        </Typography>
-        <PresentationCard />
+    <section
+      css={css({
+        position: 'relative',
+        backgroundColor: 'white',
+        paddingTop: '20px',
+      })}
+    >
+      <DottyLine />
+      <Typography
+        variant="h2"
+        component="h2"
+        gutterBottom
+        color={'primary'}
+        style={{ padding: '30px' }}
+      >
+        {title}
+      </Typography>
+      <div
+        css={css({
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          marginTop: '20px',
+        })}
+      >
+        {children}
       </div>
-      <div css={{ backgroundColor: 'white' }}>
-        <DottyLine />
-        <Typography
-          variant="h2"
-          component="h2"
-          gutterBottom
-          color={'primary'}
-          style={{ margin: '30px' }}
-        >
-          Talks & publications
-        </Typography>
+    </section>
+  )
+}
+
+export function ServicesSection() {
+  return (
+    <LandingSection title={'Services'}>
+      <TopLeftSlant />
+
+      <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
+        Our training is the opportunity to deep dive in some advanced topics:
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Angular</li>
+        <li>APIs ReST</li>
+        <li>Agility & testing</li>
+      </ServiceCard>
+
+      <ServiceCard title={'COACHING'} picture={'landing/coaching.jpg'}>
+        To complement support
+        <li>Resolve the difficulties encountered</li>
+        <li>Advise (or help?) the company</li>
+        <li>answer the questions</li>
+      </ServiceCard>
+
+      <ServiceCard title={'CODE REVIEW'} picture={'landing/codereview.jpg'}>
+        In addition to early detection of issues, bugs, security
+        vulnerabilities, our Code Reviews will help your team:
+        <li>Confidence, serenity and velocity</li>
+        <li>Best practices and tools</li>
+        <li>Stay up-to-date</li>
+      </ServiceCard>
+    </LandingSection>
+  )
+}
+
+export function TalksSection() {
+  return (
+    <LandingSection title={'Talks & publications'}>
+      <div css={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <div
           css={css({
             display: 'flex',
@@ -290,6 +293,7 @@ export default function LandingPage() {
             Bonjour je test 4
           </PublicationSection>
         </div>
+
         <Button
           variant="contained"
           size="large"
@@ -302,50 +306,59 @@ export default function LandingPage() {
         >
           See more content
         </Button>
-        <div>
-          <Footer />
-        </div>
       </div>
+    </LandingSection>
+  )
+}
+
+export default function LandingPage() {
+  const { t } = useTranslation('landing')
+
+  return (
+    <Layout title={t('title')}>
+      <Banner />
+      <ServicesSection />
+      <LandingSection title={'coach'}>
+        <PresentationCard />
+      </LandingSection>
+      <TalksSection />
+      <Footer />
     </Layout>
   )
 }
 
 export function Footer() {
   return (
-    <div css={{ marginTop: '25px' }}>
-      <AppBar position="static">
-        <Toolbar css={{ backgroundColor: 'white', color: 'black' }}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          ></IconButton>
-          <Typography variant="h6">Marmicode</Typography>
-          <div
-            css={{
-              display: 'flex',
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-            }}
-          >
-            <div>
-              <h2>CONTACT</h2>
-              <p>younes@marmicode.io</p>
-              <p>+33 (0) 4 26 83 61 92 </p>
-            </div>
-            <div>
-              <h2>INFORMATIONS</h2>
-              <p>Plan du site</p>
-            </div>
-            <div>
-              <h2>MENU</h2>
-              <p>Home</p>
-            </div>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <footer
+      css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
+    >
+      <IconButton edge="start" color="inherit" aria-label="menu" />
+      <Picture width={'130px'} path={'icon.png'} />
+      <div
+        css={{
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+        }}
+      >
+        <div>
+          <h2>CONTACT</h2>
+          <p>younes@marmicode.io</p>
+          <p>+33 (0) 4 26 83 61 92 </p>
+        </div>
+        <div>
+          <h2>INFORMATIONS</h2>
+          <p>Site map</p>
+          <p>Privacy policy</p>
+          <p>Personal data</p>
+        </div>
+        <div>
+          <h2>MENU</h2>
+          <p>Home</p>
+        </div>
+      </div>
+    </footer>
   )
 }
 //export default function Button() {
