@@ -91,7 +91,11 @@ export function ServiceCard({ title, picture, children }) {
 
 export function PresentationCard() {
   return (
-    <Person borderColor={'#5DB3AD'} name={'Foo BAR'} picturePath={'younes.jpg'}>
+    <Person
+      borderColor={'secondary'}
+      name={'Foo BAR'}
+      picturePath={'younes.jpg'}
+    >
       <div
         css={{
           display: 'flex',
@@ -263,10 +267,10 @@ export default function LandingPage() {
             flexWrap: 'wrap',
           })}
         >
-          <PublicationSection picture={'blog.png'}>
+          <PublicationSection picture={'landing/talk1.png'}>
             Bonjour je test
           </PublicationSection>
-          <PublicationSection picture={'blog.png'}>
+          <PublicationSection picture={'landing/talk2.png'}>
             Bonjour je test 2
           </PublicationSection>
         </div>
@@ -280,7 +284,7 @@ export default function LandingPage() {
           <PublicationSection picture={'blog.png'}>
             Bonjour je test 3
           </PublicationSection>
-          <PublicationSection picture={'blog.png'}>
+          <PublicationSection picture={'recipes.png'}>
             Bonjour je test 4
           </PublicationSection>
         </div>
