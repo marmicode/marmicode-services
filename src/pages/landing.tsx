@@ -14,11 +14,44 @@ import { Banner } from '../landing/banner'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 
-export function dottyLine() {
+export function DottyLine() {
+  const width = 100
+  const style = css({
+    borderBottom: '3px solid',
+    float: 'left',
+    margin: '0 10px',
+  })
+
+  const itemList = [
+    {
+      color: 'blue',
+      width,
+    },
+    {
+      color: 'orange',
+      width: width / 2,
+    },
+    {
+      color: 'red',
+      width: width / 4,
+    },
+  ]
+
   return (
-    <div css={css({width})}/>
-    <div/>
-    <div/>
+    <div>
+      {itemList.map((item, index) => (
+        <div
+          key={index}
+          css={[
+            style,
+            css({
+              borderBottomColor: item.color,
+              width: `${item.width}px`,
+            }),
+          ]}
+        />
+      ))}
+    </div>
   )
 }
 
@@ -95,6 +128,7 @@ export default function LandingPage() {
       <Banner />
       <div css={css({ position: 'relative', backgroundColor: 'white' })}>
         <TopLeftSlant />
+        <DottyLine />
         <Typography
           variant="h2"
           component="h2"
