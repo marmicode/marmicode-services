@@ -121,31 +121,29 @@ export function PresentationCard() {
       </div>
     </Person>
   )
-  // return (
-  //   <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
-  //     <CardContent css={{ textAlign: 'center' }}>
-  //       <Picture path={'younes.jpg'} css={{ borderRadius: '50px' }} />
-  //       <Typography gutterBottom component="h1">
-  //         Younes Jaaidi
-  //       </Typography>
-  //       <div
-  //         css={{
-  //           display: 'flex',
-  //           flexDirection: 'row',
-  //           justifyContent: 'space-between',
-  //         }}
-  //       >
-  //         <div>
-  //           <h2>Google Developers Experts</h2>
-  //           <p>For angular and Web Technologies</p>
-  //         </div>
-  //         <h2>eXtreme Programming Coach</h2>
-  //       </div>
-  //     </CardContent>
-  //   </Card>
-  // )
 }
-
+export function PublicationSection({ picture, children }) {
+  return (
+    <Card
+      elevation={10}
+      css={css({
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        margin: '20px',
+        minWidth: '300px',
+      })}
+    >
+      <CardContent css={{ textAlign: 'center' }}>
+        <Picture path={picture} />
+        <Typography variant="body2" color="textSecondary" component="p">
+          {children}
+        </Typography>
+      </CardContent>
+      <div css={css({ flex: 1 })} />
+    </Card>
+  )
+}
 //export default function () {
 //  const classes = useStyles();
 //  const bull = <span className={classes.bullet}>•</span>;
@@ -174,30 +172,16 @@ export function PresentationCard() {
 //    </Card>
 //  );
 //}
-export function PublicationSection() {
-  return (
-    <div css={{ display: 'flex', flexDirection: 'row' }}>
-      <Picture
-        path={'landing/talk1.png'}
-        css={{ height: '40%', width: '40%' }}
-      />
-      <Picture
-        path={'landing/talk1.png'}
-        css={{ height: '120px', width: 'auto;' }}
-      />
-    </div>
-  )
-}
 
-export function TalkSection() {
-  return (
-    <Card>
-      <CardContent>
-        <picture path={'landing/talk1.png'} />
-      </CardContent>
-    </Card>
-  )
-}
+//export function TalkSection() {
+//  return (
+//    <Card>
+//      <CardContent>
+//        <picture path={'landing/talk1.png'} />
+//      </CardContent>
+//    </Card>
+//  )
+//}
 
 export default function LandingPage() {
   const { t } = useTranslation('landing')
@@ -260,6 +244,8 @@ export default function LandingPage() {
           Coach
         </Typography>
         <PresentationCard />
+      </div>
+      <div css={{ backgroundColor: 'white' }}>
         <DottyLine />
         <Typography
           variant="h2"
@@ -270,6 +256,46 @@ export default function LandingPage() {
         >
           Talks & publications
         </Typography>
+        <div
+          css={css({
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          })}
+        >
+          <PublicationSection picture={'blog.png'}>
+            Bonjour je test
+          </PublicationSection>
+          <PublicationSection picture={'blog.png'}>
+            Bonjour je test 2
+          </PublicationSection>
+        </div>
+        <div
+          css={css({
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          })}
+        >
+          <PublicationSection picture={'blog.png'}>
+            Bonjour je test 3
+          </PublicationSection>
+          <PublicationSection picture={'blog.png'}>
+            Bonjour je test 4
+          </PublicationSection>
+        </div>
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          css={{
+            width: '30%',
+            display: 'flex',
+            margin: 'auto',
+          }}
+        >
+          See more content
+        </Button>
       </div>
     </Layout>
   )
