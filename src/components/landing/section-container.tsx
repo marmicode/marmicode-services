@@ -3,7 +3,7 @@ import React from 'react'
 import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { BottomSlant, TopSlant } from '../../shared/slant'
+import { BottomRightSlant, TopLeftSlant } from '../../shared/slant'
 
 export interface SectionData {
   title: string
@@ -85,10 +85,10 @@ export const SectionContainer = ({
         ...backgroundStyle,
       })}
     >
-      {hasSlant && <TopSlant />}
+      {hasSlant && <TopLeftSlant />}
       <SectionTitle hasBackground={hasBackground} title={title} />
       {children}
-      {hasSlant && <BottomSlant />}
+      {hasSlant && <BottomRightSlant />}
     </section>
   )
 }

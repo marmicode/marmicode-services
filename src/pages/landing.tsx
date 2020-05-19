@@ -12,7 +12,7 @@ import Layout from '../components/layout'
 import { Picture } from '../shared/picture'
 import Avatar from '@material-ui/core/Avatar'
 import { Banner } from '../landing/banner'
-import { TopSlant } from '../shared/slant'
+import { TopLeftSlant, TopRightSlant } from '../shared/slant'
 
 export function ServiceCard({ title, picture, children }) {
   return (
@@ -77,8 +77,8 @@ export default function LandingPage() {
   return (
     <Layout title={t('title')}>
       <Banner />
-      <div css={css({ backgroundColor: 'white' })}>
-        <TopSlant />
+      <div css={css({ position: 'relative', backgroundColor: 'white' })}>
+        <TopLeftSlant />
         <Typography
           variant="h2"
           component="h2"

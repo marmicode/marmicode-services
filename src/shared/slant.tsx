@@ -1,29 +1,32 @@
 import { css } from '@emotion/core'
 import React from 'react'
 
-export function TopSlant() {
-  const height = '5vh'
-  return (
-    <_Slant
-      height={height}
-      points={'0,100 100,0 100,100'}
-      style={{ top: `-${height}` }}
-    />
-  )
+export function TopLeftSlant() {
+  return <_Slant points={'0,0 0,100 100,100'} position={'top'} />
+}
+export function TopRightSlant() {
+  return <_Slant points={'0,100 100,0 100,100'} position={'top'} />
 }
 
-export function BottomSlant() {
-  const height = '5vh'
-  return (
-    <_Slant
-      height={height}
-      points={'0,0 100,0 0,100'}
-      style={{ bottom: `-${height}` }}
-    />
-  )
+export function BottomRightSlant() {
+  return <_Slant points={'0,0 100,0 0,100'} position={'bottom'} />
 }
 
-export function _Slant({ height, points, style }) {
+export function BottomLeftSlant() {
+  return <_Slant points={'0,0 0,100 100,0'} position={'bottom'} />
+}
+
+export function _Slant({ points, position }) {
+  const height = '5vh'
+  const style =
+    position === 'top'
+      ? {
+          top: `-${height}`,
+        }
+      : {
+          bottom: `-${height}`,
+        }
+
   return (
     <svg
       css={css({
