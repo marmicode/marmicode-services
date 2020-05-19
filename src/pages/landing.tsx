@@ -1,4 +1,5 @@
 import { css } from '@emotion/core'
+import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -9,25 +10,40 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { CoachSection } from '../components/landing/coach'
 import Layout from '../components/layout'
-import { Picture } from '../shared/picture'
-import Avatar from '@material-ui/core/Avatar'
 import { Banner } from '../landing/banner'
-import { TopLeftSlant, TopRightSlant } from '../shared/slant'
+import { Picture } from '../shared/picture'
+import { TopLeftSlant } from '../shared/slant'
+
+export function dottyLine() {
+  return (
+    <div css={css({width})}/>
+    <div/>
+    <div/>
+  )
+}
 
 export function ServiceCard({ title, picture, children }) {
   return (
-    <Card css={css({ flex: 1, minWidth: '300px' })}>
-      <CardActionArea>
-        <CardContent css={{ textAlign: 'center' }}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Picture path={picture} />
-          <Typography variant="body2" color="textSecondary" component="p">
-            {children}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+    <Card
+      elevation={10}
+      css={css({
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        margin: '20px',
+        minWidth: '300px',
+      })}
+    >
+      <CardContent css={{ textAlign: 'center' }}>
+        <Typography gutterBottom variant="h5" component="h2">
+          {title}
+        </Typography>
+        <Picture path={picture} />
+        <Typography variant="body2" color="textSecondary" component="p">
+          {children}
+        </Typography>
+      </CardContent>
+      <div css={css({ flex: 1 })} />
       <CardActions>
         <Button
           variant="contained"
@@ -89,11 +105,11 @@ export default function LandingPage() {
           Services
         </Typography>
         <div
-          css={{
+          css={css({
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
-          }}
+          })}
         >
           <ServiceCard title={'WORKSHOPS'} picture={'landing/coaching.jpg'}>
             Our training is the opportunity to deep dive in some advanced
