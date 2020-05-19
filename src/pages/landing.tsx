@@ -91,8 +91,34 @@ export function ServiceCard({ title, picture, children }) {
 
 export function PresentationCard() {
   return (
-    <Person borderColor={'blue'} name={'Foo BAR'} picturePath={'younes.jpg'}>
-      <div>test</div>
+    <Person borderColor={'#5DB3AD'} name={'Foo BAR'} picturePath={'younes.jpg'}>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '0px',
+        }}
+      >
+        <div>
+          <h2>Google Developers Experts</h2>
+          <p>For angular and Web Technologies</p>
+        </div>
+        <div>
+          <h2>eXtrem Programming Coach</h2>
+        </div>
+      </div>
+      <div
+        css={{
+          border: 'solid 2px black',
+          width: '500px',
+          height: '200px',
+          margin: 'auto',
+          marginBottom: '20px',
+          textAlign: 'center',
+        }}
+      >
+        Vidéo
+      </div>
     </Person>
   )
   // return (

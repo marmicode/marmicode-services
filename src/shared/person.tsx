@@ -22,14 +22,14 @@ export function Person({
         marginRight: 'auto',
         marginTop: `${20 + pictureSize / 2}px`,
         maxWidth: '800px',
-        paddingTop: `${pictureSize / 2}px`,
+        paddingTop: '10px',
         paddingLeft: '20px',
         paddingRight: '20px',
         position: 'relative',
         [mediaDesktop]: {
           borderColor: borderColor,
           borderStyle: 'solid',
-          borderWidth: '1px',
+          borderWidth: '4px',
         },
       }}
     >
