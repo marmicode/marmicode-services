@@ -8,6 +8,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { Banner } from '../landing/banner'
+import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 
@@ -90,28 +91,33 @@ export function ServiceCard({ title, picture, children }) {
 
 export function PresentationCard() {
   return (
-    <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
-      <CardContent css={{ textAlign: 'center' }}>
-        <Picture path={'younes.jpg'} css={{ borderRadius: '50px' }} />
-        <Typography gutterBottom component="h1">
-          Younes Jaaidi
-        </Typography>
-        <div
-          css={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
-          <div>
-            <h2>Google Developers Experts</h2>
-            <p>For angular and Web Technologies</p>
-          </div>
-          <h2>eXtreme Programming Coach</h2>
-        </div>
-      </CardContent>
-    </Card>
+    <Person borderColor={'blue'} name={'Foo BAR'} picturePath={'younes.jpg'}>
+      <div>test</div>
+    </Person>
   )
+  // return (
+  //   <Card css={css({ width: '60%', margin: 'auto', border: 'solid #5DB3AD' })}>
+  //     <CardContent css={{ textAlign: 'center' }}>
+  //       <Picture path={'younes.jpg'} css={{ borderRadius: '50px' }} />
+  //       <Typography gutterBottom component="h1">
+  //         Younes Jaaidi
+  //       </Typography>
+  //       <div
+  //         css={{
+  //           display: 'flex',
+  //           flexDirection: 'row',
+  //           justifyContent: 'space-between',
+  //         }}
+  //       >
+  //         <div>
+  //           <h2>Google Developers Experts</h2>
+  //           <p>For angular and Web Technologies</p>
+  //         </div>
+  //         <h2>eXtreme Programming Coach</h2>
+  //       </div>
+  //     </CardContent>
+  //   </Card>
+  // )
 }
 
 //export default function () {
