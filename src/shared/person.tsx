@@ -1,6 +1,5 @@
 import { marmicodeSecondaryColor } from '../config/config'
 import { theme } from '../config/theme'
-import { mediaDesktop } from '../helpers/media-selectors'
 import { Picture } from './picture'
 
 export function Person({
@@ -12,6 +11,7 @@ export function Person({
   name: string
   picturePath: string
 }) {
+  const borderWidth = 3
   const borderColor = marmicodeSecondaryColor
   const pictureSize = 160
 
@@ -19,8 +19,8 @@ export function Person({
     <section
       css={{
         fontFamily: 'Raleway',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        marginLeft: '20px',
+        marginRight: '20px',
         marginTop: `${20 + pictureSize / 2}px`,
         paddingTop: '10px',
         paddingLeft: '20px',
@@ -28,11 +28,18 @@ export function Person({
         position: 'relative',
         borderColor,
         borderStyle: 'solid',
-        borderWidth: '3px',
+        borderWidth: `${borderWidth}px`,
+        width: '100%',
+        maxWidth: '800px',
+        [theme.breakpoints.up('md')]: {
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        },
       }}
     >
       <PersonPicture
         borderColor={borderColor}
+        borderWidth={borderWidth}
         path={picturePath}
         size={pictureSize}
       />
@@ -57,10 +64,12 @@ export function Person({
 
 export function PersonPicture({
   borderColor,
+  borderWidth,
   path,
   size,
 }: {
   borderColor: string
+  borderWidth: number
   path: string
   size: number
 }) {
@@ -69,13 +78,16 @@ export function PersonPicture({
       css={{
         position: 'absolute',
         boxSizing: 'border-box',
-        top: `-${size / 2}px`,
-        left: `calc(50% - ${size / 2}px)`,
+        top: `-${borderWidth + size / 2}px`,
+        right: `-${borderWidth}px`,
+        [theme.breakpoints.up('md')]: {
+          left: `calc(50% - ${size / 2}px)`,
+        },
       }}
     >
       <Picture
         borderColor={borderColor}
-        borderWidth={'2px'}
+        borderWidth={`${borderWidth}px`}
         isCircle={true}
         path={path}
         width={`${size}px`}
