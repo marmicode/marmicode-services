@@ -10,19 +10,28 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Button from '@material-ui/core/Button'
+import { DottyLine, LandingSection } from './landing'
 
 export default function WorkshopPage() {
   const { t } = useTranslation('workshop')
 
   return (
     <Layout title={t('Workshop')}>
-      <TitleWorkshop />
+      <TitleWorkshop title={'WORKSHOPS'} />
       <DetailsWorkshops />
       <ReserveButton />
+      <DetailsWorkshops />
+      <ReserveButton />
+      <DetailsWorkshops />
+      <ReserveButton />
+      <TitleWorkshop title={'RESERVATION'} />
+      <SimilarWorkshops />
     </Layout>
   )
 }
-
+export function SimilarWorkshops() {
+  return <LandingSection title={'Similar Workshops'} />
+}
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -39,7 +48,9 @@ export function DetailsWorkshops() {
   const classes = useStyles()
 
   return (
-    <ExpansionPanel css={{ backgroundColor: '#380030', color: 'white' }}>
+    <ExpansionPanel
+      css={{ backgroundColor: '#380030', color: 'white', marginTop: '20px' }}
+    >
       <ExpansionPanelSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
@@ -202,18 +213,19 @@ export function ReserveButton() {
     </div>
   )
 }
-export function TitleWorkshop() {
+export function TitleWorkshop({ title }) {
   return (
     <h1
       css={{
         textAlign: 'center',
         color: '#380030',
-        fontSize: '65px',
+        fontSize: '50px',
         textDecorationLine: 'underline',
         textDecorationColor: '#5DB3AD',
+        marginTop: '40px',
       }}
     >
-      WORKSHOPS
+      {title}
     </h1>
   )
 }

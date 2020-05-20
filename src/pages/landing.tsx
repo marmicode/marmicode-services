@@ -238,6 +238,7 @@ export function LandingSection({
 export function ServicesSection() {
   return (
     <LandingSection title={'Services'}>
+      <picture path={workshop / workshop.jpeg} />
       <TopLeftSlant />
 
       <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
