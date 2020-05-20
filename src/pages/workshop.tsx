@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Button from '@material-ui/core/Button'
 import { DottyLine, LandingSection } from './landing'
+import { Picture } from '../shared/picture'
 
 export default function WorkshopPage() {
   const { t } = useTranslation('workshop')
@@ -30,7 +31,21 @@ export default function WorkshopPage() {
   )
 }
 export function SimilarWorkshops() {
-  return <LandingSection title={'Similar Workshops'} />
+  return (
+    <LandingSection title={'Similar Workshops'}>
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '100vh',
+        }}
+      >
+        <p>test</p>
+        <p>test</p>
+      </div>
+    </LandingSection>
+  )
 }
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

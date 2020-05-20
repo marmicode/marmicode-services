@@ -14,9 +14,9 @@ import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 import { AppBar, IconButton } from '@material-ui/core'
-import Toolbar from '@material-ui/core/Toolbar'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
+import CardActionArea from '@material-ui/core/CardActionArea'
 
 export function DottyLine() {
   const width = 60
@@ -238,7 +238,6 @@ export function LandingSection({
 export function ServicesSection() {
   return (
     <LandingSection title={'Services'}>
-      <picture path={workshop / workshop.jpeg} />
       <TopLeftSlant />
 
       <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
@@ -279,12 +278,18 @@ export function TalksSection() {
             flexWrap: 'wrap',
           })}
         >
-          <PublicationSection picture={'landing/talk1.png'}>
-            Bonjour je test
-          </PublicationSection>
-          <PublicationSection picture={'landing/talk2.png'}>
-            Bonjour je test 2
-          </PublicationSection>
+          <CardActionArea css={{ width: '50%' }}>
+            <PublicationSection picture={'landing/talk1.png'}>
+              White-labeling & A/B testing with interchangeable components |
+              AngularConnect 2018{' '}
+            </PublicationSection>
+          </CardActionArea>
+
+          <CardActionArea css={{ width: '50%' }}>
+            <PublicationSection picture={'landing/talk2.png'}>
+              Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
+            </PublicationSection>
+          </CardActionArea>
         </div>
         <div
           css={css({
@@ -293,12 +298,16 @@ export function TalksSection() {
             flexWrap: 'wrap',
           })}
         >
-          <PublicationSection picture={'landing/blog.png'}>
-            Bonjour je test 3
-          </PublicationSection>
-          <PublicationSection picture={'landing/recipes.png'}>
-            Bonjour je test 4
-          </PublicationSection>
+          <CardActionArea css={{ width: '50%' }}>
+            <PublicationSection picture={'landing/blog.png'}>
+              The blog
+            </PublicationSection>
+          </CardActionArea>
+          <CardActionArea css={{ width: '50%' }}>
+            <PublicationSection picture={'landing/recipes.png'}>
+              All the recipes
+            </PublicationSection>
+          </CardActionArea>
         </div>
 
         <Button
