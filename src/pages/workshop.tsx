@@ -12,6 +12,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Button from '@material-ui/core/Button'
 import { DottyLine, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
+import { ServiceButton } from '../landing/banner'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 export default function WorkshopPage() {
   const { t } = useTranslation('workshop')
@@ -27,7 +29,35 @@ export default function WorkshopPage() {
       <ReserveButton />
       <TitleWorkshop title={'RESERVATION'} />
       <SimilarWorkshops />
+      <CommentsSection />
     </Layout>
+  )
+}
+export function CommentsSection() {
+  return (
+    <LandingSection title={'Comments'}>
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          margin: 'auto',
+        }}
+      >
+        <p
+          css={{
+            width: '650px',
+            border: 'solid 1px',
+            margin: '5px',
+            height: '200px',
+          }}
+        >
+          Inserer comment
+        </p>
+        <p css={{ width: '650px', border: 'solid 1px', margin: '5px' }}>
+          Inserer comment
+        </p>
+      </div>
+    </LandingSection>
   )
 }
 export function SimilarWorkshops() {
@@ -41,8 +71,32 @@ export function SimilarWorkshops() {
           width: '100vh',
         }}
       >
-        <p>test</p>
-        <p>test</p>
+        <div css={{ display: 'flex', flexDirection: 'column' }}>
+          <p>test</p>
+          <ButtonGroup
+            disableElevation
+            variant="outlined"
+            color="primary"
+            size={'small'}
+            css={{ margin: 'auto' }}
+          >
+            <Button>Reserve</Button>
+            <Button>Check availabilities</Button>
+          </ButtonGroup>
+        </div>
+        <div css={{ display: 'flex', flexDirection: 'column' }}>
+          <p>test</p>
+          <ButtonGroup
+            disableElevation
+            variant="outlined"
+            color="primary"
+            size={'small'}
+            css={{ margin: 'auto' }}
+          >
+            <Button>Reserve</Button>
+            <Button>Check availabilities</Button>
+          </ButtonGroup>
+        </div>
       </div>
     </LandingSection>
   )
