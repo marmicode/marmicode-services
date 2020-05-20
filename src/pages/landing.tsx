@@ -14,7 +14,7 @@ import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 import { AppBar, IconButton } from '@material-ui/core'
-import Toolbar from '@material-ui/core/Toolbar'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 
@@ -76,7 +76,12 @@ export function ServiceCard({ title, picture, children }) {
           {title}
         </Typography>
         <Picture path={picture} />
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          css={{ marginTop: 'auto' }}
+        >
           {children}
         </Typography>
       </CardContent>
@@ -123,7 +128,7 @@ export function PresentationCard() {
       <div
         css={{
           border: 'solid 2px black',
-          minWidth: '300px',
+          minWidth: '30',
           height: '200px',
           margin: 'auto',
           marginBottom: '20px',
@@ -279,10 +284,16 @@ export function TalksSection() {
           })}
         >
           <PublicationSection picture={'landing/talk1.png'}>
-            Bonjour je test
+            <p css={{ paddingTop: '10px' }}>
+              White-labeling & A/B testing with interchangeable components|
+              AngularConnect 2018
+            </p>
           </PublicationSection>
+
           <PublicationSection picture={'landing/talk2.png'}>
-            Bonjour je test 2
+            <p css={{ paddingTop: '10px' }}>
+              Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019
+            </p>
           </PublicationSection>
         </div>
         <div
@@ -293,10 +304,10 @@ export function TalksSection() {
           })}
         >
           <PublicationSection picture={'landing/blog.png'}>
-            Bonjour je test 3
+            <p css={{ paddingTop: '10px' }}>The blog</p>
           </PublicationSection>
           <PublicationSection picture={'landing/recipes.png'}>
-            Bonjour je test 4
+            <p css={{ paddingTop: '10px' }}>All the recipes</p>
           </PublicationSection>
         </div>
 
@@ -364,7 +375,7 @@ export function Footer() {
       css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
     >
       <IconButton edge="start" color="inherit" aria-label="menu" />
-      <Picture width={'130px'} path={'icon.png'} />
+      <Picture width={'180px'} path={'icon.png'} />
       <div
         css={{
           display: 'flex',
@@ -387,6 +398,10 @@ export function Footer() {
         <div>
           <h2>MENU</h2>
           <p>Home</p>
+          <p>Services</p>
+          <p>About</p>
+          <p>Ressources</p>
+          <p>Contact</p>
         </div>
       </div>
     </footer>
