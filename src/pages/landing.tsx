@@ -13,10 +13,8 @@ import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
 import { AppBar, IconButton } from '@material-ui/core'
 import Toolbar from '@material-ui/core/Toolbar'
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
-import Autocomplete from '@material-ui/lab/Autocomplete'
-import parse from 'autosuggest-highlight/parse'
-import match from 'autosuggest-highlight/match'
 
 export function DottyLine() {
   const width = 60
@@ -206,7 +204,7 @@ export function LandingSection({
       css={css({
         position: 'relative',
         backgroundColor: 'white',
-        paddingTop: '20px',
+        paddingTop: '30px',
       })}
     >
       <DottyLine />
@@ -314,47 +312,31 @@ export function TalksSection() {
     </LandingSection>
   )
 }
-export default function Highlights() {
-  return (
-    <Autocomplete
-      id="highlights-demo"
-      style={{ width: 300 }}
-      renderInput={params => (
-        <TextField
-          {...params}
-          label="Highlights"
-          variant="outlined"
-          margin="normal"
-        />
-      )}
-      renderOption={(option, { inputValue }) => {
-        const matches = match(option.title, inputValue)
-        const parts = parse(option.title, matches)
 
-        return (
-          <div>
-            {parts.map((part, index) => (
-              <span
-                key={index}
-                style={{ fontWeight: part.highlight ? 700 : 400 }}
-              >
-                {part.text}
-              </span>
-            ))}
-          </div>
-        )
-      }}
-    />
-  )
-}
-
-export function NewsletterSection() {
+export function NewsSection() {
   return (
     <LandingSection title={'Subscribe to our newsletter'}>
-      <Highlights />
+      <div css={{ display: 'flex', flexDirection: 'column', margin: '10px' }}>
+        <form autoComplete="off">
+          <TextField
+            id="outlined-basic"
+            label="E-mail"
+            variant="outlined"
+            css={{ width: '600px' }}
+          />
+        </form>
+        <p css={{ fontSize: '14px' }}>
+          *En renseignant votre adresse mail vous affirmez avoir pris
+          connaissance de la politique de confidentialité
+        </p>
+        <Button variant="outlined" color="primary" css={{ width: '120px' }}>
+          Confirm
+        </Button>
+      </div>
     </LandingSection>
   )
 }
+
 export default function LandingPage() {
   const { t } = useTranslation('landing')
 
@@ -366,7 +348,7 @@ export default function LandingPage() {
         <PresentationCard />
       </LandingSection>
       <TalksSection />
-      <NewsletterSection />
+      <NewsSection />
       <Footer />
     </Layout>
   )
