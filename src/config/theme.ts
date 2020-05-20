@@ -1,19 +1,13 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import { marmicodeColor } from './config'
+import { marmicodePrimaryColor, marmicodeSecondaryColor } from './config'
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      // light: will be calculated from palette.primary.main,
-      main: marmicodeColor,
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
+      main: marmicodePrimaryColor,
     },
     secondary: {
-      light: '#5DB3AD',
-      main: '#5DB3AD',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#000000',
+      main: marmicodeSecondaryColor,
     },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.

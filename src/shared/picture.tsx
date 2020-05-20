@@ -5,12 +5,14 @@ import GatsbyImage from 'gatsby-image'
 export const Picture = ({
   path,
   borderColor,
+  borderWidth = '1px',
   isCircle,
   height,
   width,
 }: {
   path: string
   borderColor?: string
+  borderWidth?: string
   isCircle?: boolean
   height?: string
   width?: string
@@ -43,7 +45,7 @@ export const Picture = ({
           ? {
               borderStyle: 'solid',
               borderColor,
-              borderWidth: '1px',
+              borderWidth,
               borderRadius: '50%',
             }
           : {}),

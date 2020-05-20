@@ -1,6 +1,9 @@
 import { css } from '@emotion/core'
 import React from 'react'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
+import {
+  marmicodePrimaryColor,
+  marmicodeColorWithOpacity,
+} from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { mediaDesktop } from '../../helpers/media-selectors'
 import { BottomRightSlant, TopLeftSlant } from '../../shared/slant'
@@ -67,7 +70,7 @@ export const SectionContainer = ({
         background: [
           ...createGradient({
             colorA: marmicodeColorWithOpacity(0.7),
-            colorB: marmicodeColor,
+            colorB: marmicodePrimaryColor,
           }),
         ],
       }

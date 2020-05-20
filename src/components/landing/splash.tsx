@@ -2,7 +2,10 @@ import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useTranslation } from 'react-i18next'
 import { Background, Parallax } from 'react-parallax'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
+import {
+  marmicodePrimaryColor,
+  marmicodeColorWithOpacity,
+} from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
 import { LegacySlant } from '../slant'
@@ -26,10 +29,10 @@ export const Splash = () => {
 
   const gradient = {
     background: [
-      marmicodeColor,
+      marmicodePrimaryColor,
       ...createGradient({
         colorA: marmicodeColorWithOpacity(0.9),
-        colorB: marmicodeColor,
+        colorB: marmicodePrimaryColor,
       }),
     ],
   }

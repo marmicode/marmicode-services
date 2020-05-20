@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
-import { marmicodeColor } from '../config/config'
+import { marmicodePrimaryColor } from '../config/config'
 import '../config/i18n'
 import { theme } from '../config/theme'
 import SEO from './seo'
@@ -20,7 +20,7 @@ const bodyStyle = css`
 
 export const Title = styled.h1`
   position: absolute;
-  color: ${marmicodeColor};
+  color: ${marmicodePrimaryColor};
   font-family: 'Source Sans Pro', Arial, sans-serif;
   bottom: 5px;
   left: 90px;

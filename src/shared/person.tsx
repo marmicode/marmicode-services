@@ -1,17 +1,18 @@
+import { marmicodeSecondaryColor } from '../config/config'
+import { theme } from '../config/theme'
 import { mediaDesktop } from '../helpers/media-selectors'
 import { Picture } from './picture'
 
 export function Person({
-  borderColor,
   children,
   name,
   picturePath,
 }: {
-  borderColor: string
   children
   name: string
   picturePath: string
 }) {
+  const borderColor = marmicodeSecondaryColor
   const pictureSize = 160
 
   return (
@@ -21,16 +22,13 @@ export function Person({
         marginLeft: 'auto',
         marginRight: 'auto',
         marginTop: `${20 + pictureSize / 2}px`,
-        maxWidth: '1100px',
         paddingTop: '10px',
         paddingLeft: '20px',
         paddingRight: '20px',
         position: 'relative',
-        [mediaDesktop]: {
-          borderColor: '#5DB3AD',
-          borderStyle: 'solid',
-          borderWidth: '4px',
-        },
+        borderColor,
+        borderStyle: 'solid',
+        borderWidth: '3px',
       }}
     >
       <PersonPicture
@@ -40,10 +38,9 @@ export function Person({
       />
       <h3
         css={{
-          color: 'white',
           fontWeight: 800,
           fontSize: '1.5em',
-          [mediaDesktop]: {
+          [theme.breakpoints.up('md')]: {
             left: 'calc(50% + 90px)',
             position: 'absolute',
             top: '-60px',
@@ -78,6 +75,7 @@ export function PersonPicture({
     >
       <Picture
         borderColor={borderColor}
+        borderWidth={'2px'}
         isCircle={true}
         path={path}
         width={`${size}px`}

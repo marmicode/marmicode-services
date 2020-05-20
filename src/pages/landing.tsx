@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
+import { marmicodeSecondaryColor } from '../config/config'
+import { theme } from '../config/theme'
 import { Banner } from '../landing/banner'
 import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
@@ -95,31 +97,33 @@ export function ServiceCard({ title, picture, children }) {
 
 export function PresentationCard() {
   return (
-    <Person
-      borderColor={'#5DB3AD'}
-      name={'Younes Jaaidi'}
-      picturePath={'younes.jpg'}
-    >
+    <Person name={'Younes Jaaidi'} picturePath={'younes.jpg'}>
       <div
         css={{
           display: 'flex',
           justifyContent: 'space-between',
           padding: '5px',
+          flexDirection: 'column',
+          alignItems: 'center',
+          [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
+            alignItems: 'start',
+          },
         }}
       >
         <div>
-          <h3>Google Developers Experts</h3>
+          <h3>Google Developers Expert</h3>
           <p>For angular and Web Technologies</p>
         </div>
-        <div />
+        <div css={css({ width: '160px' })} />
         <div>
-          <h3>eXtrem Programming Coach</h3>
+          <h3>eXtreme Programming Coach</h3>
         </div>
       </div>
       <div
         css={{
           border: 'solid 2px black',
-          width: '500px',
+          minWidth: '300px',
           height: '200px',
           margin: 'auto',
           marginBottom: '20px',

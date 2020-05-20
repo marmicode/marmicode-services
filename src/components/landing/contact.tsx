@@ -3,13 +3,13 @@ import { css } from '@emotion/core'
 import { Button, TextField } from '@material-ui/core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { marmicodeColor } from '../../config/config'
+import { marmicodePrimaryColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
 
 export const ExternalLink = ({ href, content }: { href: string; content }) => {
   return (
     <a
-      css={{ color: marmicodeColor, textDecoration: 'none' }}
+      css={{ color: marmicodePrimaryColor, textDecoration: 'none' }}
       href={href}
       target="_blank"
     >
@@ -42,7 +42,7 @@ export const ContactForm = () => {
       <Button
         variant="contained"
         color="primary"
-        style={{ backgroundColor: marmicodeColor }}
+        style={{ backgroundColor: marmicodePrimaryColor }}
         type="submit"
       >
         Send
@@ -131,7 +131,7 @@ export const ContactSection = () => {
               <i
                 className="material-icons"
                 style={{
-                  color: marmicodeColor,
+                  color: marmicodePrimaryColor,
                   fontSize: '36px',
                   marginRight: '10px',
                 }}
