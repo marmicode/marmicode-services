@@ -52,7 +52,7 @@
     "start": "gatsby develop",
     "start:fr": "GATSBY_LANGUAGE=fr yarn start",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "clean": "gatsby clean && rimraf .firebase",
     "_build": "gatsby build"
   },
   "repository": {
