@@ -30,8 +30,20 @@ export default function WorkshopPage() {
       <TitleWorkshop title={'RESERVATION'} />
       <SimilarWorkshops />
       <CommentsSection />
+      <CommentButton />
       <Footer />
     </Layout>
+  )
+}
+export function CommentButton() {
+  return (
+    <Button
+      href="#text-buttons"
+      color="secondary"
+      css={{ display: 'flex', margin: 'auto', width: '20%', marginTop: '20px' }}
+    >
+      See all comments
+    </Button>
   )
 }
 export function CommentsSection() {
@@ -41,20 +53,29 @@ export function CommentsSection() {
         css={{
           display: 'flex',
           flexDirection: 'row',
+          flexWrap: 'wrap',
           margin: 'auto',
         }}
       >
         <p
           css={{
-            width: '650px',
+            width: '400px',
             border: 'solid 1px',
             margin: '5px',
             height: '200px',
+            margin: 'auto',
           }}
         >
           Inserer comment
         </p>
-        <p css={{ width: '650px', border: 'solid 1px', margin: '5px' }}>
+        <p
+          css={{
+            width: '400px',
+            border: 'solid 1px',
+            margin: '5px',
+            margin: 'auto',
+          }}
+        >
           Inserer comment
         </p>
       </div>
