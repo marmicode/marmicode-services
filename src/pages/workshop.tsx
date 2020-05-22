@@ -159,6 +159,7 @@ export function WorkshopsCard() {
             backgroundColor: '#5E335A',
             color: 'white',
             textAlign: 'center',
+            margin: '0px',
           }}
         >
           Angular Unit-Testing Workshop- Fundamental & test-driven development{' '}
