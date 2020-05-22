@@ -111,7 +111,11 @@ export function SimilarWorkshops() {
         }}
       >
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
+          <Picture
+            path={'workshop/workshop1.jpg'}
+            height={'100%'}
+            width={'100%'}
+          />
           <ButtonGroups />
         </div>
         <div css={{ display: 'flex', flexDirection: 'column' }}>

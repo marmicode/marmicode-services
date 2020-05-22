@@ -282,14 +282,14 @@ export function TalksSection() {
             },
           })}
         >
-          <CardActionArea css={{ width: '50%' }}>
+          <CardActionArea css={{ flex: 1 }}>
             <PublicationSection picture={'landing/talk1.png'}>
               White-labeling & A/B testing with interchangeable components |
               AngularConnect 2018{' '}
             </PublicationSection>
           </CardActionArea>
 
-          <CardActionArea css={{ width: '50%' }}>
+          <CardActionArea css={{ flex: 1 }}>
             <PublicationSection picture={'landing/talk2.png'}>
               Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
             </PublicationSection>
@@ -306,12 +306,12 @@ export function TalksSection() {
             },
           })}
         >
-          <CardActionArea css={{ width: '50%' }}>
+          <CardActionArea css={{ flex: 1 }}>
             <PublicationSection picture={'landing/blog.png'}>
               The blog
             </PublicationSection>
           </CardActionArea>
-          <CardActionArea css={{ width: '50%' }}>
+          <CardActionArea css={{ flex: 1 }}>
             <PublicationSection picture={'landing/recipes.png'}>
               All the recipes
             </PublicationSection>
