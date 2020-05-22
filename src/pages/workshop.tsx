@@ -61,6 +61,21 @@ export function CommentsSection() {
     </LandingSection>
   )
 }
+
+export function ButtonGroups() {
+  return (
+    <ButtonGroup
+      disableElevation
+      variant="outlined"
+      color="primary"
+      size={'small'}
+      css={{ margin: 'auto', marginTop: '15px', marginBottom: '15px' }}
+    >
+      <Button>Reserve</Button>
+      <Button>Check availabilities</Button>
+    </ButtonGroup>
+  )
+}
 export function SimilarWorkshops() {
   return (
     <LandingSection title={'Similar Workshops'}>
@@ -68,48 +83,23 @@ export function SimilarWorkshops() {
         css={{
           display: 'flex',
           flexDirection: 'row',
+          flexWrap: 'wrap',
+          marginBottom: '10px',
           justifyContent: 'space-around',
           width: '100%',
         }}
       >
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
-          <ButtonGroup
-            disableElevation
-            variant="outlined"
-            color="primary"
-            size={'small'}
-            css={{ margin: 'auto' }}
-          >
-            <Button>Reserve</Button>
-            <Button>Check availabilities</Button>
-          </ButtonGroup>
+          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
+          <ButtonGroups />
         </div>
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
-          <ButtonGroup
-            disableElevation
-            variant="outlined"
-            color="primary"
-            size={'small'}
-            css={{ margin: 'auto' }}
-          >
-            <Button>Reserve</Button>
-            <Button>Check availabilities</Button>
-          </ButtonGroup>
+          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
+          <ButtonGroups />
         </div>
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
-          <ButtonGroup
-            disableElevation
-            variant="outlined"
-            color="primary"
-            size={'small'}
-            css={{ margin: 'auto' }}
-          >
-            <Button>Reserve</Button>
-            <Button>Check availabilities</Button>
-          </ButtonGroup>
+          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
+          <ButtonGroups />
         </div>
       </div>
     </LandingSection>

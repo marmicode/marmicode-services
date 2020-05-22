@@ -344,7 +344,9 @@ export function NewsSection() {
             id="outlined-basic"
             label="E-mail"
             variant="outlined"
-            css={{ width: '600px' }}
+            css={{
+              width: '100%',
+            }}
           />
         </form>
         <p css={{ fontSize: '14px' }}>
