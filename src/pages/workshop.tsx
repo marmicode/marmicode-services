@@ -10,7 +10,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Button from '@material-ui/core/Button'
-import { DottyLine, LandingSection } from './landing'
+import { DottyLine, Footer, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
 import { ServiceButton } from '../landing/banner'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
@@ -30,6 +30,7 @@ export default function WorkshopPage() {
       <TitleWorkshop title={'RESERVATION'} />
       <SimilarWorkshops />
       <CommentsSection />
+      <Footer />
     </Layout>
   )
 }
@@ -67,12 +68,12 @@ export function SimilarWorkshops() {
         css={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
-          width: '100vh',
+          justifyContent: 'space-around',
+          width: '100%',
         }}
       >
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <p>test</p>
+          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
           <ButtonGroup
             disableElevation
             variant="outlined"
@@ -85,7 +86,20 @@ export function SimilarWorkshops() {
           </ButtonGroup>
         </div>
         <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <p>test</p>
+          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
+          <ButtonGroup
+            disableElevation
+            variant="outlined"
+            color="primary"
+            size={'small'}
+            css={{ margin: 'auto' }}
+          >
+            <Button>Reserve</Button>
+            <Button>Check availabilities</Button>
+          </ButtonGroup>
+        </div>
+        <div css={{ display: 'flex', flexDirection: 'column' }}>
+          <Picture path={'blog.png'} height={'350px'} width={'350px'} />
           <ButtonGroup
             disableElevation
             variant="outlined"

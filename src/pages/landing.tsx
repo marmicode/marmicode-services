@@ -374,13 +374,17 @@ export function Footer() {
       css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
     >
       <IconButton edge="start" color="inherit" aria-label="menu" />
-      <Picture width={'130px'} path={'icon.png'} />
+      <Picture path={'icon.png'} width={'120px'} height={'120px'} />
       <div
         css={{
           display: 'flex',
           flex: 1,
           flexDirection: 'row',
           justifyContent: 'space-around',
+          fontSize: '10px',
+          [theme.breakpoints.up('sm')]: {
+            fontSize: '16px',
+          },
         }}
       >
         <div>
@@ -397,6 +401,10 @@ export function Footer() {
         <div>
           <h2>MENU</h2>
           <p>Home</p>
+          <p>Services</p>
+          <p>About</p>
+          <p>Ressources</p>
+          <p>Contact</p>
         </div>
       </div>
     </footer>
