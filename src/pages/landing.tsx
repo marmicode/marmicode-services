@@ -274,8 +274,12 @@ export function TalksSection() {
         <div
           css={css({
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             flexWrap: 'wrap',
+            alignItems: 'center',
+            [theme.breakpoints.up('md')]: {
+              flexDirection: 'row',
+            },
           })}
         >
           <CardActionArea css={{ width: '50%' }}>
@@ -294,8 +298,12 @@ export function TalksSection() {
         <div
           css={css({
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             flexWrap: 'wrap',
+            alignItems: 'center',
+            [theme.breakpoints.up('md')]: {
+              flexDirection: 'row',
+            },
           })}
         >
           <CardActionArea css={{ width: '50%' }}>
