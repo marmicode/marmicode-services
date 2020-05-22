@@ -28,68 +28,55 @@ export default function WorkshopDetailsPage() {
 
 export function WorkshopCard() {
   return (
-    <Card css={{ height: '100%', width: '600px' }}>
-      <CardContent>
-        <div>
-          <h1
-            css={{
-              backgroundColor: '#5E335A',
-              color: 'white',
-              textAlign: 'center',
-            }}
-          >
-            Angular Unit-Testing Workshop- Fundamental & test-driven development{' '}
-          </h1>
+    <Card
+      css={{
+        height: '100%',
+        width: '600px',
+        display: 'flex',
+        margin: 'auto',
+        flexDirection: 'column',
+      }}
+    >
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          backgroundColor: '#380030',
+          color: 'white',
+        }}
+      >
+        <Picture path={'workshop/angular.png'} height={'250px'} width={'50%'} />
+        <div css={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
+          <h3> - Avantage 1 </h3>
+          <h3> - Avantage 2 </h3>
+          <h3> - Avantage 3 </h3>
+          <h3> - Avantage 4 </h3>
+        </div>
+      </div>
+      <div css={{ display: 'flex', flexDirection: 'row' }}>
+        <div
+          css={{
+            textAlign: 'center',
+            flex: 1,
+            border: 'solid',
+            borderColor: '#380030',
+          }}
+        >
+          <h3>Next date</h3>
+          <h2>TUE, JUN 23 </h2>
         </div>
         <div
           css={{
-            display: 'flex',
-            flexDirection: 'row',
-            backgroundColor: '#380030',
-            color: 'white',
+            textAlign: 'center',
+            flex: 1,
+            border: 'solid',
+            borderColor: '#380030',
           }}
         >
-          <Picture path={'blog.png'} height={'250px'} width={'300px'} />
-          <div
-            css={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}
-          >
-            <h3> - Avantage 1 </h3>
-            <h3> - Avantage 2 </h3>
-            <h3> - Avantage 3 </h3>
-            <h3> - Avantage 4 </h3>
-          </div>
+          <h3>Price</h3>
+          <h2>From €495,60</h2>
         </div>
-        <div css={{ display: 'flex', flexDirection: 'row' }}>
-          <div
-            css={{
-              textAlign: 'center',
-              flex: 1,
-              border: 'solid',
-              borderColor: '#380030',
-            }}
-          >
-            <h3>Next date</h3>
-            <h2>TUE, JUN 23 </h2>
-          </div>
-          <div
-            css={{
-              textAlign: 'center',
-              flex: 1,
-              border: 'solid',
-              borderColor: '#380030',
-            }}
-          >
-            <h3>Price</h3>
-            <h2>From €495,60</h2>
-          </div>
-        </div>
-      </CardContent>
-      <Button size="small" color="primary">
-        Share
-      </Button>
-      <Button size="small" color="primary">
-        Learn More
-      </Button>
+      </div>
     </Card>
   )
 }

@@ -14,6 +14,8 @@ import { DottyLine, Footer, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
 import { ServiceButton } from '../landing/banner'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 
 export default function WorkshopPage() {
   const { t } = useTranslation('workshop')
@@ -21,13 +23,7 @@ export default function WorkshopPage() {
   return (
     <Layout title={t('Workshop')}>
       <TitleWorkshop title={'WORKSHOPS'} />
-      <DetailsWorkshops />
-      <ReserveButtonDuo />
-      <DetailsWorkshops />
-      <ReserveButtonDuo />
-      <DetailsWorkshops />
-      <ReserveButtonDuo />
-      <TitleWorkshop title={'RESERVATION'} />
+      <WorkshopsCard />
       <SimilarWorkshops />
       <CommentsSection />
       <CommentButton />
@@ -130,153 +126,78 @@ export function SimilarWorkshops() {
     </LandingSection>
   )
 }
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      width: '100%',
-    },
-    heading: {
-      fontSize: theme.typography.pxToRem(20),
-      fontWeight: theme.typography.fontWeightRegular,
-    },
-  })
-)
-
-export function DetailsWorkshops() {
-  const classes = useStyles()
-
+export function WorkshopsCard() {
   return (
-    <ExpansionPanel
-      css={{ backgroundColor: '#380030', color: 'white', marginTop: '20px' }}
+    <div
+      css={{
+        height: '100%',
+        width: '600px',
+        display: 'flex',
+        margin: 'auto',
+        flexDirection: 'column',
+      }}
     >
-      <ExpansionPanelSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header"
-      >
-        <Typography className={classes.heading}>
-          Angular Unit-Testing Workshop- Fundamental & test-driven development
-        </Typography>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        <div className={classes.root} css={{ margin: '15px', width: '98%' }}>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className={classes.heading}>Description</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>Objectives</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>Place</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>
-                Déroulement de la journée
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>Requirement</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: '#380030' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>Program</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel css={{ color: 'primary' }}>
-            <ExpansionPanelSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2a-content"
-              id="panel2a-header"
-            >
-              <Typography className={classes.heading}>The coach</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
+      <CardContent>
+        <div>
+          <h2
+            css={{
+              backgroundColor: '#5E335A',
+              color: 'white',
+              textAlign: 'center',
+            }}
+          >
+            Angular Unit-Testing Workshop- Fundamental & test-driven development{' '}
+          </h2>
         </div>
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'row',
+            backgroundColor: '#380030',
+            color: 'white',
+          }}
+        >
+          <Picture
+            path={'workshop/angular.png'}
+            height={'250px'}
+            width={'50%'}
+          />
+          <div
+            css={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}
+          >
+            <h3> - Avantage 1 </h3>
+            <h3> - Avantage 2 </h3>
+            <h3> - Avantage 3 </h3>
+            <h3> - Avantage 4 </h3>
+          </div>
+        </div>
+        <div css={{ display: 'flex', flexDirection: 'row' }}>
+          <div
+            css={{
+              textAlign: 'center',
+              flex: 1,
+              border: 'solid',
+              borderColor: '#380030',
+            }}
+          >
+            <h3>Next date</h3>
+            <h2>TUE, JUN 23 </h2>
+          </div>
+          <div
+            css={{
+              textAlign: 'center',
+              flex: 1,
+              border: 'solid',
+              borderColor: '#380030',
+            }}
+          >
+            <h3>Price</h3>
+            <h2>From €495,60</h2>
+          </div>
+        </div>
+      </CardContent>
+      <ButtonGroups />
+    </div>
   )
 }
 
@@ -306,7 +227,7 @@ export function ReserveButtonDuo() {
         size="large"
         css={{ display: 'flex', margin: 'auto' }}
       >
-        Check availability
+        More details
       </Button>
     </div>
   )
