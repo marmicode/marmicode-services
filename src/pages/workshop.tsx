@@ -22,11 +22,11 @@ export default function WorkshopPage() {
     <Layout title={t('Workshop')}>
       <TitleWorkshop title={'WORKSHOPS'} />
       <DetailsWorkshops />
-      <ReserveButton />
+      <ReserveButtonDuo />
       <DetailsWorkshops />
-      <ReserveButton />
+      <ReserveButtonDuo />
       <DetailsWorkshops />
-      <ReserveButton />
+      <ReserveButtonDuo />
       <TitleWorkshop title={'RESERVATION'} />
       <SimilarWorkshops />
       <CommentsSection />
@@ -280,7 +280,7 @@ export function DetailsWorkshops() {
   )
 }
 
-export function ReserveButton() {
+export function ReserveButtonDuo() {
   return (
     <div
       css={{

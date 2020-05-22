@@ -10,7 +10,7 @@ import {
   CommentButton,
   CommentsSection,
   DetailsWorkshops,
-  ReserveButton,
+  ReserveButtonDuo,
   SimilarWorkshops,
   TitleWorkshop,
 } from './workshop'
