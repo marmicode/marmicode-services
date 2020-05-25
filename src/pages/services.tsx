@@ -6,14 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { DottyLine, Footer, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
-import {
-  CommentButton,
-  CommentsSection,
-  DetailsWorkshops,
-  ReserveButtonDuo,
-  SimilarWorkshops,
-  TitleWorkshop,
-} from './workshop'
+import { TitleWorkshop } from './workshop'
+import { css } from '@emotion/core'
 
 export default function WorkshopPage() {
   const { t } = useTranslation('workshop')
@@ -21,19 +15,34 @@ export default function WorkshopPage() {
   return (
     <Layout title={t('Services')}>
       <TitleWorkshop title={'SERVICES'} />
-      <ServicesSection />
+      <ServicesCards />
       <Footer />
     </Layout>
   )
 }
-
-export function ServicesSection() {
+export function ServicesCards() {
   return (
-    <div css={{ display: 'flex', flexDirection: 'row' }}>
-      <Picture path={'blog.png'} height={'30%'} width={'30%'} />
-      <div>
-        <h1 css={{ textAlign: 'left' }}>Workshop</h1>
-        <p>blabla blabla blabla blabla</p>
+    <div>
+      <ServicesSection picture={'services/coaching.jpg'} title={'Workshop'}>
+        nvgriehgoz hgirtzo bihrtz jbhozrij br
+      </ServicesSection>
+      <ServicesSection picture={'services/codereview.jpg'} title={'Consulting'}>
+        bla lfldn gprzigmeqjzo honlmr,ekf lrgn qlùgl ,m
+      </ServicesSection>
+      <ServicesSection picture={'services/workshop.jpg'} title={'Code Review'}>
+        bla lfldn gprzigmeqjzo honlmr,ekf lrgn qlùgl ,m
+      </ServicesSection>
+    </div>
+  )
+}
+
+export function ServicesSection({ picture, title, children }) {
+  return (
+    <div css={{ display: 'flex', flexDirection: 'row', marginBottom: '40px' }}>
+      <Picture path={picture} height={'30%'} width={'30%'} />
+      <div css={{ padding: '15px' }}>
+        <h1 css={{ textAlign: 'left' }}>{title}</h1>
+        <p>{children}</p>
         <Button variant="contained" color="primary">
           See more
         </Button>
