@@ -25,7 +25,6 @@ export default function WorkshopPage() {
     <Layout title={t('Workshop')}>
       <TitleWorkshop title={'WORKSHOPS'} />
       <AllWorkshopSection />
-      <SimilarWorkshops />
       <CommentsSection />
       <CommentButton />
       <Footer />
@@ -92,39 +91,6 @@ export function ButtonGroups() {
       <Button>Reserve</Button>
       <Button>More details</Button>
     </ButtonGroup>
-  )
-}
-export function SimilarWorkshops() {
-  return (
-    <LandingSection title={'Similar Workshops'}>
-      <div
-        css={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          marginBottom: '10px',
-          justifyContent: 'space-around',
-          width: '100%',
-        }}
-      >
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture
-            path={'workshop/workshop1.jpg'}
-            height={'100%'}
-            width={'100%'}
-          />
-          <ButtonGroups />
-        </div>
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
-          <ButtonGroups />
-        </div>
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
-          <Picture path={'blog.png'} height={'100%'} width={'100%'} />
-          <ButtonGroups />
-        </div>
-      </div>
-    </LandingSection>
   )
 }
 

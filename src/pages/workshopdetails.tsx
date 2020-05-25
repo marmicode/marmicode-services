@@ -215,11 +215,17 @@ export function DetailsSection() {
 
 export function SimilarWorkshop() {
   return (
-    <div css={{ display: 'flex', justifyContent: 'space-around' }}>
-      <LandingSection title={'Similar Workshops'}>
+    <LandingSection title={'Similar Workshops'}>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          margin: 'auto',
+        }}
+      >
         <WorkshopsCard />
         <WorkshopsCard />
-      </LandingSection>
-    </div>
+      </div>
+    </LandingSection>
   )
 }
