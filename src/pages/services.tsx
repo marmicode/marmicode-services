@@ -9,7 +9,7 @@ import { Picture } from '../shared/picture'
 import { TitleWorkshop } from './workshop'
 import { css } from '@emotion/core'
 
-export default function WorkshopPage() {
+export default function ServicesPage() {
   const { t } = useTranslation('workshop')
 
   return (
