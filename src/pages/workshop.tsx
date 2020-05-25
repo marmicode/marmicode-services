@@ -55,7 +55,7 @@ export function CommentsSection() {
       >
         <p
           css={{
-            width: '400px',
+            width: '50%',
             border: 'solid 1px',
             margin: '5px',
             height: '200px',
@@ -66,7 +66,7 @@ export function CommentsSection() {
         </p>
         <p
           css={{
-            width: '400px',
+            width: '50%',
             border: 'solid 1px',
             margin: '5px',
             margin: 'auto',
@@ -97,11 +97,11 @@ export function ButtonGroups() {
 export function AllWorkshopSection() {
   return (
     <>
-      <div css={{ display: 'flex', margin: '20px' }}>
+      <div css={{ display: 'flex', margin: '20px', flexWrap: 'wrap' }}>
         <WorkshopsCard />
         <WorkshopsCard />
       </div>
-      <div css={{ display: 'flex' }}>
+      <div css={{ display: 'flex', margin: '20px', flexWrap: 'wrap' }}>
         <WorkshopsCard />
         <WorkshopsCard />
       </div>
@@ -113,11 +113,12 @@ export function WorkshopsCard() {
     <div
       css={{
         height: '100%',
-        width: '600px',
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
         marginLeft: '10px',
+        flexWrap: 'wrap',
+        width: '500px',
       }}
     >
       <div>

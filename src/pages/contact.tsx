@@ -190,7 +190,10 @@ export function InformationSection() {
             padding: '20px',
           }}
         >
-          <WorkIcon color="primary" />
+          <WorkIcon
+            color="primary"
+            css={{ display: 'flex', alignItems: 'flex-start' }}
+          />
           <div>
             <h3 css={{ marginLeft: '15px' }}>Wishtack</h3>
             <h3 css={{ marginLeft: '15px' }}>SIREN: 827 570 490</h3>

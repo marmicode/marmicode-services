@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import Button from '@material-ui/core/Button'
+import { theme } from '../config/theme'
 import { DottyLine, Footer, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
 import { css } from '@emotion/core'
@@ -33,10 +34,13 @@ export function WorkshopCard() {
     <Card
       css={{
         height: '100%',
-        width: '600px',
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
+        width: '70%',
+        [theme.breakpoints.up('md')]: {
+          width: '50%',
+        },
       }}
     >
       <div
@@ -219,8 +223,12 @@ export function SimilarWorkshop() {
       <div
         css={{
           display: 'flex',
-          justifyContent: 'space-around',
+          margin: '20px',
+          flexWrap: 'wrap',
           margin: 'auto',
+          [theme.breakpoints.down('sm')]: {
+            width: '350px',
+          },
         }}
       >
         <WorkshopsCard />

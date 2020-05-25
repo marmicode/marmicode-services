@@ -374,28 +374,32 @@ export function Footer() {
       css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
     >
       <IconButton edge="start" color="inherit" aria-label="menu" />
-      <Picture width={'130px'} path={'icon.png'} />
+      <Picture width={'90px'} height={'90px'} path={'icon.png'} />
       <div
         css={{
           display: 'flex',
           flex: 1,
           flexDirection: 'row',
           justifyContent: 'space-around',
+          fontSize: '12px',
+          [theme.breakpoints.up('md')]: {
+            fontSize: '16px',
+          },
         }}
       >
         <div>
-          <h2>CONTACT</h2>
+          <h3>CONTACT</h3>
           <p>younes@marmicode.io</p>
           <p>+33 (0) 4 26 83 61 92 </p>
         </div>
         <div>
-          <h2>INFORMATIONS</h2>
+          <h3>INFORMATIONS</h3>
           <p>Site map</p>
           <p>Privacy policy</p>
           <p>Personal data</p>
         </div>
         <div>
-          <h2>MENU</h2>
+          <h3>MENU</h3>
           <p>Home</p>
         </div>
       </div>
