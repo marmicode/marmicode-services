@@ -12,6 +12,7 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
+import { WorkshopsCard } from './workshop'
 
 export default function WorkshopDetailsPage() {
   const { t } = useTranslation('workshop details')
@@ -21,6 +22,7 @@ export default function WorkshopDetailsPage() {
       <WorkshopCard />
       <ReserveButton />
       <DetailsSection />
+      <SimilarWorkshop />
       <Footer />
     </Layout>
   )
@@ -208,5 +210,16 @@ export function DetailsSection() {
         </p>
       </div>
     </>
+  )
+}
+
+export function SimilarWorkshop() {
+  return (
+    <div css={{ display: 'flex', justifyContent: 'space-around' }}>
+      <LandingSection title={'Similar Workshops'}>
+        <WorkshopsCard />
+        <WorkshopsCard />
+      </LandingSection>
+    </div>
   )
 }

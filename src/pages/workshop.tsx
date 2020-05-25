@@ -151,6 +151,7 @@ export function WorkshopsCard() {
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
+        marginLeft: '10px',
       }}
     >
       <div>

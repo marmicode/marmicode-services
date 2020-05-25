@@ -274,22 +274,18 @@ export function TalksSection() {
         <div
           css={css({
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             flexWrap: 'wrap',
-            alignItems: 'center',
-            [theme.breakpoints.up('md')]: {
-              flexDirection: 'row',
-            },
           })}
         >
-          <CardActionArea css={{ flex: 1 }}>
+          <CardActionArea css={{ width: '50%' }}>
             <PublicationSection picture={'landing/talk1.png'}>
               White-labeling & A/B testing with interchangeable components |
               AngularConnect 2018{' '}
             </PublicationSection>
           </CardActionArea>
 
-          <CardActionArea css={{ flex: 1 }}>
+          <CardActionArea css={{ width: '50%' }}>
             <PublicationSection picture={'landing/talk2.png'}>
               Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
             </PublicationSection>
@@ -298,20 +294,16 @@ export function TalksSection() {
         <div
           css={css({
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             flexWrap: 'wrap',
-            alignItems: 'center',
-            [theme.breakpoints.up('md')]: {
-              flexDirection: 'row',
-            },
           })}
         >
-          <CardActionArea css={{ flex: 1 }}>
+          <CardActionArea css={{ width: '50%' }}>
             <PublicationSection picture={'landing/blog.png'}>
               The blog
             </PublicationSection>
           </CardActionArea>
-          <CardActionArea css={{ flex: 1 }}>
+          <CardActionArea css={{ width: '50%' }}>
             <PublicationSection picture={'landing/recipes.png'}>
               All the recipes
             </PublicationSection>
@@ -344,9 +336,7 @@ export function NewsSection() {
             id="outlined-basic"
             label="E-mail"
             variant="outlined"
-            css={{
-              width: '100%',
-            }}
+            css={{ width: '600px' }}
           />
         </form>
         <p css={{ fontSize: '14px' }}>
@@ -384,17 +374,13 @@ export function Footer() {
       css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
     >
       <IconButton edge="start" color="inherit" aria-label="menu" />
-      <Picture path={'icon.png'} width={'120px'} height={'120px'} />
+      <Picture width={'130px'} path={'icon.png'} />
       <div
         css={{
           display: 'flex',
           flex: 1,
           flexDirection: 'row',
           justifyContent: 'space-around',
-          fontSize: '10px',
-          [theme.breakpoints.up('sm')]: {
-            fontSize: '16px',
-          },
         }}
       >
         <div>
@@ -411,10 +397,6 @@ export function Footer() {
         <div>
           <h2>MENU</h2>
           <p>Home</p>
-          <p>Services</p>
-          <p>About</p>
-          <p>Ressources</p>
-          <p>Contact</p>
         </div>
       </div>
     </footer>
