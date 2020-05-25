@@ -42,6 +42,32 @@ export function CommentButton() {
     </Button>
   )
 }
+export function Comments({ name, workshop, children }) {
+  return (
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        border: 'solid 2px',
+        borderColor: '#380030',
+        marginTop: '10px',
+        [theme.breakpoints.up('sm')]: {
+          width: '45%',
+        },
+      }}
+    >
+      <div css={{ paddingLeft: '20px' }}>
+        <h2 css={{ color: '#380030' }}>{name}</h2>
+      </div>
+      <div css={{ paddingLeft: '20px' }}>
+        <p css={{ color: '#5DB3AD' }}> Workshop: {workshop}</p>
+        <p>{children}</p>
+      </div>
+    </div>
+  )
+}
+
 export function CommentsSection() {
   return (
     <LandingSection title={'Comments'}>
@@ -50,35 +76,51 @@ export function CommentsSection() {
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
-          margin: 'auto',
+          justifyContent: 'space-around',
         }}
       >
-        <p
-          css={{
-            width: '50%',
-            border: 'solid 1px',
-            margin: '5px',
-            height: '200px',
-            margin: 'auto',
-          }}
-        >
-          Inserer comment
-        </p>
-        <p
-          css={{
-            width: '50%',
-            border: 'solid 1px',
-            margin: '5px',
-            margin: 'auto',
-          }}
-        >
-          Inserer comment
-        </p>
+        <Comments name="Pierre" workshop="Angular">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit
+        </Comments>
+        <Comments name="Paul" workshop="Angular">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit
+        </Comments>
+      </div>
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'space-around',
+          marginTop: '20px',
+        }}
+      >
+        <Comments name="Jacques" workshop="Angular">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit
+        </Comments>
+        <Comments name="Louis" workshop="Angular">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit
+        </Comments>
       </div>
     </LandingSection>
   )
 }
-
 export function ButtonGroups() {
   return (
     <ButtonGroup
@@ -97,11 +139,31 @@ export function ButtonGroups() {
 export function AllWorkshopSection() {
   return (
     <>
-      <div css={{ display: 'flex', margin: '20px', flexWrap: 'wrap' }}>
+      <div
+        css={{
+          display: 'flex',
+          margin: 'auto',
+          marginTop: '20px',
+          flexWrap: 'wrap',
+          [theme.breakpoints.down('sm')]: {
+            width: '350px',
+          },
+        }}
+      >
         <WorkshopsCard />
         <WorkshopsCard />
       </div>
-      <div css={{ display: 'flex', margin: '20px', flexWrap: 'wrap' }}>
+      <div
+        css={{
+          display: 'flex',
+          margin: '20px',
+          flexWrap: 'wrap',
+          margin: 'auto',
+          [theme.breakpoints.down('sm')]: {
+            width: '350px',
+          },
+        }}
+      >
         <WorkshopsCard />
         <WorkshopsCard />
       </div>
@@ -112,13 +174,12 @@ export function WorkshopsCard() {
   return (
     <div
       css={{
-        height: '100%',
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
         marginLeft: '10px',
         flexWrap: 'wrap',
-        width: '500px',
+        width: '600px',
       }}
     >
       <div>
@@ -186,37 +247,6 @@ export function WorkshopsCard() {
   )
 }
 
-export function ReserveButtonDuo() {
-  return (
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        width: '500px',
-        margin: 'auto',
-        marginTop: '20px',
-      }}
-    >
-      <Button
-        variant="outlined"
-        color="primary"
-        size="large"
-        css={{ display: 'flex', margin: 'auto' }}
-      >
-        Reserve / book ?
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        css={{ display: 'flex', margin: 'auto' }}
-      >
-        More details
-      </Button>
-    </div>
-  )
-}
 export function TitleWorkshop({ title }) {
   return (
     <h1
