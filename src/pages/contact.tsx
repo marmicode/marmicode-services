@@ -19,6 +19,7 @@ import { ServicesCards } from './services'
 import { css } from '@emotion/core'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { GuideSection, TalkSection, VideoSection } from './ressources'
+import { theme } from '../config/theme'
 
 export default function ContactPage() {
   const { t } = useTranslation('workshop')
@@ -141,9 +142,12 @@ export function InformationSection() {
       <div
         css={{
           display: 'flex',
-          flexDirection: 'row',
           margin: 'auto',
           justifyContent: 'space-around',
+          flexDirection: 'column',
+          [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
+          },
         }}
       >
         <div>

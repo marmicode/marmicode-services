@@ -13,6 +13,7 @@ import {
 import { ServicesCards } from './services'
 import { css } from '@emotion/core'
 import CardActionArea from '@material-ui/core/CardActionArea'
+import { theme } from '../config/theme'
 
 export default function RessourcesPage() {
   const { t } = useTranslation('workshop')
@@ -106,10 +107,13 @@ export function VideoSection() {
         size="large"
         css={{
           color: 'white',
-          width: '20%',
           display: 'flex',
           margin: 'auto',
           marginTop: '20px',
+          fontSize: '10px',
+          [theme.breakpoints.up('md')]: {
+            fontSize: '15px',
+          },
         }}
       >
         See more videos
@@ -145,6 +149,10 @@ export function GuideSection() {
           display: 'flex',
           margin: 'auto',
           marginTop: '20px',
+          fontSize: '10px',
+          [theme.breakpoints.up('md')]: {
+            fontSize: '15px',
+          },
         }}
       >
         Access Angular guide

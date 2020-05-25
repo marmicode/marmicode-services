@@ -144,7 +144,6 @@ export function PublicationSection({ picture, children }) {
         flexDirection: 'column',
         flex: 1,
         margin: '20px',
-        minWidth: '300px',
       })}
     >
       <CardContent css={{ textAlign: 'center' }}>
@@ -217,7 +216,13 @@ export function LandingSection({
         component="h2"
         gutterBottom
         color={'primary'}
-        style={{ padding: '30px' }}
+        style={{
+          padding: '30px',
+          fontSize: '40px',
+          [theme.breakpoints.up('md')]: {
+            fontSize: '65px',
+          },
+        }}
       >
         {title}
       </Typography>
