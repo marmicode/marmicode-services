@@ -5,6 +5,10 @@ import Button from '@material-ui/core/Button'
 import { Picture } from '../shared/picture'
 import { TitleWorkshop } from './workshop'
 import TextField from '@material-ui/core/TextField'
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail'
+import PhoneIcon from '@material-ui/icons/Phone'
+import WorkIcon from '@material-ui/icons/Work'
+import PlaceIcon from '@material-ui/icons/Place'
 import {
   DottyLine,
   Footer,
@@ -134,8 +138,65 @@ export function Form() {
 export function InformationSection() {
   return (
     <LandingSection title={'Informations'}>
-      <div>
-        <div></div>
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          margin: 'auto',
+          justifyContent: 'space-around',
+        }}
+      >
+        <div>
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <AlternateEmailIcon color="primary" />
+            <h3 css={{ marginLeft: '15px' }}>camijote@marmicode.fr</h3>
+          </div>
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <PhoneIcon color="primary" />
+            <h3 css={{ marginLeft: '15px' }}>+33 (0) 4 26 83 61 92</h3>
+          </div>
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <PlaceIcon color="primary" />
+            <h3 css={{ marginLeft: '15px' }}>Lyon</h3>
+          </div>
+        </div>
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '20px',
+          }}
+        >
+          <WorkIcon color="primary" />
+          <div>
+            <h3 css={{ marginLeft: '15px' }}>Wishtack</h3>
+            <h3 css={{ marginLeft: '15px' }}>SIREN: 827 570 490</h3>
+            <h3 css={{ marginLeft: '15px' }}>VAT N°: FR 71 827570490</h3>
+          </div>
+        </div>
       </div>
     </LandingSection>
   )
