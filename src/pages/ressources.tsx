@@ -22,6 +22,7 @@ export default function RessourcesPage() {
       <TitleWorkshop title={'Ressources'} />
       <TalkSection />
       <VideoSection />
+      <GuideSection />
       <Footer />
     </Layout>
   )
@@ -112,6 +113,41 @@ export function VideoSection() {
         }}
       >
         See more videos
+      </Button>
+    </div>
+  )
+}
+
+export function GuideSection() {
+  return (
+    <div>
+      <LandingSection title={'Angular guide'} />
+      <div
+        css={css({
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        })}
+      >
+        <CardActionArea css={{ width: '50%', display: 'flex', margin: 'auto' }}>
+          <PublicationSection
+            picture={'ressources/angular.png'}
+          ></PublicationSection>
+        </CardActionArea>
+      </div>
+      <Button
+        variant="contained"
+        color="secondary"
+        size="large"
+        css={{
+          color: 'white',
+          width: '20%',
+          display: 'flex',
+          margin: 'auto',
+          marginTop: '20px',
+        }}
+      >
+        Access Angular guide
       </Button>
     </div>
   )
