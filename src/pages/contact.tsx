@@ -145,6 +145,7 @@ export function InformationSection() {
           margin: 'auto',
           flexDirection: 'column',
           fontSize: '12px',
+          justifyContent: 'center',
           [theme.breakpoints.up('md')]: {
             flexDirection: 'row',
             fontSize: '15px',
@@ -198,7 +199,11 @@ export function InformationSection() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'flex-start',
-              marginLeft: '80px',
+              paddingLeft: '0px',
+              margin: 'auto',
+              [theme.breakpoints.up('md')]: {
+                paddingLeft: '80px',
+              },
             }}
           >
             <div
