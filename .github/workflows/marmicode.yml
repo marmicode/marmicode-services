@@ -1,0 +1,40 @@
+name: Webapp
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  CACHE_PATH: node_modules
+
+jobs:
+
+  # Merging all steps in one job might look dirty but this is a way of achieving
+  # faster workflows as downloading node_modules cache takes 40 seconds
+  # lint & test parallelization is not worth it.
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: actions/cache@v1
+        id: node-modules-cache
+        with:
+          path: ${{ env.CACHE_PATH }}
+          key: node_modules-${{ hashFiles('yarn.lock') }}
+      - name: Install
+        run: yarn install --frozen-lockfile
+      - name: Deploy marmicode.io
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: yarn deploy:en
+      - name: Deploy marmicode.fr
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: yarn deploy:fr
+      - uses: pioug/le-slack-message@v1.0.0
+        if: failure()
+        with:
+          JOB: ${{ toJson(job) }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

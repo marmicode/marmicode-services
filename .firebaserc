@@ -1,8 +1,18 @@
 {
   "projects": {
-    "default": "marmicode"
+    "default": "marmicode-dev"
   },
   "targets": {
+    "marmicode-dev": {
+      "hosting": {
+        "marmicode": [
+          "marmicode-dev"
+        ],
+        "marmicode-fr": [
+          "marmicode-dev-french"
+        ]
+      }
+    }
     "marmicode": {
       "hosting": {
         "marmicode": [
