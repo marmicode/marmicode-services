@@ -8,6 +8,7 @@ import { DottyLine, Footer, LandingSection } from './landing'
 import { Picture } from '../shared/picture'
 import { TitleWorkshop } from './workshop'
 import { css } from '@emotion/core'
+import { theme } from '../config/theme'
 
 export default function ServicesPage() {
   const { t } = useTranslation('workshop')
@@ -38,12 +39,36 @@ export function ServicesCards() {
 
 export function ServicesSection({ picture, title, children }) {
   return (
-    <div css={{ display: 'flex', flexDirection: 'row', marginBottom: '40px' }}>
-      <Picture path={picture} height={'30%'} width={'30%'} />
-      <div css={{ padding: '15px' }}>
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '40px',
+        [theme.breakpoints.up('md')]: {
+          flexDirection: 'row',
+          marginLeft: '0px',
+        },
+      }}
+    >
+      <Picture
+        path={picture}
+        height={'50%'}
+        width={'50%'}
+        css={{
+          flexWrap: 'wrap',
+        }}
+      />
+      <div css={{ padding: '5px' }}>
         <h1 css={{ textAlign: 'left' }}>{title}</h1>
-        <p>{children}</p>
-        <Button variant="contained" color="primary">
+        <p
+          css={{
+            fontSize: '20px',
+            [theme.breakpoints.up('md')]: { fontSize: '30px' },
+          }}
+        >
+          {children}
+        </p>
+        <Button variant="contained" color="primary" size="large">
           See more
         </Button>
       </div>
