@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { theme } from '../config/theme'
 import { Picture } from '../shared/picture'
 
 export function Banner() {
@@ -38,7 +39,9 @@ export function Hero() {
       <div
         css={css({
           color: 'white',
-          fontSize: '170%',
+          [theme.breakpoints.up('sm')]: {
+            fontSize: '170%',
+          },
         })}
       >
         <h1
