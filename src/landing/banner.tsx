@@ -2,6 +2,7 @@ import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import React from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { theme } from '../config/theme'
 import { Picture } from '../shared/picture'
 
 export function Banner() {
@@ -38,7 +39,9 @@ export function Hero() {
       <div
         css={css({
           color: 'white',
-          fontSize: '170%',
+          [theme.breakpoints.up('sm')]: {
+            fontSize: '170%',
+          },
         })}
       >
         <h1
@@ -53,12 +56,16 @@ export function Hero() {
         </h1>
         <h2>{t('hero.subtitle')}</h2>
         <div
-          css={{
-            width: '500px',
+          css={css({
             display: 'flex',
             justifyContent: 'space-around',
             margin: '5px',
-          }}
+            flexDirection: 'column',
+            alignItems: 'center',
+            [theme.breakpoints.up('sm')]: {
+              flexDirection: 'row',
+            },
+          })}
         >
           <ServiceButton title={'WORKSHOP'} />
           <ServiceButton title={'COACHING'} />
@@ -71,7 +78,15 @@ export function Hero() {
 
 export function ServiceButton({ title }: { title: string }) {
   return (
-    <Button variant="contained" size="large" color="primary">
+    <Button
+      color="primary"
+      css={css({
+        marginTop: '20px',
+        minWidth: '140px',
+      })}
+      size="large"
+      variant="contained"
+    >
       {title}
     </Button>
   )

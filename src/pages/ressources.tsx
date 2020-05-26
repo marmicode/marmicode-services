@@ -1,19 +1,14 @@
+import { css } from '@emotion/core'
+import Button from '@material-ui/core/Button'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
-import Button from '@material-ui/core/Button'
-import { Picture } from '../shared/picture'
-import { TitleWorkshop } from './workshop'
-import {
-  DottyLine,
-  Footer,
-  LandingSection,
-  PublicationSection,
-} from './landing'
-import { ServicesCards } from './services'
-import { css } from '@emotion/core'
-import CardActionArea from '@material-ui/core/CardActionArea'
 import { theme } from '../config/theme'
+import { Footer } from '../landing/footer'
+import { LandingSection } from '../landing/landing-section'
+import { PublicationSection } from '../landing/publication-section'
+import { TitleWorkshop } from './workshops'
 
 export default function RessourcesPage() {
   const { t } = useTranslation('workshop')
