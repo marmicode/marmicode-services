@@ -1,4 +1,4 @@
-name: Webapp
+name: Marmicode
 
 on:
   push:
