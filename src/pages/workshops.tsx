@@ -1,3 +1,4 @@
+import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import React from 'react'
@@ -142,27 +143,10 @@ export function AllWorkshopSection() {
           flexWrap: 'wrap',
           margin: 'auto',
           marginTop: '20px',
-          width: '380px',
-          [theme.breakpoints.up('lg')]: {
-            width: '1300px',
-          },
         }}
       >
         <WorkshopsCard />
         <WorkshopsCard />
-      </div>
-      <div
-        css={{
-          display: 'flex',
-          margin: '20px',
-          flexWrap: 'wrap',
-          margin: 'auto',
-          width: '380px',
-          [theme.breakpoints.up('lg')]: {
-            width: '1300px',
-          },
-        }}
-      >
         <WorkshopsCard />
         <WorkshopsCard />
       </div>
@@ -172,14 +156,13 @@ export function AllWorkshopSection() {
 export function WorkshopsCard() {
   return (
     <div
-      css={{
+      css={css({
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
-        marginLeft: '10px',
         flexWrap: 'wrap',
-        width: '550px',
-      }}
+        maxWidth: '600px',
+      })}
     >
       <div>
         <h2
