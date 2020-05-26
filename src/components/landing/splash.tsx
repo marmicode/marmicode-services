@@ -2,10 +2,13 @@ import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useTranslation } from 'react-i18next'
 import { Background, Parallax } from 'react-parallax'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
+import {
+  marmicodePrimaryColor,
+  marmicodeColorWithOpacity,
+} from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { Hero } from '../hero'
-import { Slant } from '../slant'
+import { LegacySlant } from '../slant'
 
 export const Splash = () => {
   const { t } = useTranslation('landing')
@@ -26,20 +29,17 @@ export const Splash = () => {
 
   const gradient = {
     background: [
-      marmicodeColor,
+      marmicodePrimaryColor,
       ...createGradient({
         colorA: marmicodeColorWithOpacity(0.9),
-        colorB: marmicodeColor,
+        colorB: marmicodePrimaryColor,
       }),
     ],
   }
 
   return (
     <div css={{ position: 'relative', height: `calc(100vh - 60px)` }}>
-      <Parallax
-        css={{ height: '100%', ...gradient }}
-        strength={400}
-      >
+      <Parallax css={{ height: '100%', ...gradient }} strength={400}>
         <Background>
           <img
             alt="Marmicode Cooking Pot"
@@ -55,10 +55,9 @@ export const Splash = () => {
           />
         </Background>
         <div css={{ marginTop: '30vh' }}>
-          <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} />
+          <Hero />
         </div>
       </Parallax>
-      <Slant />
     </div>
   )
 }

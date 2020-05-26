@@ -8,7 +8,7 @@ import { SectionContainer } from '../components/landing/section-container'
 import { ServicesSection } from '../components/landing/services'
 import { Splash } from '../components/landing/splash'
 import { Layout } from '../components/layout'
-import { Picture } from '../components/shared/picture'
+import { Picture } from '../shared/picture'
 import { createGradient } from '../helpers/create-gradient'
 import { mediaDesktop } from '../helpers/media-selectors'
 
@@ -100,7 +100,7 @@ export const ContentSection = () => {
           target="_blank"
           key={content.title}
         >
-          <Picture path={content.picture} height={'100%'}></Picture>
+          <Picture path={content.picture} height={'100%'} />
           {/* Overlay. */}
           <div
             css={{
@@ -149,11 +149,7 @@ export const IndexPage = () => {
       </SectionContainer>
 
       {/* Coach. */}
-      <SectionContainer
-        hasBackground={true}
-        hasSlant={true}
-        title={t('sections.coach')}
-      >
+      <SectionContainer hasBackground={true} title={t('sections.coach')}>
         <CoachSection />
       </SectionContainer>
 
@@ -167,16 +163,16 @@ export const IndexPage = () => {
       </SectionContainer>
 
       {/* Content & publications. */}
-      <SectionContainer
-        hasBackground={true}
-        hasSlant={true}
-        title={t('sections.content')}
-      >
+      <SectionContainer hasBackground={true} title={t('sections.content')}>
         <ContentSection />
       </SectionContainer>
 
       {/* Contact. */}
-      <SectionContainer hasBackground={false} title={t('sections.contact')}>
+      <SectionContainer
+        hasBackground={false}
+        hasSlant={true}
+        title={t('sections.contact')}
+      >
         <ContactSection />
       </SectionContainer>
     </Layout>

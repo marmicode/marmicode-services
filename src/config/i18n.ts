@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { landingEn } from '../components/landing/landing.en'
-import { landingFr } from '../components/landing/landing.fr'
+import { landingEn } from '../landing/landing.en'
+import { landingFr } from '../landing/landing.fr'
 
 export const language = process.env.GATSBY_LANGUAGE || 'en'
 
@@ -21,6 +21,10 @@ i18n.use(initReactI18next).init({
       landing: landingFr,
     },
   },
+  react: {
+    transKeepBasicHtmlNodesFor: ['strong'],
+    transSupportBasicHtmlNodes: true
+  }
 })
 
 export interface MarkdownQueryResult<T> {

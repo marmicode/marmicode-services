@@ -1,9 +1,9 @@
 import '@emotion/core'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { marmicodeColor } from '../../config/config'
+import { marmicodePrimaryColor } from '../../config/config'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { filterMarkdownFilesByLanguage } from '../../i18n/i18n'
+import { filterMarkdownFilesByLanguage } from '../../config/i18n'
 
 export interface ServiceData {
   icon: string
@@ -35,7 +35,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
     >
       <i
         className="material-icons"
-        style={{ color: marmicodeColor, fontSize: '48px' }}
+        style={{ color: marmicodePrimaryColor, fontSize: '48px' }}
       >
         {service.icon}
       </i>
@@ -54,15 +54,15 @@ export const Service = ({ service }: { service: ServiceData }) => {
         dangerouslySetInnerHTML={{ __html: service.html }}
       ></div>
 
-      <div css={{flex: 1}}></div>
+      <div css={{ flex: 1 }}></div>
 
       {service.button && (
-        <a css={{marginBottom: '20px'}} href={service.button.url}>
+        <a css={{ marginBottom: '20px' }} href={service.button.url}>
           <button
             css={{
               boxShadow:
                 '0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)',
-              backgroundColor: marmicodeColor,
+              backgroundColor: marmicodePrimaryColor,
               border: 'none',
               borderRadius: '4px',
               color: 'white',
@@ -70,7 +70,7 @@ export const Service = ({ service }: { service: ServiceData }) => {
               fontSize: '1em',
               fontWeight: 600,
               lineHeight: '36px',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
             }}
           >
             {service.button.title}

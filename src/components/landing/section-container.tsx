@@ -1,8 +1,12 @@
+import { css } from '@emotion/core'
 import React from 'react'
-import { marmicodeColor, marmicodeColorWithOpacity } from '../../config/config'
+import {
+  marmicodePrimaryColor,
+  marmicodeColorWithOpacity,
+} from '../../config/config'
 import { createGradient } from '../../helpers/create-gradient'
 import { mediaDesktop } from '../../helpers/media-selectors'
-import { Slant } from '../slant'
+import { BottomRightSlant, TopLeftSlant } from '../../shared/slant'
 
 export interface SectionData {
   title: string
@@ -66,7 +70,7 @@ export const SectionContainer = ({
         background: [
           ...createGradient({
             colorA: marmicodeColorWithOpacity(0.7),
-            colorB: marmicodeColor,
+            colorB: marmicodePrimaryColor,
           }),
         ],
       }
@@ -74,7 +78,7 @@ export const SectionContainer = ({
 
   return (
     <section
-      css={{
+      css={css({
         position: 'relative',
         boxSizing: 'border-box',
         minHeight: '100vh',
@@ -82,11 +86,12 @@ export const SectionContainer = ({
         paddingTop: '20px',
         textAlign: 'center',
         ...backgroundStyle,
-      }}
+      })}
     >
+      {hasSlant && <TopLeftSlant />}
       <SectionTitle hasBackground={hasBackground} title={title} />
       {children}
-      {hasSlant && <Slant />}
+      {hasSlant && <BottomRightSlant />}
     </section>
   )
 }

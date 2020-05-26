@@ -1,5 +1,5 @@
 import '@emotion/core'
-import { Picture } from '../shared/picture'
+import { Picture } from '../../shared/picture'
 
 export const CoachPicture = ({
   path,

@@ -6,6 +6,7 @@
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "@material-ui/core": "^4.6.1",
+    "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.6.0",
     "firebase-tools": "^8.4.0",
     "flag-icon-css": "^3.4.6",
@@ -35,14 +36,15 @@
   "devDependencies": {
     "gatsby-plugin-extract-schema": "^0.0.5",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "run-s clean _build",
     "build:fr": "GATSBY_LANGUAGE=fr yarn build",
     "deploy-all": "run-s deploy:*",
     "deploy:en": "firebase deploy --only hosting:marmicode",
@@ -51,7 +53,8 @@
     "start": "gatsby develop",
     "start:fr": "GATSBY_LANGUAGE=fr yarn start",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean && rimraf .firebase",
+    "_build": "gatsby build"
   },
   "repository": {
     "type": "git",
