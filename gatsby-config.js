@@ -1,4 +1,4 @@
-const disallowBots = process.env.DISALLOW_BOTS === 'true';
+const allowBots = process.env.ALLOW_BOTS !== 'false'
 
 module.exports = {
   siteMetadata: {
@@ -6,7 +6,7 @@ module.exports = {
     description: `Helping you cook better apps with the best ingredients`,
     author: `@marmicode`,
     /* siteUrl is required by robots txt plugin. */
-    ...disallowBots ? {siteUrl: process.env.URL} : {}
+    ...(allowBots ? {} : { siteUrl: process.env.URL }),
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -44,16 +44,16 @@ module.exports = {
       },
     },
     /* Generate robots.txt and disallow / on Netlify. */
-    ...(disallowBots
-      ? [
+    ...(allowBots
+      ? []
+      : [
           {
             resolve: `gatsby-plugin-robots-txt`,
             options: {
               policy: [{ userAgent: '*', disallow: '/' }],
             },
           },
-        ]
-      : []),
+        ]),
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

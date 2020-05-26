@@ -22,9 +22,9 @@ jobs:
         id: project
         run: |
           PROJECT=$([ $GITHUB_REF == 'refs/tags/latest' ] && echo marmicode || echo marmicode-next)
-          DISALLOW_BOTS=$([ $PROJECT == 'marmicode' ] && echo false || echo true)
+          ALLOW_BOTS=$([ $PROJECT == 'marmicode' ] && echo true || echo false)
           echo "::set-output name=project::$PROJECT"
-          echo "::set-output name=disallow_bots::$DISALLOW_BOTS"
+          echo "::set-output name=allow_bots::$ALLOW_BOTS"
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - uses: actions/cache@v1
@@ -36,13 +36,13 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Deploy marmicode.io
         env:
-          DISALLOW_BOTS: ${{ steps.project.outputs.disallow_bots }}
+          ALLOW_BOTS: ${{ steps.project.outputs.allow_bots }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT: ${{ steps.project.outputs.project }}
         run: yarn deploy:en --project=$PROJECT
       - name: Deploy marmicode.fr
         env:
-          DISALLOW_BOTS: ${{ steps.project.outputs.disallow_bots }}
+          ALLOW_BOTS: ${{ steps.project.outputs.allow_bots }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT: ${{ steps.project.outputs.project }}
         run: yarn deploy:fr --project=$PROJECT
