@@ -142,11 +142,13 @@ export function AllWorkshopSection() {
       <div
         css={{
           display: 'flex',
+          flexDirection: 'row',
           margin: 'auto',
           marginTop: '20px',
           flexWrap: 'wrap',
-          [theme.breakpoints.down('sm')]: {
-            width: '350px',
+          width: '300px',
+          [theme.breakpoints.up('md')]: {
+            width: '1300px',
           },
         }}
       >
@@ -159,8 +161,9 @@ export function AllWorkshopSection() {
           margin: '20px',
           flexWrap: 'wrap',
           margin: 'auto',
-          [theme.breakpoints.down('sm')]: {
-            width: '350px',
+          width: '300px',
+          [theme.breakpoints.up('md')]: {
+            width: '1300px',
           },
         }}
       >
@@ -179,7 +182,7 @@ export function WorkshopsCard() {
         flexDirection: 'column',
         marginLeft: '10px',
         flexWrap: 'wrap',
-        width: '600px',
+        width: '550px',
       }}
     >
       <div>
