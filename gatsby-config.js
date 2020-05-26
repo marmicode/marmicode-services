@@ -1,4 +1,4 @@
-const isNetlify = process.env.NETLIFY === 'true';
+const disallowBots = process.env.DISALLOW_BOTS === 'true';
 
 module.exports = {
   siteMetadata: {
@@ -6,7 +6,7 @@ module.exports = {
     description: `Helping you cook better apps with the best ingredients`,
     author: `@marmicode`,
     /* siteUrl is required by robots txt plugin. */
-    ...isNetlify ? {siteUrl: process.env.URL} : {}
+    ...disallowBots ? {siteUrl: process.env.URL} : {}
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -44,7 +44,7 @@ module.exports = {
       },
     },
     /* Generate robots.txt and disallow / on Netlify. */
-    ...(process.env.NETLIFY === 'true'
+    ...(disallowBots
       ? [
           {
             resolve: `gatsby-plugin-robots-txt`,
