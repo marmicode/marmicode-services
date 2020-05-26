@@ -113,9 +113,14 @@ export function DetailsSection() {
           color: 'white',
           display: 'flex',
           height: '100px',
-          width: '100%',
+          width: '97%',
           alignItems: 'center',
           paddingLeft: '15px',
+          fontSize: '24px',
+          [theme.breakpoints.up('md')]: {
+            fontSize: '30px',
+            width: '100%',
+          },
         }}
       >
         Angular Unit-Testing Workshop- Fundamental & test-driven development

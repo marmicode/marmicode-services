@@ -150,7 +150,7 @@ export function AllWorkshopSection() {
           flexWrap: 'wrap',
           margin: 'auto',
           marginTop: '20px',
-          width: '400px',
+          width: '380px',
           [theme.breakpoints.up('lg')]: {
             width: '1300px',
           },
@@ -165,7 +165,7 @@ export function AllWorkshopSection() {
           margin: '20px',
           flexWrap: 'wrap',
           margin: 'auto',
-          width: '400px',
+          width: '380px',
           [theme.breakpoints.up('lg')]: {
             width: '1300px',
           },
