@@ -36,7 +36,11 @@ export function CommentButton() {
     <Button
       href="#text-buttons"
       color="secondary"
-      css={{ display: 'flex', margin: 'auto', width: '20%', marginTop: '20px' }}
+      css={{
+        display: 'flex',
+        margin: 'auto',
+        marginTop: '20px',
+      }}
     >
       See all comments
     </Button>

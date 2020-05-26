@@ -403,13 +403,8 @@ export function Footer() {
         </div>
         <div>
           <h3>INFORMATIONS</h3>
-          <p>Site map</p>
           <p>Privacy policy</p>
           <p>Personal data</p>
-        </div>
-        <div>
-          <h3>MENU</h3>
-          <p>Home</p>
         </div>
       </div>
     </footer>

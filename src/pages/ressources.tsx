@@ -145,7 +145,6 @@ export function GuideSection() {
         size="large"
         css={{
           color: 'white',
-          width: '20%',
           display: 'flex',
           margin: 'auto',
           marginTop: '20px',
