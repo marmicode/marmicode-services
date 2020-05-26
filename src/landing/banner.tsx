@@ -56,12 +56,16 @@ export function Hero() {
         </h1>
         <h2>{t('hero.subtitle')}</h2>
         <div
-          css={{
-            width: '500px',
+          css={css({
             display: 'flex',
             justifyContent: 'space-around',
             margin: '5px',
-          }}
+            flexDirection: 'column',
+            alignItems: 'center',
+            [theme.breakpoints.up('sm')]: {
+              flexDirection: 'row',
+            },
+          })}
         >
           <ServiceButton title={'WORKSHOP'} />
           <ServiceButton title={'COACHING'} />
@@ -74,7 +78,15 @@ export function Hero() {
 
 export function ServiceButton({ title }: { title: string }) {
   return (
-    <Button variant="contained" size="large" color="primary">
+    <Button
+      color="primary"
+      css={css({
+        marginTop: '20px',
+        minWidth: '140px',
+      })}
+      size="large"
+      variant="contained"
+    >
       {title}
     </Button>
   )
