@@ -23,6 +23,10 @@ jobs:
         run: |
           PROJECT=$([ $GITHUB_REF == 'refs/tags/latest' ] && echo marmicode || echo marmicode-next)
           ALLOW_BOTS=$([ $PROJECT == 'marmicode' ] && echo true || echo false)
+          BASE_URL_EN="$([ $PROJECT == 'marmicode' ] && echo https://marmicode.io || echo https://marmicode-next.web.app)"
+          BASE_URL_FR="$([ $PROJECT == 'marmicode' ] && echo https://marmicode.fr || echo https://marmicode-french-next.web.app)"
+          echo "::set-output name=base_url_en::$BASE_URL_EN"
+          echo "::set-output name=base_url_fr::$BASE_URL_FR"
           echo "::set-output name=project::$PROJECT"
           echo "::set-output name=allow_bots::$ALLOW_BOTS"
       - uses: actions/checkout@v2
@@ -37,12 +41,14 @@ jobs:
       - name: Deploy marmicode.io
         env:
           ALLOW_BOTS: ${{ steps.project.outputs.allow_bots }}
+          BASE_URL: ${{ steps.project.outputs.base_url_en }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT: ${{ steps.project.outputs.project }}
         run: yarn deploy:en --project=$PROJECT
       - name: Deploy marmicode.fr
         env:
           ALLOW_BOTS: ${{ steps.project.outputs.allow_bots }}
+          BASE_URL: ${{ steps.project.outputs.base_url_fr }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT: ${{ steps.project.outputs.project }}
         run: yarn deploy:fr --project=$PROJECT

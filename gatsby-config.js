@@ -6,7 +6,7 @@ module.exports = {
     description: `Helping you cook better apps with the best ingredients`,
     author: `@marmicode`,
     /* siteUrl is required by robots txt plugin. */
-    ...(allowBots ? {} : { siteUrl: '/' }),
+    ...(allowBots ? {} : { siteUrl: process.env.BASE_URL }),
   },
   plugins: [
     `gatsby-plugin-emotion`,
