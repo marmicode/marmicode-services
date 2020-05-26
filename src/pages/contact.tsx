@@ -8,8 +8,9 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { theme } from '../config/theme'
-import { Footer, LandingSection } from './landing'
-import { TitleWorkshop } from './workshop'
+import { Footer } from '../landing/footer'
+import { LandingSection } from '../landing/landing-section'
+import { TitleWorkshop } from './workshops'
 
 export default function ContactPage() {
   const { t } = useTranslation('workshop')

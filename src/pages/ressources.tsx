@@ -5,8 +5,10 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { theme } from '../config/theme'
-import { Footer, LandingSection, PublicationSection } from './landing'
-import { TitleWorkshop } from './workshop'
+import { Footer } from '../landing/footer'
+import { LandingSection } from '../landing/landing-section'
+import { PublicationSection } from '../landing/publication-section'
+import { TitleWorkshop } from './workshops'
 
 export default function RessourcesPage() {
   const { t } = useTranslation('workshop')
