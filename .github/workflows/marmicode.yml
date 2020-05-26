@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    tags:
+      - latest
 
 env:
   CACHE_PATH: node_modules
@@ -16,6 +18,11 @@ jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get project name
+        id: project
+        run: |
+          PROJECT=$([ $GITHUB_REF == 'refs/tags/latest' ] && echo marmicode || echo marmicode-next)
+          echo "::set-output name=project::$PROJECT"
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - uses: actions/cache@v1
@@ -28,11 +35,13 @@ jobs:
       - name: Deploy marmicode.io
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn deploy:en
+          PROJECT: ${{ steps.project.outputs.project }}
+        run: yarn deploy:en --project=$PROJECT
       - name: Deploy marmicode.fr
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: yarn deploy:fr
+          PROJECT: ${{ steps.project.outputs.project }}
+        run: yarn deploy:fr --project=$PROJECT
       - uses: pioug/le-slack-message@v1.0.0
         if: failure()
         with:
