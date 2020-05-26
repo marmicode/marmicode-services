@@ -378,7 +378,6 @@ export function Footer() {
     <footer
       css={{ display: 'flex', padding: '25px', backgroundColor: 'white' }}
     >
-      <IconButton edge="start" color="inherit" aria-label="menu" />
       <Picture width={'90px'} height={'90px'} path={'icon.png'} />
       <div
         css={{

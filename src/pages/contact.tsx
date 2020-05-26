@@ -143,14 +143,21 @@ export function InformationSection() {
         css={{
           display: 'flex',
           margin: 'auto',
-          justifyContent: 'space-around',
           flexDirection: 'column',
+          fontSize: '12px',
           [theme.breakpoints.up('md')]: {
             flexDirection: 'row',
+            fontSize: '15px',
           },
         }}
       >
-        <div>
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+          }}
+        >
           <div
             css={{
               display: 'flex',
@@ -185,23 +192,28 @@ export function InformationSection() {
             <h3 css={{ marginLeft: '15px' }}>Lyon</h3>
           </div>
         </div>
-        <div
-          css={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '20px',
-          }}
-        >
-          <WorkIcon
-            color="primary"
-            css={{ display: 'flex', alignItems: 'flex-start' }}
-          />
-          <div>
-            <h3 css={{ marginLeft: '15px' }}>Wishtack</h3>
-            <h3 css={{ marginLeft: '15px' }}>SIREN: 827 570 490</h3>
-            <h3 css={{ marginLeft: '15px' }}>VAT N°: FR 71 827570490</h3>
+        <div>
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-start',
+              marginLeft: '80px',
+            }}
+          >
+            <div
+              css={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+              }}
+            >
+              <WorkIcon color="primary" />
+              <h3 css={{ marginLeft: '15px' }}>Wishtack</h3>
+            </div>
+            <h3>SIREN: 827 570 490</h3>
+            <h3>VAT N°: FR 71 827570490</h3>
           </div>
         </div>
       </div>
