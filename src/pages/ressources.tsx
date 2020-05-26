@@ -38,16 +38,29 @@ export function TalkSection() {
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
+          flex: 1,
         })}
       >
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk1.png'}>
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
         </CardActionArea>
 
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
@@ -65,17 +78,30 @@ export function VideoSection() {
         css={css({
           display: 'flex',
           flexDirection: 'row',
+          flex: 1,
           flexWrap: 'wrap',
         })}
       >
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk1.png'}>
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
         </CardActionArea>
 
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
@@ -86,16 +112,29 @@ export function VideoSection() {
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
+          flex: 1,
         })}
       >
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk1.png'}>
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
         </CardActionArea>
 
-        <CardActionArea css={{ width: '50%' }}>
+        <CardActionArea
+          css={{
+            [theme.breakpoints.up('md')]: {
+              width: '50%',
+            },
+          }}
+        >
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
@@ -133,7 +172,7 @@ export function GuideSection() {
           flexWrap: 'wrap',
         })}
       >
-        <CardActionArea css={{ width: '50%', display: 'flex', margin: 'auto' }}>
+        <CardActionArea css={{ width: '70%', display: 'flex', margin: 'auto' }}>
           <PublicationSection
             picture={'ressources/angular.png'}
           ></PublicationSection>
