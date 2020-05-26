@@ -143,11 +143,11 @@ export function AllWorkshopSection() {
         css={{
           display: 'flex',
           flexDirection: 'row',
+          flexWrap: 'wrap',
           margin: 'auto',
           marginTop: '20px',
-          flexWrap: 'wrap',
-          width: '300px',
-          [theme.breakpoints.up('md')]: {
+          width: '400px',
+          [theme.breakpoints.up('lg')]: {
             width: '1300px',
           },
         }}
@@ -161,8 +161,8 @@ export function AllWorkshopSection() {
           margin: '20px',
           flexWrap: 'wrap',
           margin: 'auto',
-          width: '300px',
-          [theme.breakpoints.up('md')]: {
+          width: '400px',
+          [theme.breakpoints.up('lg')]: {
             width: '1300px',
           },
         }}

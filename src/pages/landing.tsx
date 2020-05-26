@@ -341,7 +341,12 @@ export function NewsSection() {
             id="outlined-basic"
             label="E-mail"
             variant="outlined"
-            css={{ width: '600px' }}
+            css={{
+              width: '100%',
+              [theme.breakpoints.up('md')]: {
+                width: '600px',
+              },
+            }}
           />
         </form>
         <p css={{ fontSize: '14px' }}>
