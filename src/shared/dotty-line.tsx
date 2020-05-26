@@ -5,7 +5,7 @@ export function DottyLine() {
   const width = 60
   const style = css({
     borderBottom: '3px solid',
-    float: 'left',
+    display: 'inline-block',
     margin: '20px 5px',
   })
 
