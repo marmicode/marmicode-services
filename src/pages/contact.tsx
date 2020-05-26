@@ -1,25 +1,15 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import Layout from '../components/layout'
 import Button from '@material-ui/core/Button'
-import { Picture } from '../shared/picture'
-import { TitleWorkshop } from './workshop'
 import TextField from '@material-ui/core/TextField'
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail'
 import PhoneIcon from '@material-ui/icons/Phone'
-import WorkIcon from '@material-ui/icons/Work'
 import PlaceIcon from '@material-ui/icons/Place'
-import {
-  DottyLine,
-  Footer,
-  LandingSection,
-  PublicationSection,
-} from './landing'
-import { ServicesCards } from './services'
-import { css } from '@emotion/core'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import { GuideSection, TalkSection, VideoSection } from './ressources'
+import WorkIcon from '@material-ui/icons/Work'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import Layout from '../components/layout'
 import { theme } from '../config/theme'
+import { Footer, LandingSection } from './landing'
+import { TitleWorkshop } from './workshop'
 
 export default function ContactPage() {
   const { t } = useTranslation('workshop')

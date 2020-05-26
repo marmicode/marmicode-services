@@ -1,63 +1,20 @@
 import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
+import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
-import { marmicodeSecondaryColor } from '../config/config'
 import { theme } from '../config/theme'
 import { Banner } from '../landing/banner'
+import { DottyLine } from '../shared/dotty-line'
 import { Person } from '../shared/person'
 import { Picture } from '../shared/picture'
 import { TopLeftSlant } from '../shared/slant'
-import { AppBar, IconButton } from '@material-ui/core'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
-import CardActionArea from '@material-ui/core/CardActionArea'
-
-export function DottyLine() {
-  const width = 60
-  const style = css({
-    borderBottom: '3px solid',
-    float: 'left',
-    margin: '20px 5px',
-  })
-
-  const itemList = [
-    {
-      color: '#380030',
-      width,
-    },
-    {
-      color: '#600053',
-      width: width / 2,
-    },
-    {
-      color: '#810070',
-      width: width / 4,
-    },
-  ]
-
-  return (
-    <div>
-      {itemList.map((item, index) => (
-        <div
-          key={index}
-          css={[
-            style,
-            css({
-              borderBottomColor: item.color,
-              width: `${item.width}px`,
-            }),
-          ]}
-        />
-      ))}
-    </div>
-  )
-}
 
 export function ServiceCard({ title, picture, children }) {
   return (
