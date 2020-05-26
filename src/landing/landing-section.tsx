@@ -25,7 +25,7 @@ export function LandingSection({
         component="h2"
         gutterBottom
         color={'primary'}
-        style={{
+        css={{
           padding: '30px',
           fontSize: '40px',
           [theme.breakpoints.up('md')]: {
