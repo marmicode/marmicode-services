@@ -4,13 +4,7 @@ import React from 'react'
 import { theme } from '../config/theme'
 import { DottyLine } from '../shared/dotty-line'
 
-export function LandingSection({
-  children,
-  title,
-}: {
-  children
-  title: string
-}) {
+export function PageSection({ children, title }: { children; title: string }) {
   return (
     <section
       css={css({

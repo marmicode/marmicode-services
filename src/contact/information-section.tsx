@@ -1,4 +1,4 @@
-import { LandingSection } from '../landing/landing-section'
+import { PageSection } from '../landing/page-section'
 import { theme } from '../config/theme'
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail'
 import PhoneIcon from '@material-ui/icons/Phone'
@@ -8,7 +8,7 @@ import React from 'react'
 
 export function InformationSection() {
   return (
-    <LandingSection title={'Informations'}>
+    <PageSection title={'Informations'}>
       <div
         css={{
           display: 'flex',
@@ -92,6 +92,6 @@ export function InformationSection() {
           </div>
         </div>
       </div>
-    </LandingSection>
+    </PageSection>
   )
 }

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { theme } from '../config/theme'
 import { Footer } from '../landing/footer'
-import { LandingSection } from '../landing/landing-section'
+import { PageSection } from '../landing/page-section'
 import { PublicationSection } from '../landing/publication-section'
 import { TitleWorkshop } from './workshops'
 
@@ -27,7 +27,7 @@ export default function RessourcesPage() {
 export function TalkSection() {
   return (
     <div>
-      <LandingSection title={'Talks'} />
+      <PageSection title={'Talks'} />
       <div
         css={css({
           display: 'flex',
@@ -68,7 +68,7 @@ export function TalkSection() {
 export function VideoSection() {
   return (
     <div>
-      <LandingSection title={'Videos'} />
+      <PageSection title={'Videos'} />
       <div
         css={css({
           display: 'flex',
@@ -159,7 +159,7 @@ export function VideoSection() {
 export function GuideSection() {
   return (
     <div>
-      <LandingSection title={'Angular guide'} />
+      <PageSection title={'Angular guide'} />
       <div
         css={css({
           display: 'flex',

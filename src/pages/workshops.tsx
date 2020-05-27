@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { theme } from '../config/theme'
 import { Footer } from '../landing/footer'
-import { LandingSection } from '../landing/landing-section'
+import { PageSection } from '../landing/page-section'
 import { Picture } from '../shared/picture'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -71,7 +71,7 @@ export function Comments({ name, workshop, children }) {
 
 export function CommentsSection() {
   return (
-    <LandingSection title={'Comments'}>
+    <PageSection title={'Comments'}>
       <div
         css={{
           display: 'flex',
@@ -120,7 +120,7 @@ export function CommentsSection() {
           ipsum dolor sit amet. Lorem ipsum dolor sit
         </Comments>
       </div>
-    </LandingSection>
+    </PageSection>
   )
 }
 export function ButtonGroups() {

@@ -1,11 +1,11 @@
 import React from 'react'
 import { TopLeftSlant } from '../shared/slant'
-import { LandingSection } from './landing-section'
+import { PageSection } from './page-section'
 import { ServiceCard } from './service-card'
 
 export function ServicesSection() {
   return (
-    <LandingSection title={'Services'}>
+    <PageSection title={'Services'}>
       <TopLeftSlant />
 
       <ServiceCard title={'WORKSHOPS'} picture={'landing/workshop.jpg'}>
@@ -31,6 +31,6 @@ export function ServicesSection() {
         <li>Best practices and tools</li>
         <li>Stay up-to-date</li>
       </ServiceCard>
-    </LandingSection>
+    </PageSection>
   )
 }

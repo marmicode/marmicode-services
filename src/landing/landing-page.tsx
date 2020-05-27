@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { Banner } from './banner'
 import { Footer } from './footer'
-import { LandingSection } from './landing-section'
+import { PageSection } from './page-section'
 import { NewsSection } from './news-section'
 import { PresentationCard } from './presentation-card'
 import { ServicesSection } from './services-section'
@@ -16,9 +16,9 @@ export function LandingPage() {
     <Layout title={t('title')}>
       <Banner />
       <ServicesSection />
-      <LandingSection title={'coach'}>
+      <PageSection title={'coach'}>
         <PresentationCard />
-      </LandingSection>
+      </PageSection>
       <TalksSection />
       <NewsSection />
       <Footer />

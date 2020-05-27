@@ -4,7 +4,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { theme } from '../config/theme'
-import { LandingSection } from '../landing/landing-section'
+import { PageSection } from '../landing/page-section'
 import { Picture } from '../shared/picture'
 import { Footer } from '../landing/footer'
 import { WorkshopsCard } from './workshops'
@@ -218,7 +218,7 @@ export function DetailsSection() {
 
 export function SimilarWorkshop() {
   return (
-    <LandingSection title={'Similar Workshops'}>
+    <PageSection title={'Similar Workshops'}>
       <div
         css={{
           display: 'flex',
@@ -233,6 +233,6 @@ export function SimilarWorkshop() {
         <div css={{ width: '20px' }} />
         <WorkshopsCard />
       </div>
-    </LandingSection>
+    </PageSection>
   )
 }
