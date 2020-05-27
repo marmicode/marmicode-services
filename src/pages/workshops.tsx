@@ -46,11 +46,15 @@ export function Comments({ name, workshop, children }) {
         display: 'flex',
         flexDirection: 'row',
         width: '100%',
-        border: 'solid 2px',
+        border: 'solid 1px',
+        borderLeftWidth: '0px',
+        borderRightWidth: '0px',
         borderColor: '#380030',
-        marginTop: '10px',
         [theme.breakpoints.up('sm')]: {
           width: '45%',
+          borderLeftWidth: '1px',
+          borderRightWidth: '1px',
+          marginTop: '10px',
         },
       }}
     >
@@ -99,7 +103,6 @@ export function CommentsSection() {
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-around',
-          marginTop: '20px',
         }}
       >
         <Comments name="Jacques" workshop="Angular">
