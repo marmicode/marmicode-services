@@ -60,7 +60,7 @@ export function NewsSection() {
         </div>
         <p css={{ fontSize: '14px' }}>
           *En renseignant votre adresse mail vous affirmez avoir pris
-          connaissance de la politique de confidentialité
+          connaissance de la politique de confidentialité.
         </p>
       </div>
     </LandingSection>
