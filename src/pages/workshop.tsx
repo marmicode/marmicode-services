@@ -222,15 +222,15 @@ export function SimilarWorkshop() {
       <div
         css={{
           display: 'flex',
-          margin: '20px',
-          flexWrap: 'wrap',
           margin: 'auto',
+          flexWrap: 'wrap',
           [theme.breakpoints.down('sm')]: {
             width: '350px',
           },
         }}
       >
         <WorkshopsCard />
+        <div css={{ width: '20px' }} />
         <WorkshopsCard />
       </div>
     </LandingSection>

@@ -190,11 +190,15 @@ export function WorkshopsCard() {
         <div
           css={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: 'column',
             backgroundColor: '#380030',
             color: 'white',
             marginTop: '0px',
             padding: '0px',
+            alignItems: 'center',
+            [theme.breakpoints.up('sm')]: {
+              flexDirection: 'row',
+            },
           }}
         >
           <Picture
