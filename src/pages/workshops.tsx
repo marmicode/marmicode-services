@@ -8,6 +8,8 @@ import { theme } from '../config/theme'
 import { Footer } from '../landing/footer'
 import { LandingSection } from '../landing/landing-section'
 import { Picture } from '../shared/picture'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 
 export default function WorkshopListPage() {
   const { t } = useTranslation('workshop')
@@ -44,11 +46,15 @@ export function Comments({ name, workshop, children }) {
         display: 'flex',
         flexDirection: 'row',
         width: '100%',
-        border: 'solid 2px',
+        border: 'solid 1px',
+        borderLeftWidth: '0px',
+        borderRightWidth: '0px',
         borderColor: '#380030',
-        marginTop: '10px',
         [theme.breakpoints.up('sm')]: {
           width: '45%',
+          borderLeftWidth: '1px',
+          borderRightWidth: '1px',
+          marginTop: '10px',
         },
       }}
     >
@@ -97,7 +103,6 @@ export function CommentsSection() {
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-around',
-          marginTop: '20px',
         }}
       >
         <Comments name="Jacques" workshop="Angular">
@@ -125,7 +130,11 @@ export function ButtonGroups() {
       variant="outlined"
       color="primary"
       size={'medium'}
-      css={{ margin: 'auto', marginTop: '15px', marginBottom: '15px' }}
+      css={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '15px',
+      }}
     >
       <Button>Reserve</Button>
       <Button>More details</Button>
@@ -155,77 +164,88 @@ export function AllWorkshopSection() {
 }
 export function WorkshopsCard() {
   return (
-    <div
+    <Card
       css={css({
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
         flexWrap: 'wrap',
         maxWidth: '600px',
+        marginTop: '15px',
       })}
     >
-      <div>
-        <h2
-          css={{
-            backgroundColor: '#5E335A',
-            color: 'white',
-            textAlign: 'center',
-            margin: '0px',
-          }}
-        >
-          Angular Unit-Testing Workshop- Fundamental & test-driven development{' '}
-        </h2>
-      </div>
-      <div
-        css={{
-          display: 'flex',
-          flexDirection: 'row',
-          backgroundColor: '#380030',
-          color: 'white',
-          marginTop: '0px',
-          padding: '0px',
-        }}
-      >
-        <Picture path={'workshop/angular.png'} height={'250px'} width={'50%'} />
+      <CardContent>
+        <div>
+          <h2
+            css={{
+              backgroundColor: '#5E335A',
+              color: 'white',
+              textAlign: 'center',
+              margin: '0px',
+            }}
+          >
+            Angular Unit-Testing Workshop- Fundamental & test-driven development{' '}
+          </h2>
+        </div>
         <div
           css={{
             display: 'flex',
             flexDirection: 'column',
-            margin: 'auto',
+            backgroundColor: '#380030',
+            color: 'white',
+            marginTop: '0px',
+            padding: '0px',
+            alignItems: 'center',
+            [theme.breakpoints.up('sm')]: {
+              flexDirection: 'row',
+            },
           }}
         >
-          <h3> - Avantage 1 </h3>
-          <h3> - Avantage 2 </h3>
-          <h3> - Avantage 3 </h3>
-          <h3> - Avantage 4 </h3>
+          <Picture
+            path={'workshop/angular.png'}
+            height={'250px'}
+            width={'50%'}
+          />
+          <div
+            css={{
+              display: 'flex',
+              flexDirection: 'column',
+              margin: 'auto',
+            }}
+          >
+            <h3> - Avantage 1 </h3>
+            <h3> - Avantage 2 </h3>
+            <h3> - Avantage 3 </h3>
+            <h3> - Avantage 4 </h3>
+          </div>
         </div>
-      </div>
-      <div css={{ display: 'flex', flexDirection: 'row' }}>
-        <div
-          css={{
-            textAlign: 'center',
-            flex: 1,
-            border: 'solid',
-            borderColor: '#380030',
-          }}
-        >
-          <h3>Next date</h3>
-          <h2>TUE, JUN 23 </h2>
+        <div css={{ display: 'flex', flexDirection: 'row' }}>
+          <div
+            css={{
+              textAlign: 'center',
+              flex: 1,
+              border: 'solid',
+              borderColor: '#380030',
+            }}
+          >
+            <h3>Next date</h3>
+            <h2>TUE, JUN 23 </h2>
+          </div>
+          <div
+            css={{
+              textAlign: 'center',
+              flex: 1,
+              border: 'solid',
+              borderColor: '#380030',
+            }}
+          >
+            <h3>Price</h3>
+            <h2>From €495,60</h2>
+          </div>
         </div>
-        <div
-          css={{
-            textAlign: 'center',
-            flex: 1,
-            border: 'solid',
-            borderColor: '#380030',
-          }}
-        >
-          <h3>Price</h3>
-          <h2>From €495,60</h2>
-        </div>
-      </div>
-      <ButtonGroups />
-    </div>
+        <ButtonGroups />
+      </CardContent>
+    </Card>
   )
 }
 

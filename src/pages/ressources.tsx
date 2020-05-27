@@ -77,7 +77,7 @@ export function VideoSection() {
           flexWrap: 'wrap',
         })}
       >
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -88,7 +88,7 @@ export function VideoSection() {
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
 
         <CardActionArea
           css={{

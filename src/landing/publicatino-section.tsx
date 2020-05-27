@@ -4,7 +4,6 @@ import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { Picture } from '../shared/picture'
-import CardActionArea from '@material-ui/core/CardActionArea'
 
 export function PublicationSection({ picture, children }) {
   return (
@@ -18,12 +17,10 @@ export function PublicationSection({ picture, children }) {
       })}
     >
       <CardContent css={{ textAlign: 'center' }}>
-        <CardActionArea>
-          <Picture path={picture} />
-          <Typography variant="body2" color="textSecondary" component="p">
-            {children}
-          </Typography>
-        </CardActionArea>
+        <Picture path={picture} />
+        <Typography variant="body2" color="textSecondary" component="p">
+          {children}
+        </Typography>
       </CardContent>
       <div css={css({ flex: 1 })} />
     </Card>

@@ -53,7 +53,6 @@ export function TalksSection() {
           size="large"
           color="primary"
           css={{
-            width: '30%',
             display: 'flex',
             margin: 'auto',
           }}
