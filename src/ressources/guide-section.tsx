@@ -1,7 +1,7 @@
 import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 import CardActionArea from '@material-ui/core/CardActionArea'
-import { PublicationSection } from '../landing/publication-section'
+import { PublicationSection } from '../shared/publication-section'
 import Button from '@material-ui/core/Button'
 import { theme } from '../config/theme'
 import React from 'react'

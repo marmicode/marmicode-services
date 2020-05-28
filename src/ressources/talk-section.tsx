@@ -2,8 +2,9 @@ import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { theme } from '../config/theme'
-import { PublicationSection } from '../landing/publication-section'
+import { PublicationSection } from '../shared/publication-section'
 import React from 'react'
+import CardMedia from '@material-ui/core/CardMedia'
 
 export function TalkSection() {
   return (

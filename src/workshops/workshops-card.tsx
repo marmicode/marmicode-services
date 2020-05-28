@@ -69,6 +69,7 @@ export function WorkshopsCard() {
               textAlign: 'center',
               flex: 1,
               border: 'solid',
+              borderRightWidth: '0px',
               borderColor: '#380030',
             }}
           >

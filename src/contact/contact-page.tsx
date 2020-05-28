@@ -7,7 +7,7 @@ import { Footer } from '../shared/footer'
 import React from 'react'
 import { PageTitle } from '../shared/page-title'
 
-export default function ContactPage() {
+export function ContactPage() {
   const { t } = useTranslation('workshop')
 
   return (

@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import React from 'react'
 import { PageSection } from '../shared/page-section'
-import { PublicationSection } from './publication-section'
+import { PublicationSection } from '../shared/publication-section'
 
 export function TalksSection() {
   return (

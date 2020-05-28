@@ -1,1 +1,3 @@
-import React from 'react'
+import { ContactPage } from '../contact/contact-page'
+
+export default ContactPage
