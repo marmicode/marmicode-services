@@ -1,1 +1,3 @@
-import React from 'react'
+import { RessourcesPage } from '../ressources/ressources-page'
+
+export default RessourcesPage

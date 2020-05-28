@@ -7,7 +7,7 @@ import { GuideSection } from './guide-section'
 import { Footer } from '../shared/footer'
 import React from 'react'
 
-export default function RessourcesPage() {
+export function RessourcesPage() {
   const { t } = useTranslation('workshop')
 
   return (

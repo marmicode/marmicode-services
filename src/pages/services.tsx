@@ -1,1 +1,3 @@
-import React from 'react'
+import { ServicesPage } from '../services/services-page'
+
+export default ServicesPage

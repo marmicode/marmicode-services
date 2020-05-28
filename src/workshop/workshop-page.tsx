@@ -7,7 +7,7 @@ import { SimilarWorkshop } from './similar-workshop'
 import { Footer } from '../shared/footer'
 import React from 'react'
 
-export default function WorkshopPage() {
+export function WorkshopPage() {
   const { t } = useTranslation('workshop details')
 
   return (

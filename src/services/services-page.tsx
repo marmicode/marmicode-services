@@ -5,7 +5,7 @@ import { ServicesCards } from './services-cards'
 import { Footer } from '../shared/footer'
 import React from 'react'
 
-export default function ServicesPage() {
+export function ServicesPage() {
   const { t } = useTranslation('workshop')
 
   return (

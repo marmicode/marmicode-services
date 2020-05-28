@@ -7,7 +7,7 @@ import { CommentButton } from './comment-button'
 import { Footer } from '../shared/footer'
 import React from 'react'
 
-export default function WorkshopsPage() {
+export function WorkshopsPage() {
   const { t } = useTranslation('workshop')
 
   return (

@@ -1,1 +1,3 @@
-import React from 'react'
+import { WorkshopPage } from '../workshop/workshop-page'
+
+export default WorkshopPage
