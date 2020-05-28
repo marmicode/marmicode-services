@@ -5,14 +5,14 @@ import Layout from '../components/layout'
 import { theme } from '../config/theme'
 import { Footer } from '../landing/footer'
 import { Picture } from '../shared/picture'
-import { TitleWorkshop } from './workshops'
+import { PageTitle } from '../shared/page-title'
 
 export default function ServicesPage() {
   const { t } = useTranslation('workshop')
 
   return (
     <Layout title={t('Services')}>
-      <TitleWorkshop title={'SERVICES'} />
+      <PageTitle title={'SERVICES'} />
       <ServicesCards />
       <Footer />
     </Layout>

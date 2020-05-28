@@ -7,7 +7,7 @@ import { theme } from '../config/theme'
 import { PageSection } from '../landing/page-section'
 import { Picture } from '../shared/picture'
 import { Footer } from '../landing/footer'
-import { WorkshopsCard } from './workshops'
+import { WorkshopsCard } from '../workshops/workshops-card'
 
 export default function WorkshopDetailPage() {
   const { t } = useTranslation('workshop details')

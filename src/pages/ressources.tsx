@@ -8,14 +8,14 @@ import { theme } from '../config/theme'
 import { Footer } from '../landing/footer'
 import { PageSection } from '../landing/page-section'
 import { PublicationSection } from '../landing/publication-section'
-import { TitleWorkshop } from './workshops'
+import { PageTitle } from '../shared/page-title'
 
 export default function RessourcesPage() {
   const { t } = useTranslation('workshop')
 
   return (
     <Layout title={t('Ressources')}>
-      <TitleWorkshop title={'Ressources'} />
+      <PageTitle title={'Ressources'} />
       <TalkSection />
       <VideoSection />
       <GuideSection />
