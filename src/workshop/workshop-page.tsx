@@ -4,7 +4,7 @@ import { WorkshopCard } from './workshop-card'
 import { ReserveButton } from './reserve-button'
 import { DetailsSection } from './detail-section'
 import { SimilarWorkshop } from './similar-workshop'
-import { Footer } from '../landing/footer'
+import { Footer } from '../shared/footer'
 import React from 'react'
 
 export default function WorkshopPage() {

@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import { Subtitle } from './subtitle'
 import { Form } from './form'
 import { InformationSection } from './information-section'
-import { Footer } from '../landing/footer'
+import { Footer } from '../shared/footer'
 import React from 'react'
 import { PageTitle } from '../shared/page-title'
 

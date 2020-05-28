@@ -1,4 +1,4 @@
-import { PageSection } from '../landing/page-section'
+import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { theme } from '../config/theme'
@@ -8,7 +8,7 @@ import React from 'react'
 export function TalkSection() {
   return (
     <div>
-      <PageSection title={'Talks'}/>
+      <PageSection title={'Talks'} />
       <div
         css={css({
           display: 'flex',

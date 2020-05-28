@@ -1,4 +1,4 @@
-import { PageSection } from '../landing/page-section'
+import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 import { theme } from '../config/theme'
 import { PublicationSection } from '../landing/publication-section'

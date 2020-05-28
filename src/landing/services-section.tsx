@@ -1,6 +1,6 @@
 import React from 'react'
 import { TopLeftSlant } from '../shared/slant'
-import { PageSection } from './page-section'
+import { PageSection } from '../shared/page-section'
 import { ServiceCard } from './service-card'
 
 export function ServicesSection() {

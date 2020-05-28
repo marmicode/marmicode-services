@@ -4,7 +4,7 @@ import { PageTitle } from '../shared/page-title'
 import { AllWorkshopSection } from './all-workshop-section'
 import { CommentsSection } from './comments-section'
 import { CommentButton } from './comment-button'
-import { Footer } from '../landing/footer'
+import { Footer } from '../shared/footer'
 import React from 'react'
 
 export default function WorkshopsPage() {
@@ -12,11 +12,11 @@ export default function WorkshopsPage() {
 
   return (
     <Layout title={t('Workshop')}>
-      <PageTitle title={'WORKSHOPS'}/>
-      <AllWorkshopSection/>
-      <CommentsSection/>
-      <CommentButton/>
-      <Footer/>
+      <PageTitle title={'WORKSHOPS'} />
+      <AllWorkshopSection />
+      <CommentsSection />
+      <CommentButton />
+      <Footer />
     </Layout>
   )
 }

@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import React from 'react'
 import { theme } from '../config/theme'
-import { PageSection } from './page-section'
+import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 
 export function NewsSection() {

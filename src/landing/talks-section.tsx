@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import React from 'react'
-import { PageSection } from './page-section'
+import { PageSection } from '../shared/page-section'
 import { PublicationSection } from './publication-section'
 
 export function TalksSection() {

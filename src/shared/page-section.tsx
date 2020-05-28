@@ -2,7 +2,7 @@ import { css } from '@emotion/core'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { theme } from '../config/theme'
-import { DottyLine } from '../shared/dotty-line'
+import { DottyLine } from './dotty-line'
 
 export function PageSection({ children, title }: { children; title: string }) {
   return (

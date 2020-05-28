@@ -1,4 +1,4 @@
-import { PageSection } from '../landing/page-section'
+import { PageSection } from '../shared/page-section'
 import { theme } from '../config/theme'
 import { WorkshopsCard } from '../workshops/workshops-card'
 import React from 'react'

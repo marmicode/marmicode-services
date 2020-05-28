@@ -1,4 +1,4 @@
-import { PageSection } from '../landing/page-section'
+import { PageSection } from '../shared/page-section'
 import { Comments } from './comments'
 import React from 'react'
 

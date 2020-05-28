@@ -1,4 +1,4 @@
-import { PageSection } from '../landing/page-section'
+import { PageSection } from '../shared/page-section'
 import { theme } from '../config/theme'
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail'
 import PhoneIcon from '@material-ui/icons/Phone'

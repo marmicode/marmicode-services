@@ -4,7 +4,7 @@ import { PageTitle } from '../shared/page-title'
 import { TalkSection } from './talk-section'
 import { VideoSection } from './video-section'
 import { GuideSection } from './guide-section'
-import { Footer } from '../landing/footer'
+import { Footer } from '../shared/footer'
 import React from 'react'
 
 export default function RessourcesPage() {
