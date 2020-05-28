@@ -18,8 +18,8 @@ export function ServicesSection({ picture, title, children }) {
     >
       <Picture
         path={picture}
-        height={'50%'}
-        width={'50%'}
+        height={'40%'}
+        width={'40%'}
         css={{
           flexWrap: 'wrap',
         }}
@@ -28,8 +28,8 @@ export function ServicesSection({ picture, title, children }) {
         <h1 css={{ textAlign: 'left' }}>{title}</h1>
         <p
           css={{
-            fontSize: '20px',
-            [theme.breakpoints.up('md')]: { fontSize: '30px' },
+            fontSize: '15px',
+            [theme.breakpoints.up('md')]: { fontSize: '25px' },
           }}
         >
           {children}

@@ -4,6 +4,7 @@ import { PageTitle } from '../shared/page-title'
 import { ServicesCards } from './services-cards'
 import { Footer } from '../shared/footer'
 import React from 'react'
+import { SectionRight } from './section-right'
 
 export function ServicesPage() {
   const { t } = useTranslation('workshop')
