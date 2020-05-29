@@ -1,6 +1,6 @@
 import React from 'react'
 import { theme } from '../config/theme'
-import { Picture } from '../shared/picture'
+import { Picture } from './picture'
 
 export function Footer() {
   return (

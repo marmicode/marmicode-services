@@ -2,12 +2,12 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import React from 'react'
 import { theme } from '../config/theme'
-import { LandingSection } from './landing-section'
+import { PageSection } from '../shared/page-section'
 import { css } from '@emotion/core'
 
 export function NewsSection() {
   return (
-    <LandingSection title={'Subscribe to our newsletter'}>
+    <PageSection title={'Subscribe to our newsletter'}>
       <div css={{ display: 'flex', flexDirection: 'column', margin: '10px' }}>
         <TextField
           id="outlined-basic"
@@ -63,6 +63,6 @@ export function NewsSection() {
           connaissance de la politique de confidentialité.
         </p>
       </div>
-    </LandingSection>
+    </PageSection>
   )
 }

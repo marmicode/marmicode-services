@@ -2,12 +2,12 @@ import { css } from '@emotion/core'
 import Button from '@material-ui/core/Button'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import React from 'react'
-import { LandingSection } from './landing-section'
-import { PublicationSection } from './publication-section'
+import { PageSection } from '../shared/page-section'
+import { PublicationSection } from '../shared/publication-section'
 
 export function TalksSection() {
   return (
-    <LandingSection title={'Talks & publications'}>
+    <PageSection title={'Talks & publications'}>
       <div css={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <div
           css={css({
@@ -60,6 +60,6 @@ export function TalksSection() {
           See more content
         </Button>
       </div>
-    </LandingSection>
+    </PageSection>
   )
 }
