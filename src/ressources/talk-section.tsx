@@ -18,7 +18,7 @@ export function TalkSection() {
           flex: 1,
         })}
       >
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -29,9 +29,9 @@ export function TalkSection() {
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
 
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -41,7 +41,7 @@ export function TalkSection() {
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
       </div>
     </div>
   )

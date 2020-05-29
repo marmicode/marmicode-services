@@ -31,7 +31,7 @@ export function VideoSection() {
           </PublicationSection>
         </div>
 
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -41,7 +41,7 @@ export function VideoSection() {
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
       </div>
       <div
         css={css({
@@ -51,7 +51,7 @@ export function VideoSection() {
           flex: 1,
         })}
       >
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -62,9 +62,9 @@ export function VideoSection() {
             White-labeling & A/B testing with interchangeable components |
             AngularConnect 2018{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
 
-        <CardActionArea
+        <div
           css={{
             [theme.breakpoints.up('md')]: {
               width: '50%',
@@ -74,7 +74,7 @@ export function VideoSection() {
           <PublicationSection picture={'landing/talk2.png'}>
             Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
           </PublicationSection>
-        </CardActionArea>
+        </div>
       </div>
       <Button
         variant="contained"

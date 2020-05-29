@@ -20,7 +20,10 @@ export function PublicationSection({ picture, children }) {
     >
       <CardContent css={{ textAlign: 'center' }}>
         <CardActionArea>
-          <Picture path={picture} />
+          <CardMedia>
+            {' '}
+            <Picture path={picture} />
+          </CardMedia>
           <Typography variant="body2" color="textSecondary" component="p">
             {children}
           </Typography>

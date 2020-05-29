@@ -17,11 +17,11 @@ export function GuideSection() {
           flexWrap: 'wrap',
         })}
       >
-        <CardActionArea css={{ width: '70%', display: 'flex', margin: 'auto' }}>
+        <div css={{ width: '70%', display: 'flex', margin: 'auto' }}>
           <PublicationSection
             picture={'ressources/angular.png'}
           ></PublicationSection>
-        </CardActionArea>
+        </div>
       </div>
       <Button
         variant="contained"
