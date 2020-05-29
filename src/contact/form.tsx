@@ -1,6 +1,7 @@
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import React from 'react'
+import { theme } from '../config/theme'
 
 export function Form() {
   return (
@@ -13,10 +14,13 @@ export function Form() {
     >
       <TextField
         css={{
-          width: '50%',
           display: 'flex',
           margin: 'auto',
           marginBottom: '20px',
+          width: '100%',
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+          },
         }}
         id="outlined-textarea"
         label="E-mail"
@@ -26,10 +30,13 @@ export function Form() {
       />
       <TextField
         css={{
-          width: '50%',
           display: 'flex',
           margin: 'auto',
           marginBottom: '20px',
+          width: '100%',
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+          },
         }}
         id="outlined-textarea"
         label="Name"
@@ -39,10 +46,13 @@ export function Form() {
       />
       <TextField
         css={{
-          width: '50%',
           display: 'flex',
           margin: 'auto',
           marginBottom: '20px',
+          width: '100%',
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+          },
         }}
         id="outlined-textarea"
         label="Company"
@@ -52,10 +62,13 @@ export function Form() {
       />
       <TextField
         css={{
-          width: '50%',
           display: 'flex',
           margin: 'auto',
           marginBottom: '20px',
+          width: '100%',
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+          },
         }}
         id="outlined-number"
         label="Number"
@@ -67,10 +80,13 @@ export function Form() {
       />
       <TextField
         css={{
-          width: '50%',
           display: 'flex',
           margin: 'auto',
           marginBottom: '20px',
+          width: '100%',
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+          },
         }}
         id="outlined-multiline-static"
         label="Message"
