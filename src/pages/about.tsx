@@ -55,15 +55,27 @@ export function WhatWeDo({ picture, title, children }) {
     <>
       <div
         css={{
+          width: '400px',
+          height: '300px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'start',
+          paddingLeft: '15px',
+          margin: '20px',
+          textAlign: 'center',
         }}
       >
-        <Picture path={picture} height={'200px'} width={'200px'} />
-        <h2>{title}</h2>
-        <p>{children}</p>
+        <Picture
+          path={picture}
+          height={'300px'}
+          width={'300px'}
+          css={{
+            display: 'flex',
+            margin: 'auto',
+          }}
+        />
+        <h2 css={{ display: 'flex', margin: 'auto' }}>{title}</h2>
+        <p css={{ width: '400px' }}>{children}</p>
       </div>
     </>
   )
@@ -96,5 +108,9 @@ export function WwdSection() {
 }
 
 export function Title() {
-  return <h1 css={{ fontSize: '60px', textAlign: 'center' }}>What we do.</h1>
+  return (
+    <h1 css={{ fontSize: '60px', textAlign: 'center', color: '#380030' }}>
+      What we do.
+    </h1>
+  )
 }
