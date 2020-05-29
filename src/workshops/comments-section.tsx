@@ -1,6 +1,7 @@
 import { PageSection } from '../shared/page-section'
 import { Comments } from './comments'
 import React from 'react'
+import { theme } from '../config/theme'
 
 export function CommentsSection() {
   return (
@@ -52,6 +53,13 @@ export function CommentsSection() {
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet. Lorem ipsum dolor sit
         </Comments>
+        <div
+          css={{
+            width: '100%',
+            borderTop: 'solid 1px',
+            borderColor: '#380030',
+          }}
+        />
       </div>
     </PageSection>
   )
