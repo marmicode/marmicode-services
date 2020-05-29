@@ -8,6 +8,7 @@ export function DetailsSection() {
         css={{
           backgroundColor: '#380030',
           color: 'white',
+          marginTop: '50px',
           display: 'flex',
           height: '100px',
           width: '97%',
