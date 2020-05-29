@@ -20,13 +20,24 @@ export function WorkshopCard() {
       <div
         css={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           backgroundColor: '#380030',
           color: 'white',
+          alignItems: 'center',
+          [theme.breakpoints.up('md')]: {
+            flexDirection: 'row',
+          },
         }}
       >
-        <Picture path={'workshop/angular.png'} height={'250px'} width={'50%'} />
-        <div css={{ display: 'flex', flexDirection: 'column', margin: 'auto' }}>
+        <Picture path={'workshop/angular.png'} height={'100%'} width={'50%'} />
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            margin: 'auto',
+            fontSize: '15px',
+          }}
+        >
           <h3> - Avantage 1 </h3>
           <h3> - Avantage 2 </h3>
           <h3> - Avantage 3 </h3>
