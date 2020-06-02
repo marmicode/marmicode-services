@@ -52,7 +52,7 @@ export function MarmicodeDetails() {
   )
 }
 
-export function WhatWeDo({ picture, title, children }) {
+export function WhatWeDo({ title, children }) {
   return (
     <>
       <div
@@ -67,15 +67,6 @@ export function WhatWeDo({ picture, title, children }) {
           textAlign: 'center',
         }}
       >
-        <Picture
-          path={picture}
-          height={'300px'}
-          width={'100%'}
-          css={{
-            display: 'flex',
-            margin: 'auto',
-          }}
-        />
         <h2 css={{ display: 'flex', margin: 'auto' }}>{title}</h2>
         <p css={{ width: '400px' }}>{children}</p>
       </div>
@@ -93,16 +84,16 @@ export function WwdSection() {
           justifyContent: 'space-around',
         }}
       >
-        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+        <WhatWeDo title={'Workshops'}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           magna aliquyam erat,magna aliquyam erat,
         </WhatWeDo>
-        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+        <WhatWeDo title={'Workshops'}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
         </WhatWeDo>
-        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+        <WhatWeDo title={'Workshops'}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
         </WhatWeDo>
@@ -160,7 +151,7 @@ export function TheCoach({ picture, name, children }) {
   return (
     <div css={{ display: 'flex', justifyContent: 'space-around' }}>
       <div>
-        <Picture path={picture} />
+        <Picture path={picture} height={'100%'} width={'400px'} />
       </div>
 
       <div
@@ -185,7 +176,7 @@ export function YounesSection() {
         {' '}
         The coach.
       </h1>
-      <TheCoach picture={'landing/talk1.png'} name={'Younes Jaaidi'}>
+      <TheCoach picture={'images/younes.jpg'} name={'Younes Jaaidi'}>
         Younes is a trainer, consultant & eXtreme Programming coach who loves
         the challenge of boosting teams efficiency and helping everyone enjoy
         every part of their job. He is passionate about testing, continuous

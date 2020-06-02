@@ -8,7 +8,9 @@ export function ServicesCards() {
       <ServicesSection picture={'services/coaching.jpg'} title={'Workshop'}>
         nvgriehgoz hgirtzo bihrtz jbhozrij br
       </ServicesSection>
-      <SectionRight />
+      <SectionRight title={'Code review'} picture={'services/codereview.jpg'}>
+        gekjgrhlznhbpmqkh
+      </SectionRight>
       <ServicesSection picture={'services/workshop.jpg'} title={'Code Review'}>
         bla lfldn gprzigmeqjzo honlmr,ekf lrgn qlùgl ,m
       </ServicesSection>
