@@ -13,6 +13,7 @@ export default function(AboutPage) {
       <MarmicodeDetails />
       <Title />
       <WwdSection />
+      <ValuesSection />
     </Layout>
   )
 }
@@ -68,7 +69,7 @@ export function WhatWeDo({ picture, title, children }) {
         <Picture
           path={picture}
           height={'300px'}
-          width={'300px'}
+          width={'100%'}
           css={{
             display: 'flex',
             margin: 'auto',
@@ -83,27 +84,29 @@ export function WhatWeDo({ picture, title, children }) {
 
 export function WwdSection() {
   return (
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-      }}
-    >
-      <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, magna
-        aliquyam erat,magna aliquyam erat,
-      </WhatWeDo>
-      <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-      </WhatWeDo>
-      <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-      </WhatWeDo>
-    </div>
+    <>
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+        }}
+      >
+        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          magna aliquyam erat,magna aliquyam erat,
+        </WhatWeDo>
+        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        </WhatWeDo>
+        <WhatWeDo picture={'landing/blog.png'} title={'Workshops'}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+        </WhatWeDo>
+      </div>
+    </>
   )
 }
 
@@ -113,4 +116,45 @@ export function Title() {
       What we do.
     </h1>
   )
+}
+
+export function ValuesSection() {
+  return (
+    <>
+      <h1 css={{ fontSize: '60px', marginLeft: '40px', color: '#380030' }}>
+        {' '}
+        Our values.
+      </h1>
+      <div>
+        <h1
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          Share
+        </h1>
+        <h1
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          Support
+        </h1>
+        <h1
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          I don't know
+        </h1>
+      </div>
+    </>
+  )
+}
+
+export function TheCoach() {
+  return <div></div>
 }
