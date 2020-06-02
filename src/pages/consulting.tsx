@@ -33,6 +33,7 @@ export function ConceptCard({ picture, title, children }) {
         display: 'flex',
         flexDirection: 'column',
         marginBottom: '40px',
+        alignItems: 'center',
         [theme.breakpoints.up('md')]: {
           flexDirection: 'row',
           marginLeft: '0px',
@@ -54,16 +55,19 @@ export function ConceptCard({ picture, title, children }) {
 
       <div
         css={{
-          padding: '5px',
-          width: '80%',
+          padding: '0px',
+          width: '300px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          marginRight: '10px',
-          [theme.breakpoints.up('md')]: { width: '50%' },
+          [theme.breakpoints.up('md')]: {
+            width: '50%',
+            padding: '5px',
+            marginRight: '10px',
+          },
         }}
       >
-        <h1 css={{ textAlign: 'left' }}>{title}</h1>
+        <h2 css={{ textAlign: 'left' }}>{title}</h2>
         <p
           css={{
             fontSize: '15px',
@@ -119,10 +123,10 @@ export function ConceptRight({ title, children, picture }) {
         justifyContent: 'flex-end',
         flexDirection: 'column',
         marginBottom: '40px',
-        alignItems: 'center',
         [theme.breakpoints.up('md')]: {
           flexDirection: 'row',
           marginLeft: '0px',
+          alignItems: 'center',
         },
       }}
     >
@@ -134,11 +138,13 @@ export function ConceptRight({ title, children, picture }) {
           [theme.breakpoints.down('md')]: {
             textAlign: 'left',
             order: 2,
-            width: '50%',
+            width: '300px',
+            paddingRight: '0px',
+            margin: 'auto',
           },
         }}
       >
-        <h1>{title}</h1>
+        <h2>{title}</h2>
         <p
           css={{
             fontSize: '15px',
