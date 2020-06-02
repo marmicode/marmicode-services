@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { PageTitle } from '../shared/page-title'
 
-export default function(ConsultingPage) {
+export default function(Consulting) {
   const { t } = useTranslation('landing')
-  return(
+  return (
     <Layout title={t('Consulting')}>
       <PageTitle title={'Consulting'} />
+    </Layout>
   )
-
 }
