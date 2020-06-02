@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { Footer } from '../shared/footer'
 import { PageTitle } from '../shared/page-title'
 import { Picture } from '../shared/picture'
+import { theme } from '../config/theme'
 
 export default function(AboutPage) {
   const { t } = useTranslation('landing')
@@ -24,10 +25,17 @@ export function MarmicodeDetails() {
     <div
       css={{
         textAlign: 'center',
-        width: '65%',
+        width: '100%',
+        paddingLeft: '5px',
         display: 'flex',
-        margin: 'auto',
         flexDirection: 'column',
+        fontSize: '15px',
+        margin: 'auto',
+
+        [theme.breakpoints.up('md')]: {
+          fontSize: '25px',
+          width: '65%',
+        },
       }}
     >
       <p>
@@ -82,6 +90,7 @@ export function WwdSection() {
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-around',
+          flexWrap: 'wrap',
         }}
       >
         <WhatWeDo title={'Workshops'}>
@@ -147,12 +156,10 @@ export function ValuesSection() {
   )
 }
 
-export function TheCoach({ picture, name, children }) {
+export function TheCoach({ name, children }) {
   return (
     <div css={{ display: 'flex', justifyContent: 'space-around' }}>
-      <div>
-        <Picture path={picture} height={'100%'} width={'400px'} />
-      </div>
+      <div></div>
 
       <div
         css={{
@@ -176,7 +183,7 @@ export function YounesSection() {
         {' '}
         The coach.
       </h1>
-      <TheCoach picture={'images/younes.jpg'} name={'Younes Jaaidi'}>
+      <TheCoach name={'Younes Jaaidi'}>
         Younes is a trainer, consultant & eXtreme Programming coach who loves
         the challenge of boosting teams efficiency and helping everyone enjoy
         every part of their job. He is passionate about testing, continuous
@@ -185,7 +192,7 @@ export function YounesSection() {
         knowledge sharing. In his spare time, you will find him contributing to
         open-source software, writing articles or speaking at meetups or
         conferences… and sometimes sailing. His favorite trick? Adding features
-        by removing code.
+        by removing code.{''}
       </TheCoach>
     </>
   )
