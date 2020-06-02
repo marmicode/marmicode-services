@@ -8,12 +8,13 @@ import { Picture } from '../shared/picture'
 export default function(AboutPage) {
   const { t } = useTranslation('landing')
   return (
-    <Layout title={t('Ressources')}>
+    <Layout title={t('About')}>
       <PageTitle title={'About us.'} />
       <MarmicodeDetails />
       <Title />
       <WwdSection />
       <ValuesSection />
+      <YounesSection />
     </Layout>
   )
 }
@@ -155,6 +156,46 @@ export function ValuesSection() {
   )
 }
 
-export function TheCoach() {
-  return <div></div>
+export function TheCoach({ picture, name, children }) {
+  return (
+    <div css={{ display: 'flex', justifyContent: 'space-around' }}>
+      <div>
+        <Picture path={picture} />
+      </div>
+
+      <div
+        css={{
+          width: '50%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <h2>{name}</h2>
+        <p>{children}</p>
+      </div>
+    </div>
+  )
+}
+
+export function YounesSection() {
+  return (
+    <>
+      <h1 css={{ fontSize: '60px', marginLeft: '40px', color: '#380030' }}>
+        {' '}
+        The coach.
+      </h1>
+      <TheCoach picture={'landing/talk1.png'} name={'Younes Jaaidi'}>
+        Younes is a trainer, consultant & eXtreme Programming coach who loves
+        the challenge of boosting teams efficiency and helping everyone enjoy
+        every part of their job. He is passionate about testing, continuous
+        deployment, automation and simplicity. His experience convinced him that
+        the key to making quality products is collective ownership, passion and
+        knowledge sharing. In his spare time, you will find him contributing to
+        open-source software, writing articles or speaking at meetups or
+        conferences… and sometimes sailing. His favorite trick? Adding features
+        by removing code.
+      </TheCoach>
+    </>
+  )
 }
