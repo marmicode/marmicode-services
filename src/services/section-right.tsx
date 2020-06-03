@@ -55,8 +55,7 @@ export function SectionRight({ title, children, picture }) {
         width={'40%'}
         css={{
           flexWrap: 'wrap',
-
-          [theme.breakpoints.up('md')]: {},
+          [theme.breakpoints.down('md')]: { height: '100%', width: '100%' },
         }}
       />
     </div>

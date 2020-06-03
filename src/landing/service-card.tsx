@@ -23,14 +23,10 @@ export function ServiceCard({ title, picture, children }) {
         <Typography gutterBottom variant="h5" component="h2">
           {title}
         </Typography>
-        <CardActionArea>
-          <CardMedia>
-            <Picture path={picture} />
-          </CardMedia>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {children}
-          </Typography>
-        </CardActionArea>
+        <Picture path={picture} />
+        <Typography variant="body2" color="textSecondary" component="p">
+          {children}
+        </Typography>
       </CardContent>
       <div css={css({ flex: 1 })} />
       <CardActions>

@@ -4,6 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea'
 import React from 'react'
 import { LandingSection } from './landing-section'
 import { PublicationSection } from './publication-section'
+import { theme } from '../config/theme'
 
 export function TalksSection() {
   return (
@@ -16,18 +17,30 @@ export function TalksSection() {
             flexWrap: 'wrap',
           })}
         >
-          <div css={{ width: '50%' }}>
+          <div
+            css={{
+              [theme.breakpoints.up('md')]: {
+                width: '50%',
+              },
+            }}
+          >
             <PublicationSection picture={'landing/talk1.png'}>
               White-labeling & A/B testing with interchangeable components |
               AngularConnect 2018{' '}
             </PublicationSection>
           </div>
 
-          <CardActionArea css={{ width: '50%' }}>
+          <div
+            css={{
+              [theme.breakpoints.up('md')]: {
+                width: '50%',
+              },
+            }}
+          >
             <PublicationSection picture={'landing/talk2.png'}>
               Boost Your Time to Market by Dancing the Limbo | AngualrUP 2019{' '}
             </PublicationSection>
-          </CardActionArea>
+          </div>
         </div>
         <div
           css={css({
@@ -36,16 +49,30 @@ export function TalksSection() {
             flexWrap: 'wrap',
           })}
         >
-          <CardActionArea css={{ width: '50%' }}>
+          <div
+            css={{
+              width: '100%',
+              [theme.breakpoints.up('md')]: {
+                width: '50%',
+              },
+            }}
+          >
             <PublicationSection picture={'landing/blog.png'}>
               The blog
             </PublicationSection>
-          </CardActionArea>
-          <CardActionArea css={{ width: '50%' }}>
+          </div>
+          <div
+            css={{
+              width: '100%',
+              [theme.breakpoints.up('md')]: {
+                width: '50%',
+              },
+            }}
+          >
             <PublicationSection picture={'landing/recipes.png'}>
               All the recipes
             </PublicationSection>
-          </CardActionArea>
+          </div>
         </div>
 
         <Button
@@ -53,9 +80,12 @@ export function TalksSection() {
           size="large"
           color="primary"
           css={{
-            width: '30%',
             display: 'flex',
             margin: 'auto',
+            marginBottom: '10px',
+            [theme.breakpoints.up('md')]: {
+              width: '30%',
+            },
           }}
         >
           See more content
