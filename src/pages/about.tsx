@@ -98,11 +98,11 @@ export function WwdSection() {
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           magna aliquyam erat,magna aliquyam erat,
         </WhatWeDo>
-        <WhatWeDo title={'Workshops'}>
+        <WhatWeDo title={'Consulting'}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
         </WhatWeDo>
-        <WhatWeDo title={'Workshops'}>
+        <WhatWeDo title={'Code review'}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
         </WhatWeDo>

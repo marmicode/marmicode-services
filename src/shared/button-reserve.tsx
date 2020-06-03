@@ -1,5 +1,6 @@
 import Button from '@material-ui/core/Button'
 import React from 'react'
+import { theme } from '../config/theme'
 
 export function ButtonReserve() {
   return (
@@ -8,11 +9,14 @@ export function ButtonReserve() {
       color="primary"
       size="large"
       css={{
-        width: '150px',
         display: 'flex',
         margin: 'auto',
         marginTop: '20px',
-        fontSize: '22px',
+        fontSize: '18px',
+        [theme.breakpoints.up('md')]: {
+          fontSize: '20px',
+          marginBottom: '25px',
+        },
       }}
     >
       Reserve
