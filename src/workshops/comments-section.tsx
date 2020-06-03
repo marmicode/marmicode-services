@@ -53,14 +53,16 @@ export function CommentsSection() {
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet. Lorem ipsum dolor sit
         </Comments>
-        <div
-          css={{
-            width: '100%',
-            borderTop: 'solid 1px',
-            borderColor: '#380030',
-          }}
-        />
       </div>
+      <div
+        css={{
+          [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            borderBottom: '1px solid',
+            borderColor: '#380030',
+          },
+        }}
+      />
     </PageSection>
   )
 }
