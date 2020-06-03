@@ -16,12 +16,12 @@ export function TalksSection() {
             flexWrap: 'wrap',
           })}
         >
-          <CardActionArea css={{ width: '50%' }}>
+          <div css={{ width: '50%' }}>
             <PublicationSection picture={'landing/talk1.png'}>
               White-labeling & A/B testing with interchangeable components |
               AngularConnect 2018{' '}
             </PublicationSection>
-          </CardActionArea>
+          </div>
 
           <CardActionArea css={{ width: '50%' }}>
             <PublicationSection picture={'landing/talk2.png'}>

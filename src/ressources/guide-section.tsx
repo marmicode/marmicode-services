@@ -17,7 +17,7 @@ export function GuideSection() {
           flexWrap: 'wrap',
         })}
       >
-        <div css={{ width: '70%', display: 'flex', margin: 'auto' }}>
+        <div css={{ width: '60%', display: 'flex', margin: 'auto' }}>
           <PublicationSection
             picture={'ressources/angular.png'}
           ></PublicationSection>
