@@ -1,6 +1,18 @@
+import { css } from '@emotion/core'
 import React from 'react'
-import { ExternalLink } from '../components/landing/contact'
 import { marmicodePrimaryColor } from '../config/config'
+
+export const ExternalLink = ({ href, content }: { href: string; content }) => {
+  return (
+    <a
+      css={css({ color: 'white', textDecoration: 'none' })}
+      href={href}
+      target="_blank"
+    >
+      {content}
+    </a>
+  )
+}
 
 export function Footer() {
   const email = 'kitchen@marmicode.io'
@@ -25,34 +37,33 @@ export function Footer() {
     <footer
       css={{
         display: 'flex',
-        padding: '25px',
-        backgroundColor: '#fbfbfb',
-        paddingTop: '10px',
+        padding: '10px',
+        backgroundColor: marmicodePrimaryColor,
         justifyContent: 'center',
       }}
     >
       {footerItems.map(item => (
         <div
-          css={{
+          css={css({
             alignItems: 'center',
+            color: 'white',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
             margin: '0 20px',
-          }}
+          })}
           key={item.icon}
         >
           <i
             className="material-icons"
-            style={{
-              color: marmicodePrimaryColor,
+            css={{
               fontSize: '28px',
               marginRight: '10px',
             }}
           >
             {item.icon}
           </i>
-          {item.content}
+          <span css={{ color: 'white' }}>{item.content}</span>
         </div>
       ))}
     </footer>
