@@ -58,18 +58,10 @@ export function Hero() {
         <div
           css={css({
             display: 'flex',
-            justifyContent: 'space-around',
             margin: '5px',
-            flexDirection: 'column',
-            alignItems: 'center',
-            [theme.breakpoints.up('sm')]: {
-              flexDirection: 'row',
-            },
           })}
         >
-          <ServiceButton title={'WORKSHOP'} />
-          <ServiceButton title={'COACHING'} />
-          <ServiceButton title={'CODE REVIEW'} />
+          <ServiceButton title={'See all workshops'} />
         </div>
       </div>
     </div>
@@ -82,7 +74,7 @@ export function ServiceButton({ title }: { title: string }) {
       color="primary"
       css={css({
         marginTop: '20px',
-        minWidth: '140px',
+        minWidth: '150px',
       })}
       size="large"
       variant="contained"

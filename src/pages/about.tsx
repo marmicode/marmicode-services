@@ -16,6 +16,7 @@ export default function(AboutPage) {
       <WwdSection />
       <ValuesSection />
       <YounesSection />
+      <Footer />
     </Layout>
   )
 }

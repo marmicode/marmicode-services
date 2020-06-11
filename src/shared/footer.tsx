@@ -9,7 +9,7 @@ export function Footer() {
         display: 'flex',
         padding: '25px',
         backgroundColor: '#F2EFEF',
-        marginTop: '10px',
+        paddingTop: '10px',
       }}
     >
       <Picture width={'90px'} height={'90px'} path={'icon.png'} />

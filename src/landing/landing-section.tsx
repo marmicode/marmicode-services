@@ -29,7 +29,7 @@ export function LandingSection({
           padding: '30px',
           fontSize: '40px',
           [theme.breakpoints.up('md')]: {
-            fontSize: '55px',
+            fontSize: '57px',
           },
         }}
       >
