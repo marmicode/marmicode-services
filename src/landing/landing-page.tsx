@@ -8,6 +8,7 @@ import { NewsSection } from './news-section'
 import { PresentationCard } from './presentation-card'
 import { ServicesSection } from './services-section'
 import { TalksSection } from './talks-section'
+import { AllWorkshopSection } from '../workshops/all-workshop-section'
 
 export function LandingPage() {
   const { t } = useTranslation('landing')
@@ -15,12 +16,11 @@ export function LandingPage() {
   return (
     <Layout title={t('title')}>
       <Banner />
-      <ServicesSection />
+      <AllWorkshopSection />
       <LandingSection title={'coach'}>
         <PresentationCard />
       </LandingSection>
-      <TalksSection />
-      <NewsSection />
+      <ServicesSection />
       <Footer />
     </Layout>
   )
