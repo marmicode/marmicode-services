@@ -170,7 +170,7 @@ export const IndexPage = () => {
       {/* Contact. */}
       <SectionContainer
         hasBackground={false}
-        hasSlant={true}
+        hasSlant={false}
         title={t('sections.contact')}
       >
         <ContactSection />

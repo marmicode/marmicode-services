@@ -1,41 +1,60 @@
 import React from 'react'
-import { theme } from '../config/theme'
-import { Picture } from './picture'
+import { ExternalLink } from '../components/landing/contact'
+import { marmicodePrimaryColor } from '../config/config'
 
 export function Footer() {
+  const email = 'kitchen@marmicode.io'
+
+  const footerItems = [
+    {
+      icon: 'email',
+      content: <ExternalLink href={`mailto:${email}`} content={email} />,
+    },
+    {
+      icon: 'phone',
+      content: (
+        <ExternalLink
+          href="tel:+33 (0) 4 26 83 61 92"
+          content="+33 (0) 4 26 83 61 92"
+        />
+      ),
+    },
+  ]
+
   return (
     <footer
       css={{
         display: 'flex',
         padding: '25px',
-        backgroundColor: '#F2EFEF',
+        backgroundColor: '#fbfbfb',
         paddingTop: '10px',
+        justifyContent: 'center',
       }}
     >
-      <Picture width={'90px'} height={'90px'} path={'icon.png'} />
-      <div
-        css={{
-          display: 'flex',
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          fontSize: '12px',
-          [theme.breakpoints.up('md')]: {
-            fontSize: '16px',
-          },
-        }}
-      >
-        <div>
-          <h3>CONTACT</h3>
-          <p>younes@marmicode.io</p>
-          <p>+33 (0) 4 26 83 61 92 </p>
+      {footerItems.map(item => (
+        <div
+          css={{
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            margin: '0 20px',
+          }}
+          key={item.icon}
+        >
+          <i
+            className="material-icons"
+            style={{
+              color: marmicodePrimaryColor,
+              fontSize: '28px',
+              marginRight: '10px',
+            }}
+          >
+            {item.icon}
+          </i>
+          {item.content}
         </div>
-        <div>
-          <h3>INFORMATIONS</h3>
-          <p>Privacy policy</p>
-          <p>Personal data</p>
-        </div>
-      </div>
+      ))}
     </footer>
   )
 }
