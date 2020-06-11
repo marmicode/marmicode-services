@@ -1,15 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
-import { Banner } from './banner'
 import { Footer } from '../shared/footer'
+import { AllWorkshopSection } from '../workshops/all-workshop-section'
+import { Banner } from './banner'
 import { LandingSection } from './landing-section'
-import { NewsSection } from './news-section'
 import { PresentationCard } from './presentation-card'
 import { ServicesSection } from './services-section'
-import { TalksSection } from './talks-section'
-import { AllWorkshopSection } from '../workshops/all-workshop-section'
-import { TopLeftSlant } from '../shared/slant'
 
 export function LandingPage() {
   const { t } = useTranslation('landing')
