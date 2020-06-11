@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button'
 import { Picture } from '../shared/picture'
 import React from 'react'
 
-export function SectionRight() {
+export function SectionRight({ title, children, picture }) {
   return (
     <div
       css={{
@@ -27,14 +27,14 @@ export function SectionRight() {
           },
         }}
       >
-        <h1 css={{}}>Code review</h1>
+        <h1>{title}</h1>
         <p
           css={{
             fontSize: '15px',
             [theme.breakpoints.up('md')]: { fontSize: '25px' },
           }}
         >
-          bvjloen ikrznegk n nmkgnemhn{' '}
+          {children}
         </p>
         <Button
           variant="contained"
@@ -50,13 +50,12 @@ export function SectionRight() {
         </Button>
       </div>
       <Picture
-        path={'services/codereview.jpg'}
+        path={picture}
         height={'40%'}
         width={'40%'}
         css={{
           flexWrap: 'wrap',
-
-          [theme.breakpoints.up('md')]: {},
+          [theme.breakpoints.down('md')]: { height: '100%', width: '100%' },
         }}
       />
     </div>

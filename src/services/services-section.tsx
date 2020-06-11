@@ -22,6 +22,7 @@ export function ServicesSection({ picture, title, children }) {
         width={'40%'}
         css={{
           flexWrap: 'wrap',
+          [theme.breakpoints.down('md')]: { height: '100%', width: '100%' },
         }}
       />
       <div css={{ padding: '5px' }}>
