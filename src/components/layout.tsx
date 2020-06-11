@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import { marmicodePrimaryColor } from '../config/config'
 import '../config/i18n'
 import { theme } from '../config/theme'
+import { Footer } from '../shared/footer'
 import SEO from './seo'
 
 const bodyStyle = css`
@@ -126,6 +127,7 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
         <LanguageSelector />
       </Toolbar>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <Footer />
     </>
   )
 }

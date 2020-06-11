@@ -4,7 +4,7 @@ import { LandingSection } from '../landing/landing-section'
 
 export function AllWorkshopSection() {
   return (
-    <LandingSection title={'Upcomming workshops'}>
+    <LandingSection title={'Upcoming workshops'}>
       <div
         css={{
           display: 'flex',

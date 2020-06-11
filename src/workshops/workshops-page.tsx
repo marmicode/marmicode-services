@@ -1,11 +1,10 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { PageTitle } from '../shared/page-title'
 import { AllWorkshopSection } from './all-workshop-section'
-import { CommentsSection } from './comments-section'
 import { CommentButton } from './comment-button'
-import { Footer } from '../shared/footer'
-import React from 'react'
+import { CommentsSection } from './comments-section'
 
 export function WorkshopsPage() {
   const { t } = useTranslation('workshop')
@@ -16,7 +15,6 @@ export function WorkshopsPage() {
       <AllWorkshopSection />
       <CommentsSection />
       <CommentButton />
-      <Footer />
     </Layout>
   )
 }

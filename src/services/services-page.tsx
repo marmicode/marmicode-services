@@ -1,10 +1,8 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
 import { PageTitle } from '../shared/page-title'
 import { ServicesCards } from './services-cards'
-import { Footer } from '../shared/footer'
-import React from 'react'
-import { SectionRight } from './section-right'
 
 export function ServicesPage() {
   const { t } = useTranslation('workshop')
@@ -13,7 +11,6 @@ export function ServicesPage() {
     <Layout title={t('Services')}>
       <PageTitle title={'SERVICES'} />
       <ServicesCards />
-      <Footer />
     </Layout>
   )
 }

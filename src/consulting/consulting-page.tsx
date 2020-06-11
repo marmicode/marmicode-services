@@ -1,10 +1,9 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
+import { ButtonReserve } from '../shared/button-reserve'
 import { PageTitle } from '../shared/page-title'
 import { ConsultingSection } from './consulting-section'
-import { ButtonReserve } from '../shared/button-reserve'
-import { Footer } from '../shared/footer'
-import React from 'react'
 
 export function ConsultingPage() {
   const { t } = useTranslation('landing')
@@ -13,7 +12,6 @@ export function ConsultingPage() {
       <PageTitle title={'Consulting'} />
       <ConsultingSection />
       <ButtonReserve />
-      <Footer />
     </Layout>
   )
 }
