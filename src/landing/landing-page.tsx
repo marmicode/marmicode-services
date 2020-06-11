@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Layout from '../components/layout'
+import { TopLeftSlant } from '../shared/slant'
 import { AllWorkshopSection } from '../workshops/all-workshop-section'
 import { Banner } from './banner'
 import { LandingSection } from './landing-section'
@@ -14,7 +15,7 @@ export function LandingPage() {
     <Layout title={t('title')}>
       <Banner />
       <AllWorkshopSection />
-      <LandingSection title={'Coach'}>
+      <LandingSection title={'coach'}>
         <PresentationCard />
       </LandingSection>
       <ServicesSection />

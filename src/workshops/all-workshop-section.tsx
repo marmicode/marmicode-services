@@ -1,10 +1,12 @@
-import { WorkshopsCard } from './workshops-card'
 import React from 'react'
 import { LandingSection } from '../landing/landing-section'
+import { TopLeftSlant } from '../shared/slant'
+import { WorkshopsCard } from './workshops-card'
 
 export function AllWorkshopSection() {
   return (
     <LandingSection title={'Upcoming workshops'}>
+      <TopLeftSlant />
       <div
         css={{
           display: 'flex',
