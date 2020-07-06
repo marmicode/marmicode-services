@@ -1,6 +1,9 @@
 ---
 title: Formation
 icon: menu_book
+button:
+  title: Nos Workshops
+  url: https://marmicode.eventbrite.fr
 ---
 
 Nos formations s’adaptent au public tout en restant axées sur les **bonnes pratiques** et **l’architecture**.

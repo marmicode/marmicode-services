@@ -3,7 +3,7 @@ title: Workshops
 icon: menu_book
 button:
   title: See Workshops
-  url: https://angular-unit-testing-fundamentals-workshop-2020-06.eventbrite.com
+  url: https://marmicode.eventbrite.com
 ---
 
 Our workshops focus on **best practices** and **progressive architectures**.
