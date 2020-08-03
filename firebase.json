@@ -8,9 +8,16 @@
     },
     {
       "target": "marmicode-fr",
-      "predeploy": "yarn build:fr",
+      "predeploy": "mkdir public",
       "public": "public",
-      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "redirects": [
+        {
+          "source": "/**",
+          "destination": "https://marmicode.io",
+          "type": 301
+        }
+      ]
     }
   ]
 }
