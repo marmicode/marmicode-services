@@ -126,7 +126,9 @@ export const Layout = ({ children, title }: { children?; title: string }) => {
         <div css={{ flex: 1 }} />
         <LanguageSelector />
       </Toolbar>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <div css={{ background: 'white', zIndex: '-2' }}>{children}</div>
+      </ThemeProvider>
       <Footer />
     </>
   )

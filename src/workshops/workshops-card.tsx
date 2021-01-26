@@ -13,9 +13,11 @@ export function WorkshopsCard() {
         display: 'flex',
         margin: 'auto',
         flexDirection: 'column',
+        backgroundColor: '#F8F8F8',
         flexWrap: 'wrap',
         maxWidth: '600px',
         marginTop: '15px',
+        marginBottom: '10px',
       })}
     >
       <CardContent>
